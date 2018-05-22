@@ -1,17 +1,6 @@
 const http = require('http');
-const fs = require('fs');
+const app = require('./app');
 
-http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.readFile('./index.html', function(error, data){
-        if(error){
-            res.writeHead(404);
-            res.write('Erreur 404');
-        }
-        else{
-            res.write(data);
-        }
-        res.end();
-    });
+console.log(app);
 
-}).listen(8000);
+http.createServer(app.handleRequest).listen(8000);

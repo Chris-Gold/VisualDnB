@@ -4,7 +4,9 @@
   "description": "Site pour l'association VisualDnB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "nodemon" : "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Chris-Gold/VisualDnB/issues"
   },
-  "homepage": "https://github.com/Chris-Gold/VisualDnB#readme"
+  "homepage": "https://github.com/Chris-Gold/VisualDnB#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
 }
