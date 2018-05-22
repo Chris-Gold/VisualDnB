@@ -1,33 +1,12 @@
-const fs = require('fs');
+const express = require('express');
+const app = express();
 
-const renderHTML = function(template, response){
-    response.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.readFile(template, function(error, data){
-        if(error){
-            response.writeHead(404);
-            response.write('template inexistant');
-        }
-        else{
-            response.write(data);
-        }
-        response.end();
-    })
-}
+app.get('/', function(req, res){
+    res.status(200).send("Salut ceci est la page d'acceuil");
+});
 
-const handleRequest = function(request, response){
+app.get('*', function(req, res){
+    res.status(404).send("Erreur 404");
+});
 
-    let path = request.url;
-
-    switch(path){
-        case '/':
-            renderHTML('./index.html', response);
-            break;
-        default:
-            renderHTML('./404.html', response);
-    }
-
-}
-
-module.exports = {
-    handleRequest : handleRequest
-}
+app.listen(8000);

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "nodemon" : "nodemon server.js"
+    "nodemon": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Chris-Gold/VisualDnB#readme",
   "devDependencies": {
     "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
