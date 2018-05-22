@@ -1,0 +1,19 @@
+{
+  "name": "visualdnb",
+  "version": "1.0.0",
+  "description": "Site pour l'association VisualDnB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris-Gold/VisualDnB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris-Gold/VisualDnB/issues"
+  },
+  "homepage": "https://github.com/Chris-Gold/VisualDnB#readme"
+}
