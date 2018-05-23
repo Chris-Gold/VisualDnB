@@ -50,20 +50,25 @@
     </section>
 
     <section id="gallery">
-      <div id="gal_crea">
+      <div id="galCrea">
       </div>
 
-      <div id="gal_img">
+      <div id="galImg">
       </div>
 
-      <div id="gal_vid">
+      <div id="galVid">
       </div>
     </section>
 
     <section id="contact">
       <!-- CONTACT + CALENDRIER -->
-      <div id="contact_form">
-      </div>
+      <form id="contactForm" action="/" method="POST">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="siteWeb" placeholder="Site Web">
+        <textarea type="text" name="message" placeholder="Message" required></textarea>
+        <input type="submit" value="Envoyer"></input>
+      </form>
 
       <div id="calendrier">
       </div>
