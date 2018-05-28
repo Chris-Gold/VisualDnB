@@ -11,7 +11,19 @@ router.get('/admin', function(req, res){
 router.post('/admin', function(req, res){
     let id = req.body.id;
     let mdp = req.body.mdp;
-    res.send(id + ' ' + mdp);
+
+    req.checkBody("id", "l'identifiant est requis.").notEmpty();
+    req.checkBody("mdp", "le mot de passe est requis.").notEmpty();
+    
+    let errors = req.validationErrors();
+
+    if(errors){
+        res.render('back/login.hbs', {
+            errors:errors
+        });
+    }else {
+        res.send(id + ' ' + mdp);
+    }
 });
 
 module.exports = router;

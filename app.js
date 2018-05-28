@@ -1,8 +1,16 @@
 const express = require('express'); // On utilise le framework Express pour Nodejs
 const path = require('path'); // Module fourni avec express pour les chemins. (Pour utiliser "join")
 const bodyParser = require('body-parser'); // Permet d'utiliser la method post data
+const expressValidator = require('express-validator'); // Permet de required les inputs
 const mongodb = require('mongodb');
 const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/visualdnb');
+let db = mongoose.connection;
+
+db.once('open', function(){
+    console.log('connected to mongodb');
+})
 
 // Routes
 const indexRoutes = require('./routes/index.js'); // "importe" les routes de l'index.hbs
