@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 const router = express.Router(); 
 // Récupération du client mongodb
 const mongodb = require('mongodb');
@@ -46,6 +47,10 @@ router.post('/', function(req, res){
 
 // ROUTES BACK
 // Si l'url indique admin alors on affiche la page login
+router.get('/adminIndex', function(req, res){
+    res.status(200).render('back/adminIndex.hbs');
+});
+
 router.get('/admin', function(req, res){
     res.status(200).render('back/login.hbs');
 });
@@ -72,7 +77,7 @@ router.post('/admin', function(req, res){
             }
         });
     });
-    res.redirect('/'); 
+    res.redirect('/adminIndex'); 
 });
 
 module.exports = router;
