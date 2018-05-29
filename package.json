@@ -1,0 +1,29 @@
+{
+  "name": "visualdnb",
+  "version": "1.0.0",
+  "description": "Site pour l'association VisualDnB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "nodemon": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris-Gold/VisualDnB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris-Gold/VisualDnB/issues"
+  },
+  "homepage": "https://github.com/Chris-Gold/VisualDnB#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  }
+}
