@@ -6,7 +6,8 @@
 
     <title>Visual DnB</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">    
+    <link rel="stylesheet" href="css/jquery.simplyscroll.css">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
@@ -50,7 +51,7 @@
     </section>
 
     <section id="presentation">
-      <p>C'est ici qu'on se présente maggle</p>
+      <p>C'est ici qu'on se présente</p>
     </section>
 
     <section id="booked">
@@ -75,37 +76,66 @@
     <section id="team">
     </section>
 
-    <section id="gallery">
-      <div id="galCrea">
+    <section id="gallery" class="text-center">
+      <h3>GalCréa</h3>
+      <div id="galCrea" class="simply-scroll simply-scroll-container offset-2 col-md-8">
+        <div class="simply-scroll-clip">
+          <ul class="scroller simply-scroll-list" style="width: 2320px;">
+              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
+          </ul>      
+        </div>
       </div>
 
-      <div id="galImg">
+      <h3>GalImg</h3>
+      <div id="galImg" class="simply-scroll simply-scroll-container offset-md-2 col-md-8">
+        <div class="simply-scroll-clip">
+          <ul class="scroller simply-scroll-list" style="width: 2320px;">
+              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
+          </ul>      
+        </div>
       </div>
 
-      <div id="galVid">
+      <h3>GalVid</h3>
+      <div id="galVid" class="simply-scroll simply-scroll-container offset-md-2 col-md-8">
+        <div class="simply-scroll-clip">
+          <ul class="scroller simply-scroll-list" style="width: 2320px;">
+              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
+              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
+          </ul>      
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="container box">
+      <div class="row">
       <!-- CONTACT + CALENDRIER -->
-      <form id="contactForm" action="/" method="POST">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="siteWeb" placeholder="Site Web">
-        <textarea type="text" name="message" placeholder="Message" required></textarea>
-        <input type="submit" value="Envoyer"></input>
-      </form>
+        <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
+          <input type="text" class="col-12" name="nom" placeholder="Nom" required>
+          <input type="email" class="col-12" name="email" placeholder="Email" required>
+          <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
+          <input type="submit" class="col-12" value="Envoyer"></input>
+        </form>
 
-      <div id="calendrier">
+        <div id="calendrier" class="col-12 col-md-6 box text-center">
+          <iframe class="col-12 box" src="https://calendar.google.com/calendar?cid=eWVsbG93YWZvcm1hY0BnbWFpbC5jb20" frameborder="15"></iframe>
+        </div>
       </div>
     </section>
 
-    <footer>
+    <footer class="box">
+    
     </footer>
 
     <!-- INSERTION SCRIPT -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/jquery.simplyscroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

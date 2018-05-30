@@ -1,8 +1,56 @@
-header{
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-  video{
+$noir : #070C0C;
+$blanc : #E5E5E4;
+
+.box{
+  border: 1px solid $blanc;
+}
+
+.row{
+  margin: 0px;
+}
+
+.container-fluid{
+  padding: 0px;
+}
+
+body{
+  background-color : $noir;
+  color : $blanc;
+}
+
+video{
+  height: 100%;
+  width : 100%;
+}
+
+#gallery{
+  width: 100%;
+  #galCrea, #galImg, #galVid{
     width: 100%;
-    height: 100%;
+    div{
+      width: 100%;
+    }
   }
+}
+
+#contactForm{
+  background-color : $noir;
+}
+
+#contactForm input, textarea{
+  margin : 10px 0px 10px 0px;
+}
+
+#calendrier{
+  display: flex;
+  background-color : $noir;
+}
+
+#calendrier iframe{
+  margin : 10px 0px 10px 0px;
+}
+
+footer{
+  height : 100px;
+  background-color : $noir;
 }

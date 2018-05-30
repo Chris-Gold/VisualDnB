@@ -1,8 +1,42 @@
-header {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0; }
-  header video {
-    width: 100%;
-    height: 100%; }
+.box {
+  border: 1px solid #E5E5E4; }
+
+.row {
+  margin: 0px; }
+
+.container-fluid {
+  padding: 0px; }
+
+body {
+  background-color: #070C0C;
+  color: #E5E5E4; }
+
+video {
+  height: 100%;
+  width: 100%; }
+
+#gallery {
+  width: 100%; }
+  #gallery #galCrea, #gallery #galImg, #gallery #galVid {
+    width: 100%; }
+    #gallery #galCrea div, #gallery #galImg div, #gallery #galVid div {
+      width: 100%; }
+
+#contactForm {
+  background-color: #070C0C; }
+
+#contactForm input, textarea {
+  margin: 10px 0px 10px 0px; }
+
+#calendrier {
+  display: flex;
+  background-color: #070C0C; }
+
+#calendrier iframe {
+  margin: 10px 0px 10px 0px; }
+
+footer {
+  height: 100px;
+  background-color: #070C0C; }
 
 /*# sourceMappingURL=style.css.map */
