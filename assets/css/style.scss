@@ -59,9 +59,18 @@ header{
 
 #presta{
   width: 100%;
-  #da-slider{
+  #da-slider, .da-slider{
     width: 100%;
   }
+}
+
+#insta{
+    width: 100%;
+    #instafeed{
+      img{
+        height: 500px;
+      }
+    }
 }
 
 #gallery{
