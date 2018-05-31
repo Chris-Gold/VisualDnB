@@ -1,11 +1,19 @@
-(function($) {
-  $(function() { //on DOM ready
+// (function($){
+$(document).ready(function(){
+  // $(function() { //on DOM ready
+  // HEADER SIZE
+  var screenHeight = $(window).height();
+  var navHeight = $('#navigation').height();
+  var headHeight = (screenHeight - navHeight);
+  $("header").css({height: headHeight});
       // SIMPLY SCROLL
         $(".scroller").simplyScroll();
+
       // SLIDER PARALLAX
         $('#da-slider').cslider({
 					bgincrement	: 0
 				});
+
         // INSTAFEED
         var userFeed = new Instafeed({
           get: 'user',
@@ -14,11 +22,31 @@
           accessToken : '6921109790.1677ed0.7ad1c946a4b74af5bf14e5575f1052e8',
           sortBy : 'most-recent',
           //template : '<li><img src="{{image}}" alt="{{caption}}" class="img-fluid"/></li>'
-          template : '<li><img src="{{image}}" alt="{{caption}}" width="290" height="200"/></li>'
-
-          // after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
+          template : '<div class="carousel-item text-center">'+
+                        '<a target="_blank" href="{{link}}">'+
+                        '<img class="img-fluid" src="{{image}}"/>'+
+                        '<p>{{caption}}</p>'+
+                      '</a></div>',
+          after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
         });
         userFeed.run();
-        
+
+        // MULTILANGUE
+        $('#eng').click(function(){
+          $('.fr').addClass('d-none');
+          $('.eng').removeClass('d-none');
+        })
+        $('#fr').click(function(){
+          $('.eng').addClass('d-none');
+          $('.fr').removeClass('d-none');
+        })
+
+        // NAVIGATION
+        $("#navigation").find("li").on("click", "a", function () {
+            $('.navbar-collapse').collapse('hide');
+            var target = $(this).attr('href');
+            var navHeight = $('#navigation').height();
+            $('html, body').stop().animate({scrollTop: ($(target).offset().top)-navHeight}, 1000 );
+        })
   });
-})(jQuery);
+// })(jQuery);
