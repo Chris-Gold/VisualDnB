@@ -39,6 +39,50 @@ header{
   div, ul{
     width: 100%;
   }
+  button{
+    height: 1.5em;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0);
+    img{
+      height: 1.5em;
+      }
+    a {
+    color: $blanc;
+    line-height: 1.4;
+    padding: .25em;
+    text-decoration: none;
+    &:hover {
+     // background: rgba($blanc, 1);
+     color: $vert;
+    }
+    .btn-2:after,
+    .btn-2:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 500ms ease-in-out;
+    width: 0;
+    }
+    .btn-2:hover:after,
+    .btn-2:hover:before {
+    backface-visibility: hidden;
+    border-color: $vert;
+    transition: width 500ms ease-in-out;
+    width: 70%;
+    }
+    .btn-2:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+      }
+    }
+  }
 }
 
 .img-transition{
@@ -80,6 +124,9 @@ header{
   min-height: 40em;
   width: 100%;
   #instafeed{
+    a{
+      color: $blanc;
+    }
     img{
       max-height: 25em;
       width: auto;
@@ -122,4 +169,8 @@ header{
 footer{
   height : 100px;
   background-color : $noir;
+  p{
+    width: 100%;
+    height: 100%;
+  }
 }

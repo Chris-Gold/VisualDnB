@@ -6,6 +6,14 @@ $(document).ready(function(){
   var navHeight = $('#navigation').height();
   var headHeight = (screenHeight - navHeight);
   $("header").css({height: headHeight});
+  // TRANSITION SIZE
+  $(".img-transition").css({height: screenHeight*0.8})
+  // NAVIGATION
+  $("#navigation").find("li").on("click", "a", function () {
+    $('.navbar-collapse').collapse('hide');
+    var target = $(this).attr('href');
+    $('html, body').stop().animate({scrollTop: ($(target).offset().top)-navHeight}, 1000 );
+  })
       // SIMPLY SCROLL
         $(".scroller").simplyScroll();
 
@@ -41,12 +49,5 @@ $(document).ready(function(){
           $('.fr').removeClass('d-none');
         })
 
-        // NAVIGATION
-        $("#navigation").find("li").on("click", "a", function () {
-            $('.navbar-collapse').collapse('hide');
-            var target = $(this).attr('href');
-            var navHeight = $('#navigation').height();
-            $('html, body').stop().animate({scrollTop: ($(target).offset().top)-navHeight}, 1000 );
-        })
   });
 // })(jQuery);
