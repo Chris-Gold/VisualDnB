@@ -9,6 +9,8 @@ body {
   color: #E5E5E4;
   z-index: 5; }
   body section {
+    padding-top: 5em;
+    padding-bottom: 5em;
     background-color: #070C0C;
     z-index: 10; }
   body h3 {
@@ -30,7 +32,6 @@ body {
     height: 1.5em;
     margin: 0;
     border: 0;
-    margin: 0;
     background-color: transparent; }
     #navigation button img {
       height: 1.5em; }
@@ -66,10 +67,11 @@ body {
   background: url("https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg?w=2000&h=1200&crop=1") center fixed no-repeat;
   background-size: cover; }
 
-#about div {
+#about {
+  height: auto;
   padding-top: 2em;
   padding-bottom: 2em; }
-  #about div img {
+  #about img {
     padding-bottom: 1em; }
 
 #booked {
@@ -83,20 +85,23 @@ body {
   padding: 20px; }
 
 #presta {
+  height: auto;
   width: 100%; }
   #presta #da-slider, #presta .da-slider {
     width: 100%; }
 
 #insta {
-  min-height: 40em;
+  height: auto;
   width: 100%; }
-  #insta #instafeed a {
-    color: #E5E5E4; }
-  #insta #instafeed img {
-    max-height: 25em;
-    width: auto; }
-  #insta #instafeed p {
-    padding-top: 1em; }
+  #insta #instafeed {
+    padding-bottom: 2em; }
+    #insta #instafeed a {
+      color: #E5E5E4; }
+    #insta #instafeed img {
+      max-height: 25em;
+      width: auto; }
+    #insta #instafeed p {
+      padding-top: 1em; }
 
 #gallery {
   width: 100%; }
