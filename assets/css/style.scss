@@ -2,9 +2,9 @@ $noir : #070C0C;
 $blanc : #E5E5E4;
 $vert : #05b72f;
 
-.box{
-  border: 1px solid $blanc;
-}
+// .box{
+//   border: 1px solid $blanc;
+// }
 
 .row{
   margin: 0px;
@@ -19,11 +19,13 @@ body{
   color : $blanc;
   z-index: 5;
   section{
+    padding-top: 5em;
+    padding-bottom: 5em;
     background-color : $noir;
     z-index: 10;
   }
   h3{
-    margin: 1em;
+    padding: 1em;
     font-size: 2.5em;
   }
 }
@@ -47,7 +49,6 @@ body{
     height: 1.5em;
     padding: 0;
     border: 0;
-    margin: 0;
     background-color: rgba(0,0,0,0);
     img{
       height: 1.5em;
@@ -92,12 +93,15 @@ body{
   background-size : cover;
 }
 
-#about div{
-  margin-top: 2em;
-  margin-bottom: 2em;
-  img{
-    margin-bottom: 1em;
-  }
+#about{
+  height: auto;
+
+    padding-top: 2em;
+    padding-bottom: 2em;
+    img{
+      padding-bottom: 1em;
+    }
+
 }
 
 #booked{
@@ -109,10 +113,11 @@ body{
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  margin: 20px;
+  padding: 20px;
 }
 
 #presta{
+  height: auto;
   width: 100%;
   #da-slider, .da-slider{
     width: 100%;
@@ -120,10 +125,10 @@ body{
 }
 
 #insta{
-  min-height: 40em;
+  height: auto;
   width: 100%;
   #instafeed{
-    margin-bottom: 2em;
+    padding-bottom: 2em;
     a{
       color: $blanc;
     }
@@ -132,7 +137,7 @@ body{
       width: auto;
     }
     p{
-      margin-top: 1em;
+      padding-top: 1em;
     }
   }
 }
@@ -159,7 +164,7 @@ body{
 }
 
 #contact div.row{
-  margin: 2em;
+  padding: 2em;
 }
 #contactForm{
   background-color : $noir;

@@ -3,7 +3,7 @@
 	min-width: 520px;
 	height: 400px;
 	position: relative;
-	margin: 30px auto;
+	/* margin: 30px auto; */
 	overflow: hidden;
 	background: transparent url(../images/waves.gif) repeat 0% 0%;
 	border-top: 8px solid #efc34a;
@@ -201,7 +201,7 @@
 	opacity: 1;
 }
 .da-slide-current .da-img{
-	
+
 	left: 50%;
 	opacity: 1;
 }
