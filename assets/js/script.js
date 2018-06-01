@@ -1,6 +1,14 @@
 // (function($){
 $(document).ready(function(){
   // $(function() { //on DOM ready
+  var posTeam = $('#gallery').offset().top;
+  var posFooter = $('#contact').offset().top;
+  var screenWidth = $(window).width();
+  var fnlHeight = posFooter-posTeam;
+  var ratio = screenWidth/fnlHeight;
+  console.log(ratio);
+  // console.log(posFooter);
+
   // HEADER SIZE
   var screenHeight = $(window).height();
   var navHeight = $('#navigation').height();
