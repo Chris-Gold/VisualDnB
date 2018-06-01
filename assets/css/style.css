@@ -30,7 +30,7 @@ body {
     width: 100%; }
   #navigation button {
     height: 1.5em;
-    padding: 0;
+    margin: 0;
     border: 0;
     background-color: transparent; }
     #navigation button img {
@@ -124,7 +124,7 @@ body {
     #gallery #galCrea div, #gallery #galImg div, #gallery #galVid div {
       width: 100%; }
       #gallery #galCrea div li, #gallery #galImg div li, #gallery #galVid div li {
-        margin-left: 1em; }
+        padding-left: 1em; }
         #gallery #galCrea div li img, #gallery #galImg div li img, #gallery #galVid div li img {
           border-radius: 25%; }
 
@@ -134,10 +134,13 @@ body {
   background-size: contain; }
 
 #contact div.row {
-  padding: 2em; }
+  padding: 2em;
+  background-color: rgba(7, 12, 12, 0.8);
+}
 
 #contactForm input, textarea {
-  margin: 1em 0px 1em 0px; }
+  margin: 1em 0px 1em 0px;
+}
 
 #calendrier {
   background-color: #070C0C; }

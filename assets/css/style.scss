@@ -2,6 +2,7 @@ $noir : #070C0C;
 $blanc : #E5E5E4;
 $vert : #05b72f;
 
+
 // .box{
 //   border: 1px solid $blanc;
 // }
@@ -47,7 +48,7 @@ body{
   }
   button{
     height: 1.5em;
-    padding: 0;
+    margin: 0;
     border: 0;
     background-color: rgba(0,0,0,0);
     img{
@@ -93,6 +94,7 @@ body{
   background: url('https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg?w=2000&h=1200&crop=1')center fixed no-repeat;
   background-size : cover;
 }
+
 
 #about{
   height: auto;
@@ -169,7 +171,7 @@ body{
     div{
       width: 100%;
       li{
-        margin-left: 1em;
+        padding-left: 1em;
         img{
           border-radius: 25%;
         }

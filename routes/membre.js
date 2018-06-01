@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router(); 
 
-// Ici ':' permet d'utiliser nom comme une variable. (idem dans produits)
-router.get('/membre/:nom', function(req, res){
-    const membre = req.params.membre;
+router.get('/:nom', function(req, res){
+    let nom = req.params.nom;
     res.status(200).render('front/membre.hbs', {
-        membre: membre
+        nom: nom
     });
 });
 
