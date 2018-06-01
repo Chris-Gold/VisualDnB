@@ -3,8 +3,13 @@ const path = require('path'); // Module fourni avec express pour les chemins. (P
 const bodyParser = require('body-parser'); // Permet d'utiliser la method post data
 
 // Routes
-const indexRoutes = require('./routes/index.js'); // "importe" les routes de l'index.hbs
-const errorRoutes = require('./routes/404.js'); // idem qu'au dessus pour la page 404
+const indexRoute = require('./routes/index.js'); // "importe" les routes de l'index.hbs
+const errorRoute = require('./routes/404.js'); // idem qu'au dessus pour la page 404
+const produitRoute = require('./routes/produit.js');
+const allProduitsRoute = require('./routes/all-produits.js');
+const membreRoute = require('./routes/membre.js');
+const loginRoute = require('./routes/login.js');
+const adminRoute = require('./routes/admin.js');
 
 // Init app Express
 const app = express(); 
@@ -22,7 +27,12 @@ app.use(express.static(__dirname + '/assets')); // On dit que assets contient le
 // __dirname permet de récupérer l'url d'où on est à partir de la racine
 
 // Declaration de nos routes maintenant à leurs place dans le dossier routes
-app.use('/', indexRoutes);
-app.use('*', errorRoutes);
+app.use('/', indexRoute);
+app.use('/produit', produitRoute);
+app.use('/all-produits', allProduitsRoute);
+app.use('/membre/:nom', membreRoute);
+app.use('/login', loginRoute);
+app.use('/admin', adminRoute);
+app.use('*', errorRoute);
 
 app.listen(8000); // On écoute sur le port 8000
