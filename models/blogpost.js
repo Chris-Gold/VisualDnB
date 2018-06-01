@@ -8,4 +8,4 @@ const blogpostSchema = new Schema({
 
 const BlogPost = mongoose.model("BlogPost", blogpostSchema);
 
-module.exports = Blogpost;
+module.exports = BlogPost;
