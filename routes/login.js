@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); 
 
-router.get('/login', function(req, res){
+router.get('/', function(req, res){
     res.status(200).render('back/login.hbs');
 });
 
