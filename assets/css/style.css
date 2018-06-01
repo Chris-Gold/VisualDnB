@@ -128,11 +128,6 @@ body {
         #gallery #galCrea div li img, #gallery #galImg div li img, #gallery #galVid div li img {
           border-radius: 25%; }
 
-#contact {
-  z-index: 15;
-  background: url("../img/bgBottom2.jpg") center bottom fixed no-repeat;
-  background-size: contain; }
-
 #contact div.row {
   padding: 2em;
   background-color: rgba(7, 12, 12, 0.8);
