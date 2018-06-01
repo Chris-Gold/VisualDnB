@@ -17,7 +17,7 @@ $(document).ready(function(){
       // SIMPLY SCROLL
         $(".scroller").simplyScroll();
         $("#galImg .scroller").simplyScroll({
-          frameRate: 50,          
+          frameRate: 50,
           direction: 'backwards'
         });
 
@@ -41,8 +41,10 @@ $(document).ready(function(){
           //             '</a></div>',
           // after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
           template : '<div class="col-6 col-md-4 col-lg-3">'+
+                      '<a class="btn-2" target="_blank" href="{{link}}">'+
                       '<img class="img-fluid" src="{{image}}"/>'+
-                      '<p class="offset-1 col-10 text-truncate">{{caption}}</p></div>'
+                      '<p class="offset-1 col-10 text-truncate">{{caption}}</p>'+
+                      '</a></div>'
         });
         userFeed.run();
 
