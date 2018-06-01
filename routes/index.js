@@ -15,8 +15,6 @@ router.post('/', function(req, res){
     res.send(nom + ' ' + email + ' ' + siteWeb + ' ' + message);
 });
 
-// BACK
-// Si l'url indique admin alors on affiche la page login
 
 
 module.exports = router;

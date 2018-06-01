@@ -30,8 +30,8 @@ app.use(express.static(__dirname + '/assets')); // On dit que assets contient le
 app.use('/', indexRoute);
 app.use('/login', loginRoute);
 app.use('/admin', adminRoute);
-app.use('/membre/:nom', membreRoute);
-app.use('/produit', produitRoute);
+app.use('/membre', membreRoute);
+app.use('/all-produits', produitRoute);
 app.use('/all-produits', allProduitsRoute);
 // app.use('*', errorRoute);
 
