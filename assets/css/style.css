@@ -1,11 +1,8 @@
-.box {
-  border: 1px solid #E5E5E4; }
-
 .row {
   margin: 0px; }
 
 .container-fluid {
-  padding: 0px; }
+  margin: 0px; }
 
 body {
   background-color: #070C0C;
@@ -15,7 +12,7 @@ body {
     background-color: #070C0C;
     z-index: 10; }
   body h3 {
-    margin: 1em;
+    padding: 1em;
     font-size: 2.5em; }
 
 #topVid {
@@ -31,7 +28,7 @@ body {
     width: 100%; }
   #navigation button {
     height: 1.5em;
-    padding: 0;
+    margin: 0;
     border: 0;
     margin: 0;
     background-color: transparent; }
@@ -70,10 +67,10 @@ body {
   background-size: cover; }
 
 #about div {
-  margin-top: 2em;
-  margin-bottom: 2em; }
+  padding-top: 2em;
+  padding-bottom: 2em; }
   #about div img {
-    margin-bottom: 1em; }
+    padding-bottom: 1em; }
 
 #booked {
   width: 100%;
@@ -83,7 +80,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  margin: 20px; }
+  padding: 20px; }
 
 #presta {
   width: 100%; }
@@ -93,15 +90,13 @@ body {
 #insta {
   min-height: 40em;
   width: 100%; }
-  #insta #instafeed {
-    margin-bottom: 2em; }
-    #insta #instafeed a {
-      color: #E5E5E4; }
-    #insta #instafeed img {
-      max-height: 25em;
-      width: auto; }
-    #insta #instafeed p {
-      margin-top: 1em; }
+  #insta #instafeed a {
+    color: #E5E5E4; }
+  #insta #instafeed img {
+    max-height: 25em;
+    width: auto; }
+  #insta #instafeed p {
+    padding-top: 1em; }
 
 #gallery {
   width: 100%; }
@@ -110,18 +105,18 @@ body {
     #gallery #galCrea div, #gallery #galImg div, #gallery #galVid div {
       width: 100%; }
       #gallery #galCrea div li, #gallery #galImg div li, #gallery #galVid div li {
-        margin-left: 1em; }
+        padding-left: 1em; }
         #gallery #galCrea div li img, #gallery #galImg div li img, #gallery #galVid div li img {
           border-radius: 25%; }
 
 #contact div.row {
-  margin: 2em; }
+  padding: 2em; }
 
 #contactForm {
   background-color: #070C0C; }
 
 #contactForm input, textarea {
-  margin: 1em 0px 1em 0px; }
+  padding: 1em 0px 1em 0px; }
 
 #calendrier {
   background-color: #070C0C; }

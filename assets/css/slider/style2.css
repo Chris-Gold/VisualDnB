@@ -3,7 +3,7 @@
 	min-width: 520px;
 	height: 400px;
 	position: relative;
-	margin: 30px auto;
+	margin: 0px auto;
 	overflow: hidden;
 	background: transparent url(../images/waves.gif) repeat 0% 0%;
 	border-top: 8px solid #efc34a;
@@ -117,7 +117,7 @@
 	height: 12px;
 	border-radius: 50%;
 	background: #e4b42d;
-	margin: 3px;
+	margin: 0px;
 	cursor: pointer;
 	box-shadow:
 		1px 1px 1px rgba(0,0,0,0.1) inset,
