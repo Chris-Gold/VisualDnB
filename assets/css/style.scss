@@ -1,5 +1,6 @@
 $noir : #070C0C;
 $blanc : #E5E5E4;
+$vert : #05b72f;
 
 .box{
   border: 1px solid $blanc;
@@ -16,21 +17,69 @@ $blanc : #E5E5E4;
 body{
   background-color : $noir;
   color : $blanc;
-}
-
-header{
-  video{
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: 0;
+  z-index: 5;
+  section{
+    background-color : $noir;
+    z-index: 10;
+  }
+  h3{
+    margin: 1em;
+    font-size: 2.5em;
   }
 }
 
+#topVid{
+  display: block;
+  z-index: -5;
+  position: fixed;
+  // top: 0;
+  // left:0;
+}
+
 #navigation{
+  background-color: $noir;
+  font-size: 2em;
   width: 100%;
   div, ul{
     width: 100%;
+  }
+  button{
+    height: 1.5em;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0);
+    img{
+      height: 1.5em;
+      }
+    }
+  .btn-2:after,
+  .btn-2:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+    color: $vert;
+  }
+
+  .btn-2:hover:after,
+  .btn-2:hover:before {
+    backface-visibility: hidden;
+    border-color: $vert;
+    color: $vert;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
+
+  .btn-2:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
   }
 }
 
@@ -41,6 +90,14 @@ header{
 #trans1, #trans2, #trans3{
   background: url('https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg?w=2000&h=1200&crop=1')center fixed no-repeat;
   background-size : cover;
+}
+
+#about div{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  img{
+    margin-bottom: 1em;
+  }
 }
 
 #booked{
@@ -57,39 +114,75 @@ header{
 
 #presta{
   width: 100%;
-  #da-slider{
+  #da-slider, .da-slider{
     width: 100%;
   }
 }
 
+#insta{
+  min-height: 40em;
+  width: 100%;
+  #instafeed{
+    margin-bottom: 2em;
+    a{
+      color: $blanc;
+    }
+    img{
+      max-height: 25em;
+      width: auto;
+    }
+    p{
+      margin-top: 1em;
+    }
+  }
+}
+
+#skills{
+  p{
+
+  }
+}
 #gallery{
   width: 100%;
   #galCrea, #galImg, #galVid{
     width: 100%;
     div{
       width: 100%;
+      li{
+        margin-left: 1em;
+        img{
+          border-radius: 25%;
+        }
+      }
     }
   }
 }
 
+#contact div.row{
+  margin: 2em;
+}
 #contactForm{
   background-color : $noir;
 }
 
 #contactForm input, textarea{
-  margin : 10px 0px 10px 0px;
+  margin : 1em 0px 1em 0px;
 }
 
 #calendrier{
-  display: flex;
   background-color : $noir;
+
 }
 
 #calendrier iframe{
-  margin : 10px 0px 10px 0px;
+  width: 100%;
 }
 
 footer{
   height : 100px;
   background-color : $noir;
+  p{
+    width: 100%;
+    height: 100%;
+  }
 }
