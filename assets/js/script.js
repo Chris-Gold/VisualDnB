@@ -16,6 +16,10 @@ $(document).ready(function(){
   })
       // SIMPLY SCROLL
         $(".scroller").simplyScroll();
+        $("#galImg .scroller").simplyScroll({
+          frameRate: 50,          
+          direction: 'backwards'
+        });
 
       // SLIDER PARALLAX
         $('#da-slider').cslider({
@@ -30,12 +34,15 @@ $(document).ready(function(){
           accessToken : '6921109790.1677ed0.7ad1c946a4b74af5bf14e5575f1052e8',
           sortBy : 'most-recent',
           //template : '<li><img src="{{image}}" alt="{{caption}}" class="img-fluid"/></li>'
-          template : '<div class="carousel-item text-center">'+
-                        '<a target="_blank" href="{{link}}">'+
-                        '<img class="img-fluid" src="{{image}}"/>'+
-                        '<p>{{caption}}</p>'+
-                      '</a></div>',
-          after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
+          // template : '<div class="carousel-item text-center">'+
+          //               '<a target="_blank" href="{{link}}">'+
+          //               '<img class="img-fluid" src="{{image}}"/>'+
+          //               '<p>{{caption}}</p>'+
+          //             '</a></div>',
+          // after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
+          template : '<div class="col-6 col-md-4 col-lg-3">'+
+                      '<img class="img-fluid" src="{{image}}"/>'+
+                      '<p class="offset-1 col-10 text-truncate">{{caption}}</p></div>'
         });
         userFeed.run();
 

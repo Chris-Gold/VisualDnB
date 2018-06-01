@@ -23,9 +23,9 @@
   </head>
   <body>
 
-    <header id="header" class="container-fluid">
+    <header id="header" class="container-fluid text-center">
       <!-- VIDEO PRESENTATION -->
-      <video id="topVid" class="container-fluid" autoplay="" loop="" muted src="https://visualdnb.files.wordpress.com/2017/12/bigroom-aftermovie.mp4">
+      <video id="topVid"  class="" autoplay="" loop="" muted src="https://visualdnb.files.wordpress.com/2017/12/bigroom-aftermovie.mp4">
       </video>
     </header>
 
@@ -41,17 +41,17 @@
             <button id="eng" type="button" class="fr"><img class="img-fluid" src="img/uk.gif"/></button>
             <button id="fr" type="button" class="eng d-none "><img class="img-fluid" src="img/fr2.gif"/></button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn-2" href="#header"><span class="fr">Accueil</span><span class="eng d-none">Home</span></a>
+          <li class="nav-item btn-2 ">
+            <a class="nav-link " href="#header"><span class="fr">Accueil</span><span class="eng d-none">Home</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn-2" href="#about"><span class="fr">Qui nous sommes</span><span class="eng d-none">Who we are</span></a>
+          <li class="nav-item btn-2">
+            <a class="nav-link" href="#about"><span class="fr">Qui nous sommes</span><span class="eng d-none">Who we are</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn-2" href="#presta"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></a>
+          <li class="nav-item btn-2">
+            <a class="nav-link" href="#presta"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn-2" href="#team"><span class="fr">L'équipe</span><span class="eng d-none">The Team</span></a>
+          <li class="nav-item btn-2">
+            <a class="nav-link" href="#team"><span class="fr">L'équipe</span><span class="eng d-none">The Team</span></a>
           </li>
         </ul>
       </div>
@@ -125,9 +125,15 @@
       </div>
     </section>
 
-    <section id="insta" class="box">
-      <h3 class="text-center">Instagram</h3>
-      <div id="carouselInsta" class="carousel slide container justify-content-center" data-ride="carousel">
+    <section id="insta" class="box container-fluid text-center">
+      <h3 class="">Instagram</h3>
+      <div class="container">
+        <div id="instafeed" class="row"></div>
+      </div>
+
+
+
+      <!-- <div id="carouselInsta" class="carousel slide container justify-content-center" data-ride="carousel">
         <div id="instafeed" class="carousel-inner"></div>
 
         <a class="carousel-control-prev" href="#carouselInsta" role="button" data-slide="prev" >
@@ -138,29 +144,35 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> -->
     </section>
 
-    <section id="skills" class="text-center box">
+    <section id="skills" class="text-center box container-fluid">
        <h3><span class="fr">Compétences : </span><span class="eng d-none">Skills : </span></h3>
-      <div>
-        <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-      </div>
-      <div>
-        <span>Skill 1</span>
-        <span>Skill 2</span>
-        <span>Skill 3</span>
-        <span>Skill 4</span>
+      <div class="row">
+        <div class=" col-6 col-md-4 col-lg-3">
+          <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+          <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <div class=" col-6 col-md-4 col-lg-3">
+          <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+          <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <div class=" col-6 col-md-4 col-lg-3">
+          <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+          <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <div class=" col-6 col-md-4 col-lg-3">
+          <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+          <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
       </div>
     </section>
 
     <section id="trans3" class="img-transition box">
     </section>
 
-    <section id="team" class="offset-md-2 col-md-8 text-center box">
+    <section id="team" class="container-fluid text-center box">
       <h3><span class="fr">Membres de l'équipe : </span><span class="eng d-none">Team members : </span></h3>
       <div>
         <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
@@ -211,19 +223,21 @@
       </div>
     </section>
 
-    <section id="contact" class="container box text-center">
+    <section id="contact" class="container-fluid box text-center">
       <h3><span class="fr">Contactez nous!!</span><span class="eng d-none">Contact us!!</span></h3>
-      <div class="row">
-      <!-- CONTACT + CALENDRIER -->
-        <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
-          <input type="text" class="col-12" name="nom" placeholder="Nom" required>
-          <input type="email" class="col-12" name="email" placeholder="Email" required>
-          <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
-          <input type="submit" class="col-12" value="Envoyer"></input>
-        </form>
+      <div class="container">
+        <div class="row">
+        <!-- CONTACT + CALENDRIER -->
+          <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
+            <input type="text" class="col-12" name="nom" placeholder="Nom" required>
+            <input type="email" class="col-12" name="email" placeholder="Email" required>
+            <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
+            <input type="submit" class="col-12" value="Envoyer"></input>
+          </form>
 
-        <div id="calendrier" class="col-12 col-md-6 box d-flex text-center">
-          <iframe src="https://calendar.google.com/calendar/embed?src=chris.ratsimba87%40gmail.com&ctz=Europe%2FParis"></iframe>
+          <div id="calendrier" class="col-12 col-md-6 box d-flex text-center">
+            <iframe src="https://calendar.google.com/calendar/embed?src=chris.ratsimba87%40gmail.com&ctz=Europe%2FParis"></iframe>
+          </div>
         </div>
       </div>
     </section>
