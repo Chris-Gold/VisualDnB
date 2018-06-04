@@ -99,23 +99,16 @@
       <h3 class="text-center"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></h3>
       <div class="container">
         <div id="da-slider" class="da-slider">
+          {{#each blogPosts}}
           <div class="da-slide row">
             <div class="col-12 col-md-6">
-              <h4>Easy management</h4>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <h4>{{this.title}}</h4>
+              <p>{{this.message}}</p>
               <a href="#" class="da-link">Read more</a>
             </div>
             <div class="da-img col-12 col-md-6 d-flex justify-content-center"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
           </div>
-
-          <div class="da-slide row">
-            <div class="col-sm-12 col-md-6">
-              <h4>Easy management</h4>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-              <a href="#" class="da-link">Read more</a>
-            </div>
-            <div class="da-img col-sm-12 col-md-6 d-flex justify-content-center"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
-          </div>
+          {{/each}}
 
           <nav class="da-arrows">
             <span class="da-arrows-prev"></span>

@@ -16,8 +16,9 @@ router.post('/', function(req, res){
         }
         res.render('back/index.hbs', {title: "Administration", description: "Blog post sauvegardé"});
     })
-    res.redirect('/admin');
-
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin#presta");
+    }
 });
 
 module.exports = router;
