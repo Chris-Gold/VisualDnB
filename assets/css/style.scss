@@ -3,9 +3,9 @@ $blanc : #E5E5E4;
 $vert : #05b72f;
 
 
-// .box{
-//   border: 1px solid $blanc;
-// }
+.box{
+  border: 1px solid $blanc;
+}
 
 .row{
   margin: 0px;
@@ -40,6 +40,7 @@ body{
 }
 
 #navigation{
+  z-index: 20;
   background-color: $noir;
   font-size: 1.5em;
   width: 100%;
@@ -115,7 +116,6 @@ body{
   height: 8em;
   border-radius: 100%;
   padding: 20px;
-
 }
 .bubble{
   width: 10em;
@@ -158,20 +158,29 @@ body{
   }
 }
 
-#skills{
-  p{
+// #skills{
+//   .row div{
+//     min-width: 25%;
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+// }
 
+#team{
+  .row{
+    // display: flex;
+    // flex-wrap: wrap;
   }
 }
 
 #gallery{
   width: 100%;
   #galCrea, #galImg, #galVid{
-    width: 100%;
+    // width: 100%;
     div{
       width: 100%;
       li{
-        padding-left: 1em;
+        margin-left: 1em;
         img{
           border-radius: 25%;
         }
@@ -181,15 +190,15 @@ body{
 }
 
 #contact{
-  z-index: 15;
-  background: url('../img/bgBottom2.jpg')center bottom fixed no-repeat;
-  background-size: contain;
+  // z-index: 15;
+  // background: url('../img/bgBottom2.jpg')center bottom fixed no-repeat;
+  // background-size: contain;
 }
 #contact div.row{
   padding: 2em;
 }
 #contactForm{
-  // background-color : $noir;
+  background-color : $noir;
 }
 
 #contactForm input, textarea{
