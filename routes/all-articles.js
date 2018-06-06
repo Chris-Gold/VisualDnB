@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router(); 
-const BlogPost = require('../models/blogpost');
+const Article = require('../models/article');
 
 router.get('/', function(req, res){ 
-    BlogPost.find(function(err, results){
+    Article.find(function(err, results){
         if(err){
             throw err;
         }
-        res.render("front/all-articles", {title: "Tous les articles", description: "Postés auparavant", blogPosts: results});
+        res.render("front/all-articles", {title: "Tous les articles", description: "Postés auparavant", articles: results});
     })
 });
 

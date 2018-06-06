@@ -25,8 +25,10 @@
 
     <header id="header" class="container-fluid text-center">
       <!-- VIDEO PRESENTATION -->
-      <video id="topVid"  class="" autoplay="" loop="" muted src="https://visualdnb.files.wordpress.com/2017/12/bigroom-aftermovie.mp4">
+      {{#each visuels}}
+      <video id="topVid"  class="" autoplay="" loop="" muted src="{{this.video}}">
       </video>
+       {{/each}}
     </header>
 
     <nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
@@ -57,9 +59,10 @@
       </div>
     </nav>
 
-    <section id="trans1" class="img-transition box">
+    {{#each visuels}}
+    <section id="trans1" class="img-transition box" style="background: url('{{this.transition1}}')center fixed no-repeat;">
     </section>
-
+    {{/each}}
     <section id="about" class="box">
       <div class="container text-center">
         <img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/cropped-lelogovdnb1.png"/>
@@ -92,8 +95,10 @@
       </div>
     </section>
 
-    <section id="trans2" class="img-transition box">
+    {{#each visuels}}
+    <section id="trans2" class="img-transition box" style="background: url('{{this.transition2}}')center fixed no-repeat;">
     </section>
+    {{/each}}
 
     <section id="presta" class="container-fluid box">
       <h3 class="text-center"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></h3>
@@ -166,8 +171,10 @@
 
     </section>
 
-    <section id="trans3" class="img-transition box">
+    {{#each visuels}}
+    <section id="trans3" class="img-transition box" style="background: url('{{this.transition3}}')center fixed no-repeat;">
     </section>
+    {{/each}}
 
     <section id="team" class="container-fluid text-center box">
 
@@ -404,6 +411,12 @@
           <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
             <input type="text" class="col-12" name="nom" placeholder="Nom" required>
             <input type="email" class="col-12" name="email" placeholder="Email" required>
+            <input type="checkbox" name="Logo" value="Logo"> Logo <br>
+            <input type="checkbox" name="ClipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)<br>
+            <input type="checkbox" name="Bumper" value="Bumper"> Bumper <br>
+            <input type="checkbox" name="ClipVJ" value="ClipVJ"> ClipVJ <br>
+            <input type="checkbox" name="ClipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)<br>
+            <input type="checkbox" name="Scenographie" value="Scenographie"> Scénographie
             <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
             <input type="submit" class="col-12" value="Envoyer"></input>
           </form>
