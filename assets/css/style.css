@@ -17,7 +17,6 @@ body {
     background-color: #070C0C;
     z-index: 10; }
   body h3 {
-    padding: 0.5em;
     font-size: 2.5em; }
 
 #topVid {
@@ -121,14 +120,12 @@ body {
     #insta #instafeed p {
       padding-top: 1em; }
 
-#gallery {
+#showroom .focus {
+  max-height: 100%;
   width: 100%; }
-  #gallery #galCrea div, #gallery #galImg div, #gallery #galVid div {
-    width: 100%; }
-    #gallery #galCrea div li, #gallery #galImg div li, #gallery #galVid div li {
-      margin-left: 1em; }
-      #gallery #galCrea div li img, #gallery #galImg div li img, #gallery #galVid div li img {
-        border-radius: 25%; }
+  #showroom .focus img {
+    height: 100%;
+    width: auto; }
 
 #contact div.row {
   padding: 2em; }

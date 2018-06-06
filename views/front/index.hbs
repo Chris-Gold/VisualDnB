@@ -170,7 +170,6 @@
     </section>
 
     <section id="team" class="container-fluid text-center box">
-
       <h3><span class="fr">Membres de l'équipe</span><span class="eng d-none">Team members</span></h3>
       <div class="container">
         <div class="row">
@@ -247,110 +246,99 @@
 
     <section id="showroom" class="container-fluid text-center box">
       <div id="showLogo">
-        <div class="container box">
           <!-- DERNIERS LOGOS -->
-          <div id="firstLogos" class="row gldBox showFirst align-items-center box">
-            <h3 class="col-12 text-center">Nos logos</h3>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse" >
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse" >
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse" >
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse" >
-            </div>
+          <div class="row gldBox showFirst align-items-center box">
+            <h3 class="col-12 text-center"><span class="fr">Nos Logos</span><span class="eng d-none">Our Logos</span></h3>
+              <div id="firstLogos" class="row">
+                  <img class="img-fluid col-3 showLogo" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
+                  <img class="img-fluid col-3 showLogo" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
+                  <img class="img-fluid col-3 showLogo" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
+                  <img class="img-fluid col-3 showLogo" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
+              </div>
           </div>
           <!-- click sur logo => FOCUS -->
-          <div id="focusLogo" class="row gldBox box">
-            <div class="col-8 gldBox">
-               <!-- ZOOM LOGO -->
+          <div id="focusLogo" class="row gldBox collapse box">
+            <div class="col-8 gldBox container focus">
+                <!-- FOCUS VIDEO -->
+                <img class="img-fluid display" src=""/>
             </div>
             <div class="col-4 box">
-              <div class="" style="height: 50%;">
-                 <!-- texte descriptif -->
+              <div class="container box" style="height: 50%;">
+                  <!-- texte descriptif -->
               </div>
-              <div class="" style="height: 50%;">
-                <button type="button" style="height: 100%;width: 100%;">MORE</button>
+              <div class="container box" style="height: 50%;">
+                <div class="row" style="height: 100%;">
+                  <button type="button" class="col-6 prev" style="height: 100%;">Previous</button>
+                  <button type="button" class="col-6 next" style="height: 100%;">Next</button>
+                </div>
               </div>
             </div>
           </div>
           <!-- TOUS LES LOGOS RESTANTS -->
-          <div id="moreLogos" class="row gldBox box">
+          <div id="moreLogos" class="row gldBox collapse box ">
             <!-- LOGOS RESTANTS -->
           </div>
-        </div>
       </div>
 
       <div id="showAud">
-        <div class="container box">
           <!-- DERNIERS CLIPS -->
-          <div id="firstAud" class="row gldBox showFirst align-items-center box">
-            <h3 class="col-12 text-center">Nos clips Audio React</h3>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
+          <div class="row gldBox showFirst align-items-center box">
+            <h3 class="col-12 text-center"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
+              <div id="firstAud" class="row">
+                <img class="img-fluid col-3 showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid col-3 showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid col-3 showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid col-3 showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+              </div>
+
           </div>
           <!-- click sur image => FOCUS -->
-          <div id="focusAud" class="row gldBox box">
-            <div class="col-8 gldBox">
-               <!-- FOCUS VIDEO -->
-            </div>
-            <div class="col-4 box">
-              <div class="box" style="height: 50%;">
-                 <!-- texte descriptif -->
+          <div id="focusAud" class="row gldBox collapse box">
+              <div class="col-8 gldBox container focus">
+                  <!-- FOCUS VIDEO -->
+                  <img class="img-fluid display" src=""/>
               </div>
-              <div class="row box" style="height: 50%;">
-                <button type="button" class="col-6">Previous</button>
-                <button type="button" class="col-6">Next</button>
+              <div class="col-4 box">
+                <div class="container box" style="height: 50%;">
+                    <!-- texte descriptif -->
+                </div>
+                <div class="container box" style="height: 50%;">
+                  <div class="row" style="height: 100%;">
+                    <button type="button" class="col-6 prev" style="height: 100%;">Previous</button>
+                    <button type="button" class="col-6 next" style="height: 100%;">Next</button>
+                  </div>
+                </div>
               </div>
-            </div>
+
           </div>
-        </div>
       </div>
 
       <div id="showBumper">
-        <div class="container box">
           <!-- DERNIERS CLIPS -->
-          <div id="firstBumper" class="row gldBox showFirst align-items-center box">
-            <h3 class="col-12 text-center">Nos bumpers</h3>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
+        <div class="row gldBox showFirst align-items-center box">
+          <h3 class="col-12 text-center"><span class="fr">Nos Bumpers</span><span class="eng d-none">Our Bumpers</span></h3>
+            <div id="firstBumper" class="row">
+              <img class="img-fluid col-3 showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid col-3 showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid col-3 showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid col-3 showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
             </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
+
+        </div>
+        <!-- click sur image => FOCUS -->
+        <div id="focusBumper" class="row gldBox collapse box">
+          <div class="col-8 gldBox container focus">
+            <!-- FOCUS VIDEO -->
+            <img class='display img-fluid' src="" />
           </div>
-          <!-- click sur image => FOCUS -->
-          <div id="focusBumper" class="row gldBox box">
-            <div class="col-8 gldBox">
-               <!-- FOCUS VIDEO -->
+          <div class="col-4 box">
+            <div class="box" style="height: 50%;">
+               <!-- texte descriptif -->
             </div>
-            <div class="col-4 box">
-              <div class="box" style="height: 50%;">
-                 <!-- texte descriptif -->
-              </div>
-              <div class="row box" style="height: 50%;">
-                <button type="button" class="col-6">Previous</button>
-                <button type="button" class="col-6">Next</button>
+            <div class="container box" style="height: 50%;">
+              <div class="row" style="height: 100%;">
+                <button type="button" class="col-6 prev" style="height: 100%;">Previous</button>
+                <button type="button" class="col-6 next" style="height: 100%;">Next</button>
               </div>
             </div>
           </div>
@@ -358,42 +346,36 @@
       </div>
 
       <div id="showVJ">
-        <div class="container box">
           <!-- DERNIERS CLIPS -->
-          <div id="firstVJ" class="row gldBox showFirst align-items-center box">
-            <h3 class="col-12 text-center">Nos clip VJing</h3>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
-            <div class="col-3">
-              <img class="img-fluid" src="img/home.jpg" alt="Firehouse">
-            </div>
+          <div class="row gldBox showFirst align-items-center box">
+            <h3 class="col-12 text-center"><span class="fr">Nos clip VJing</span><span class="eng d-none">Our VJing clips</span></h3>
+              <div id="firstVJ" class="row">
+                <img class="img-fluid col-3 showVJ" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid col-3 showVJ" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid col-3 showVJ" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid col-3 showVJ" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+              </div>
+
           </div>
           <!-- click sur image => FOCUS -->
-          <div id="focusVJ" class="row gldBox box">
-            <div class="col-8 gldBox">
-               <!-- FOCUS VIDEO -->
+          <div id="focusVJ" class="row gldBox collapse box">
+            <div class="col-8 gldBox container focus">
+                <!-- FOCUS VIDEO -->
+                <img class="img-fluid display" src=""/>
             </div>
             <div class="col-4 box">
               <div class="box" style="height: 50%;">
                  <!-- texte descriptif -->
               </div>
-              <div class="row box" style="height: 50%;">
-                <button type="button" class="col-6">Previous</button>
-                <button type="button" class="col-6">Next</button>
+              <div class="container box" style="height: 50%;">
+                <div class="row" style="height: 100%;">
+                  <button type="button" class="col-6 prev" style="height: 100%;">Previous</button>
+                  <button type="button" class="col-6 next" style="height: 100%;">Next</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
-
-
     </section>
 
     <section id="contact" class="container-fluid box text-center">

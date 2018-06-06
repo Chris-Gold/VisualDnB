@@ -26,7 +26,6 @@ body{
     z-index: 10;
   }
   h3{
-    padding: 0.5em;
     font-size: 2.5em;
   }
 }
@@ -173,18 +172,29 @@ body{
   }
 }
 
-#gallery{
-  width: 100%;
-  #galCrea, #galImg, #galVid{
-    // width: 100%;
-    div{
-      width: 100%;
-      li{
-        margin-left: 1em;
-        img{
-          border-radius: 25%;
-        }
-      }
+// #gallery{
+//   width: 100%;
+//   #galCrea, #galImg, #galVid{
+//     // width: 100%;
+//     div{
+//       width: 100%;
+//       li{
+//         margin-left: 1em;
+//         img{
+//           border-radius: 25%;
+//         }
+//       }
+//     }
+//   }
+// }
+
+#showroom{
+  .focus{
+    max-height: 100%;
+    width: 100%;
+    img{
+      height: 100%;
+      width: auto;
     }
   }
 }
