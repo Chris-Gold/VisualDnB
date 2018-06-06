@@ -1,2 +1,8 @@
 ratio image : 1.6180 (largeur/hauteur)
           -> hauteur = largeur * 1.6180 (100% + 61.8%)
+
+
+compte vimeo {
+    adresse : dnbvisual@gmail.com
+    mdp : Peremir941
+}

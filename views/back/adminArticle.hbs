@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Administration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/visuel">Visuel <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/prog">Programmé avec</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/article">Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/logo">Logo</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="col-12 text-center">
+      <form action="/admin/uploadArticle" method="POST" enctype="multipart/form-data">
+        <input type="file" name="uploadArticle"><br><br>
+        <input type="submit" value="Upload">
+      </form>
+    </section>
+    
+    <section>
+        <form action="/admin/article" method="POST">
+            <div class="row text-center">
+                <div class="col-6">
+                    <input type="text" name="url" placeholder="url" value="../img/"><br><br>
+                    <input type="text" name="titre" placeholder="titre" value=""><br><br>
+                    <input type="text" name="date" placeholder="date" value=""><br><br>
+                    <textarea type="text" name="description" placeholder="description" value=""></textarea><br><br>
+                    <input type="text" name="url1" placeholder="url1" value="../img/"><br><br>
+                    <input type="submit" value="Envoyer">
+                    <p>{{description}}</p>
+                </div>
+                {{!-- Tous les articles --}}
+                <div class="row col-6">
+                    {{#each articles}}
+                    <div class="col-6">
+                      <h4>{{this.titre}}</h4>
+                      <p>{{this.date}}</p>
+                      <a href="edit-article/{{this._id}}">Modifier</a>
+                      <a href="delete-article/{{this._id}}">Supprimer</a><hr>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer class="box text-center d-flex align-items-center">
+      <div class="w-100">
+        <p>Footer</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

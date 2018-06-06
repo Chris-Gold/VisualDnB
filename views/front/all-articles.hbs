@@ -22,13 +22,7 @@
 
   </head>
   <body>
-
-    <header id="header" class="container-fluid text-center">
-      <!-- VIDEO PRESENTATION -->
-      <video id="topVid"  class="" autoplay="" loop="" muted src="https://visualdnb.files.wordpress.com/2017/12/bigroom-aftermovie.mp4">
-      </video>
-    </header>
-
+    
     <nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,8 +56,10 @@
         <div>{{description}}</div>
     </section>
     <section class="col-12 text-center">
-        {{#each blogPosts}}
+        {{#each articles}}
+            Photo: {{this.url}}</br>
             Titre : {{this.title}}</br>
+            date: {{this.Date}}</br>
             message : {{this.message}}</br>
             <div>
                 <a href="/edit-article/{{this._id}}">modifier</a> &nbsp;

@@ -1,7 +1,6 @@
 const express = require('express'); // On utilise le framework Express pour Nodejs
 const path = require('path'); // Module fourni avec express pour les chemins. (Pour utiliser "join")
 const bodyParser = require('body-parser'); // Permet d'utiliser la method post data
-const BlogPost = require('./models/blogpost.js'); // On import le model (Schema mongoose) des post
 const mongoose = require('mongoose');
 
 // Routes
