@@ -63,6 +63,7 @@
     <section id="trans1" class="img-transition box" style="background: url('{{this.transition1}}')center fixed no-repeat;">
     </section>
     {{/each}}
+
     <section id="about" class="box">
       <div class="container text-center">
         <img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/cropped-lelogovdnb1.png"/>
@@ -76,22 +77,9 @@
     <section id="booked" class="text-center box">
       <h3><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
       <div id="bookedLogos" class="container">
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+        {{#each progs}}
+        <img class="img-fluid bubble2 animated rollIn" src="{{this.url}}" title="{{this.nom}}"/>
+        {{/each}}
       </div>
     </section>
 
@@ -104,11 +92,11 @@
       <h3 class="text-center"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></h3>
       <div class="container">
         <div id="da-slider" class="da-slider">
-          {{#each blogPosts}}
+          {{#each articles}}
           <div class="da-slide row">
             <div class="col-12 col-md-6">
-              <h4>{{this.title}}</h4>
-              <p>{{this.message}}</p>
+              <h4>{{this.titre}}</h4>
+              <p>{{this.description}}</p>
               <a href="#" class="da-link">Read more</a>
             </div>
             <div class="da-img col-12 col-md-6 d-flex justify-content-center"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
@@ -180,38 +168,12 @@
       <h3><span class="fr">Membres de l'équipe</span><span class="eng d-none">Team members</span></h3>
       <div class="container">
         <div class="row">
+          {{#each logos}}
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
+            <img class="img-fluid bubble" src="{{this.url}}"/>
+            <p>{{this.nom}}</p>
           </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-            <p>Visual DnB</p>
-          </div>
+          {{/each}}
         </div>
       </div>
     </section>
@@ -393,13 +355,14 @@
           <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
             <input type="text" class="col-12" name="nom" placeholder="Nom" required>
             <input type="email" class="col-12" name="email" placeholder="Email" required>
-            <input type="checkbox" name="Logo" value="Logo"> Logo <br>
-            <input type="checkbox" name="ClipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)<br>
-            <input type="checkbox" name="Bumper" value="Bumper"> Bumper <br>
-            <input type="checkbox" name="ClipVJ" value="ClipVJ"> ClipVJ <br>
-            <input type="checkbox" name="ClipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)<br>
-            <input type="checkbox" name="Scenographie" value="Scenographie"> Scénographie
-            <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
+            <input type="checkbox" name="logo" value="Logo"> Logo
+            <input type="checkbox" name="clipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)
+            <input type="checkbox" name="bumper" value="Bumper"> Bumper
+            <input type="checkbox" name="clipVJ" value="ClipVJ"> ClipVJ <br>
+            <input type="checkbox" name="clipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)
+            <input type="checkbox" name="scenographie" value="Scenographie"> Scénographie
+            <input type="checkbox" name="autre" value="Autre"> Autre
+            <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" required></textarea>
             <input type="submit" class="col-12" value="Envoyer"></input>
           </form>
 
