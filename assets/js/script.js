@@ -45,18 +45,19 @@ $(document).ready(function(){
       resolution : 'standard_resolution',
       accessToken : '6921109790.1677ed0.7ad1c946a4b74af5bf14e5575f1052e8',
       sortBy : 'most-recent',
-      //template : '<li><img src="{{image}}" alt="{{caption}}" class="img-fluid"/></li>'
-      // template : '<div class="carousel-item text-center">'+
-      //               '<a target="_blank" href="{{link}}">'+
-      //               '<img class="img-fluid" src="{{image}}"/>'+
-      //               '<p>{{caption}}</p>'+
-      //             '</a></div>',
-      // after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
-      template : '<div class="col-6 col-md-4 col-lg-3">'+
-                  '<a class="btn-2" target="_blank" href="{{link}}">'+
-                  '<img class="img-fluid" src="{{image}}"/>'+
-                  '<p class="offset-1 col-10 text-truncate">{{caption}}</p>'+
-                  '</a></div>'
+        // SLICK
+      template: '<div>'+
+                  '<a href={{link}}>'+
+                  '<img class="img-fluid feed" src="{{image}}" alt="slider image"/>'+
+                  '<p class="text-center text-truncate">{{caption}}</p>'+
+                  '</a></div>',
+      after: function(){
+        $('#instafeed').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3
+        });
+      }      
     });
     userFeed.run();
 

@@ -2,7 +2,6 @@ $noir : #070C0C;
 $blanc : #E5E5E4;
 $vert : #05b72f;
 
-
 .box{
   border: 1px solid $blanc;
 }
@@ -143,13 +142,17 @@ body{
   height: auto;
   width: 100%;
   #instafeed{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
     padding-bottom: 2em;
     a{
       color: $blanc;
-    }
-    img{
-      max-height: 25em;
+    }    
+    .feed{
+      height: 25em;
       width: auto;
+      padding-left: 1em;
     }
     p{
       padding-top: 1em;
