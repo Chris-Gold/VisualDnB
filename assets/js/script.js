@@ -45,13 +45,6 @@ $(document).ready(function(){
       resolution : 'standard_resolution',
       accessToken : '6921109790.1677ed0.7ad1c946a4b74af5bf14e5575f1052e8',
       sortBy : 'most-recent',
-      //template : '<li><img src="{{image}}" alt="{{caption}}" class="img-fluid"/></li>'
-      // template : '<div class="carousel-item text-center">'+
-      //               '<a target="_blank" href="{{link}}">'+
-      //               '<img class="img-fluid" src="{{image}}"/>'+
-      //               '<p>{{caption}}</p>'+
-      //             '</a></div>',
-      // after : function () {$('#instafeed > div:nth-child(1)').addClass('active');}
       template : '<div class="col-6 col-md-4 col-lg-3">'+
                   '<a class="btn-2" target="_blank" href="{{link}}">'+
                   '<img class="img-fluid" src="{{image}}"/>'+
@@ -232,6 +225,16 @@ $(document).ready(function(){
           }
       });
 
+      // Fonction destiné à compléter le sujet du mail à envoyer.
+      let buttons = document.querySelectorAll('.inputButton');
+      let subject = document.querySelector('#subject');
+      for (let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener('click', function(){
+          console.log(buttons[i].value);
+          subject.value += buttons[i].value + " ";
+        })
+      }
 
   });
 // })(jQuery);
+

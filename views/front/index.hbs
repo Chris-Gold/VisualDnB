@@ -60,7 +60,7 @@
     </nav>
 
     {{#each visuels}}
-    <section id="trans1" class="img-transition box" style="background: url('{{this.transition1}}')center fixed no-repeat;">
+    <section id="trans1" class="img-transition box" style="background: url('../img/{{this.transition1}}')center fixed no-repeat;">
     </section>
     {{/each}}
 
@@ -78,13 +78,13 @@
       <h3><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
       <div id="bookedLogos" class="container">
         {{#each progs}}
-        <img class="img-fluid bubble2 animated rollIn" src="{{this.url}}" title="{{this.nom}}"/>
+        <img class="img-fluid bubble2 animated rollIn" src="../img/{{this.url}}" title="{{this.nom}}"/>
         {{/each}}
       </div>
     </section>
 
     {{#each visuels}}
-    <section id="trans2" class="img-transition box" style="background: url('{{this.transition2}}')center fixed no-repeat;">
+    <section id="trans2" class="img-transition box" style="background: url('../img/{{this.transition2}}')center fixed no-repeat;">
     </section>
     {{/each}}
 
@@ -160,7 +160,7 @@
     </section>
 
     {{#each visuels}}
-    <section id="trans3" class="img-transition box" style="background: url('{{this.transition3}}')center fixed no-repeat;">
+    <section id="trans3" class="img-transition box" style="background: url('../img/{{this.transition3}}')center fixed no-repeat;">
     </section>
     {{/each}}
 
@@ -170,7 +170,7 @@
         <div class="row">
           {{#each logos}}
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="{{this.url}}"/>
+            <img class="img-fluid bubble" src="../img/{{this.url}}"/>
             <p>{{this.nom}}</p>
           </div>
           {{/each}}
@@ -355,13 +355,15 @@
           <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
             <input type="text" class="col-12" name="nom" placeholder="Nom" required>
             <input type="email" class="col-12" name="email" placeholder="Email" required>
-            <input type="checkbox" name="logo" value="Logo"> Logo
-            <input type="checkbox" name="clipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)
-            <input type="checkbox" name="bumper" value="Bumper"> Bumper
-            <input type="checkbox" name="clipVJ" value="ClipVJ"> ClipVJ <br>
-            <input type="checkbox" name="clipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)
-            <input type="checkbox" name="scenographie" value="Scenographie"> Scénographie
-            <input type="checkbox" name="autre" value="Autre"> Autre
+            <input type="button" class="inputButton" value="Logo" name="logo">
+            <input type="button" class="inputButton" value="ClipAudioReact" name="clipAudioReact">
+            <input type="button" class="inputButton" value="Bumper" name="bumper">
+            <input type="button" class="inputButton" value="ClipVJ" name="clipVJ">
+            <input type="button" class="inputButton" value="ClipVideo" name="clipVideo">
+            <input type="button" class="inputButton" value="Scenographie" name="scenographie">
+            <input type="button" class="inputButton" value="Autre" name="autre">
+            <p>* Les boutons servent à remplir le sujet du mail.</p>
+            <input type="text" class="col-12" id="subject" name="subject" placeholder="Sujet" required>
             <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" required></textarea>
             <input type="submit" class="col-12" value="Envoyer"></input>
           </form>
@@ -387,7 +389,6 @@
     <script src="js/simplyscroll/jquery.simplyscroll.js"></script>
     <script type="text/javascript" src="js/slider/jquery.cslider.js"></script>
     <script src="js/insta/instafeed.min.js"></script>
-    <script src="js/booked.js"></script>
 
   </body>
 </html>

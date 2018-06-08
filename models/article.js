@@ -8,7 +8,10 @@ const articleSchema = new Schema({
     description: String,
     photos: {
         url1: String,
-        url2: String
+        url2: String,
+        url3: String,
+        url4: String,
+        url5: String
     }
 });
 

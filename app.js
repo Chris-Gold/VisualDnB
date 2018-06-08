@@ -4,10 +4,7 @@ const bodyParser = require('body-parser'); // Permet d'utiliser la method post d
 const mongoose = require('mongoose');
 
 // Routes
-const indexRoute = require('./routes/index.js'); // "importe" les routes de l'index.hbs
-const allArticlesRoute = require('./routes/all-articles.js');
-const membreRoute = require('./routes/membre.js');
-const loginRoute = require('./routes/login.js');
+const indexRoute = require('./routes/index.js'); // "importe" les routes de l'index.js
 const adminRoute = require('./routes/admin.js');
 const errorRoute = require('./routes/404.js'); 
 
@@ -30,9 +27,6 @@ app.use(express.static(__dirname + '/assets')); // On dit que assets contient le
 // __dirname permet de récupérer l'url d'où on est à partir de la racine
 
 // Declaration de nos routes maintenant à leurs place dans le dossier routes
-app.use('/all-articles', allArticlesRoute);
-app.use('/membre', membreRoute);
-app.use('/login', loginRoute);
 app.use('/admin', adminRoute);
 app.use('/', indexRoute);
 app.use('*', errorRoute);

@@ -18,11 +18,15 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage:storage });
 
-router.post('/uploadVisuel',upload.any(),function(req,res,next){
-	console.log(req.files);
-	res.redirect('/admin/visuel');
+router.get('/', function(req, res){
+    res.status(200).render('back/login.hbs');
 });
 
+router.post('/', function(req, res){
+    let id = req.body.id;
+    let mdp = req.body.mdp;
+    console.log(id + ' ' + mdp);
+});
 
 router.get('/visuel', function(req, res){
     Visuel.find(function(err, results){
@@ -40,6 +44,11 @@ router.post('/visuel', function(req, res){
         res.redirect('/admin/visuel');
     })});
     
+router.post('/uploadVisuel',upload.any(),function(req,res,next){
+    console.log(req.files);
+    res.redirect('/admin/visuel');
+});
+
 router.get('/prog', function(req, res){
     Prog.find(function(err, results){
         if(err){
@@ -95,6 +104,10 @@ router.post('/article', function(req, res){
     art.date = req.body.date;
     art.description = req.body.description;
     art.photos.url1 = req.body.url1;
+    art.photos.url2 = req.body.url2;
+    art.photos.url3 = req.body.url3;
+    art.photos.url4 = req.body.url4;
+    art.photos.url5 = req.body.url5;
     art.save(function(err){
         if (err){
             res.render('back/adminArticle.hbs', {title: "Administration", description: "Une erreur s'est produite"});
