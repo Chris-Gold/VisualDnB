@@ -124,6 +124,9 @@ body {
     #insta #instafeed p {
       padding-top: 1em; }
 
+#showroom .container {
+  padding-left: 3em;
+  padding-right: 3em; }
 #showroom .focus {
   max-height: 100%;
   width: 100%; }
