@@ -6,6 +6,7 @@ const Visuel = require('../models/visuel');
 const Article = require('../models/article');
 const Prog = require('../models/prog');
 const Logo = require('../models/logo');
+
 // GET l'url, si = '/' alors affiche le fichier index.html
 router.get('/', function(req, res){ 
     let visuels = {};
@@ -27,7 +28,7 @@ router.get('/', function(req, res){
     Logo.find({}, function(err, alllogos){
         if (err) throw err;
         logos = alllogos;
-        res.render("front/index",{visuels:visuels, articles:articles, progs:progs, logos:logos});
+        res.render("front/index",{visuels:visuels, articles:articles, progs:progs, logos:logos, title:'Visual DNB'});
     })
     
 });
@@ -77,6 +78,7 @@ router.post('/', function(req, res){
 router.get('/:nom', function(req, res){
     let nom = req.params.nom;
     res.status(200).render('front/membre.hbs', {
+        title: nom,
         nom: nom
     });
 });

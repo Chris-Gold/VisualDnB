@@ -1,6 +1,7 @@
 const express = require('express'); // On utilise le framework Express pour Nodejs
 const path = require('path'); // Module fourni avec express pour les chemins. (Pour utiliser "join")
 const bodyParser = require('body-parser'); // Permet d'utiliser la method post data
+const hbs = require('express-handlebars');
 const mongoose = require('mongoose');
 
 // Routes
@@ -15,6 +16,7 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/visualdnb');
 
 // View Engine
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views')); // On implémente au chemin courant le dossier views
 app.set('view engine', 'hbs'); // On défini le moteur de vue comme étant handlebars
 
