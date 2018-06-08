@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Visual DnB</title>
+    <link rel="manifest" href="manifest.json">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- SLIDER PARALLAX -->
     <link rel="stylesheet" type="text/css" href="css/slider/style2.css" />
     <script type="text/javascript" src="js/slider/modernizr.custom.28468.js"></script>
-    <noscript>
+    <!-- <noscript>
 			<link rel="stylesheet" type="text/css" href="css/slider/nojs.css" />
-		</noscript>
+		</noscript> -->
     <!-- CSS PERSO -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <link rel="stylesheet" href="css/simplyscroll/jquery.simplyscroll.css">
@@ -58,6 +59,9 @@
           <li class="nav-item btn-2">
             <a class="nav-link" href="#team"><span class="fr">L'équipe</span><span class="eng d-none">The Team</span></a>
           </li>
+          <li class="nav-item btn-2">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -66,9 +70,10 @@
     <section id="trans1" class="img-transition box" style="background: url('{{this.transition1}}')center fixed no-repeat;">
     </section>
     {{/each}}
+
     <section id="about" class="box">
       <div class="container text-center">
-        <img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/cropped-lelogovdnb1.png"/>
+        <img class="img-fluid" src="img/visualdnb.png"/>
         <h4 class="">Nous sommes un collectif d’artistes/techniciens audiovisuels.</h4>
         <p class="">Nous créons des identités graphiques pour les producteurs et labels de musique électronique et réalisons des performances live: scénographie sur mesure, show audio visuel, vjing, lumière…</p>
         <p class="">Logos, Bumpers, Clips d animation, Pages web, scénographies, Clips vjing, Mapping, live performance,  show lumière, scène couverte  et système de sonorisation.</p>
@@ -79,22 +84,9 @@
     <section id="booked" class="text-center box">
       <h3><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
       <div id="bookedLogos" class="container">
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
-        <img class="img-fluid bubble2 animated rollIn" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+        {{#each progs}}
+        <img class="img-fluid bubble2" src="{{this.url}}" title="{{this.nom}}"/>
+        {{/each}}
       </div>
     </section>
 
@@ -107,11 +99,11 @@
       <h3 class="text-center"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></h3>
       <div class="container">
         <div id="da-slider" class="da-slider">
-          {{#each blogPosts}}
+          {{#each articles}}
           <div class="da-slide row">
             <div class="col-12 col-md-6">
-              <h4>{{this.title}}</h4>
-              <p>{{this.message}}</p>
+              <h4>{{this.titre}}</h4>
+              <p>{{this.description}}</p>
               <a href="#" class="da-link">Read more</a>
             </div>
             <div class="da-img col-12 col-md-6 d-flex justify-content-center"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
@@ -128,28 +120,28 @@
 
     <section id="insta" class="box container-fluid text-center gldBox">
       <h3 class="">Instagram</h3>
-      <div id="instafeed" class="container"></div>      
+      <div id="instafeed" class="container"></div>
     </section>
 
     <section id="skills" class="text-center box container-fluid">
        <h3><span class="fr">Nos Compétences</span><span class="eng d-none">Our Skills</span></h3>
       <div class="row">
-        <div class=" col-6 col-md-4 col-lg-3">
+        <div class=" col-6 col-lg-3">
           <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
           <h5><span class="fr">Compétence 1</span><span class="eng d-none">Skill 1</span></h5>
           <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </div>
-        <div class=" col-6 col-md-4 col-lg-3">
+        <div class=" col-6 col-lg-3">
           <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
           <h5><span class="fr">Compétence 2</span><span class="eng d-none">Skill 2</span></h5>
           <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </div>
-        <div class=" col-6 col-md-4 col-lg-3">
+        <div class=" col-6 col-lg-3">
           <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
           <h5><span class="fr">Compétence 3</span><span class="eng d-none">Skill 3</span></h5>
           <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </div>
-        <div class=" col-6 col-md-4 col-lg-3">
+        <div class=" col-6 col-lg-3">
           <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
           <h5><span class="fr">Compétence 4</span><span class="eng d-none">Skill 4</span></h5>
           <p class="offset-1 col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -167,86 +159,50 @@
       <div class="container">
         <div class="row">
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
           <div class="col-6 col-md-4 col-lg-3">
-            <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+            <img class="img-fluid bubble" src="img/visualdnb.png"/>
             <p>Visual DnB</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- <section id="gallery" class="text-center">
-      <h3>GalCréa</h3>
-      <div id="galCrea" class="gldBox simply-scroll simply-scroll-container offset-md-2 col-md-8">
-        <div class="simply-scroll-clip ">
-          <ul class="scroller simply-scroll-list " style="width: 2320px;">
-              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>GalImg</h3>
-      <div id="galImg" class="gldBox simply-scroll simply-scroll-container offset-md-2 col-md-8">
-        <div class="simply-scroll-clip ">
-          <ul class="scroller simply-scroll-list" style="width: 2320px;">
-              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>GalVid</h3>
-      <div id="galVid" class="gldBox simply-scroll simply-scroll-container offset-md-2 col-md-8">
-        <div class="simply-scroll-clip ">
-          <ul class="scroller simply-scroll-list" style="width: 2320px;">
-              <li><img src="img/home.jpg" alt="Firehouse" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Chloe nightclub" width="290" height="200"></li>
-              <li><img src="img/home.jpg" alt="Firehouse bar" width="290" height="200"></li>
-          </ul>
-        </div>
-      </div>
-    </section> -->
-
     <section id="showroom" class="container-fluid text-center box">
       <div id="showLogo">
           <!-- DERNIERS LOGOS -->
           <div class="row gldBox showFirst align-items-center box">
             <h3 class="col-12 text-center"><span class="fr">Nos Logos</span><span class="eng d-none">Our Logos</span></h3>
-              <div id="firstLogos" class="row">
-                  <img class="img-fluid col-3 showLogo" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
-                  <img class="img-fluid col-3 showLogo" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
-                  <img class="img-fluid col-3 showLogo" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
-                  <img class="img-fluid col-3 showLogo" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false">
+              <div id="firstLogos" class="container">
+                {{#each logos}}
+                  <img class="img-fluid showLogo" src="{{this.url}}" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false"/>
+                {{/each}}
               </div>
           </div>
           <!-- click sur logo => FOCUS -->
@@ -277,11 +233,11 @@
           <!-- DERNIERS CLIPS -->
           <div class="row gldBox showFirst align-items-center box">
             <h3 class="col-12 text-center"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
-              <div id="firstAud" class="row">
-                <img class="img-fluid col-3 showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                <img class="img-fluid col-3 showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                <img class="img-fluid col-3 showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                <img class="img-fluid col-3 showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+              <div id="firstAud" class="container">
+                <img class="img-fluid showAud" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid showAud" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid showAud" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid showAud" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
               </div>
 
           </div>
@@ -310,11 +266,11 @@
           <!-- DERNIERS CLIPS -->
         <div class="row gldBox showFirst align-items-center box">
           <h3 class="col-12 text-center"><span class="fr">Nos Bumpers</span><span class="eng d-none">Our Bumpers</span></h3>
-            <div id="firstBumper" class="row">
-              <img class="img-fluid col-3 showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid col-3 showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid col-3 showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid col-3 showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+            <div id="firstBumper" class="container">
+              <img class="img-fluid showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              <img class="img-fluid showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
             </div>
 
         </div>
@@ -342,11 +298,11 @@
           <!-- DERNIERS CLIPS -->
           <div class="row gldBox showFirst align-items-center box">
             <h3 class="col-12 text-center"><span class="fr">Nos clip VJing</span><span class="eng d-none">Our VJing clips</span></h3>
-              <div id="firstVJ" class="row">
-                <img class="img-fluid col-3 showVJ" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-                <img class="img-fluid col-3 showVJ" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-                <img class="img-fluid col-3 showVJ" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-                <img class="img-fluid col-3 showVJ" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+              <div id="firstVJ" class="container">
+                <img class="img-fluid showVJ" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid showVJ" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid showVJ" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                <img class="img-fluid showVJ" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
               </div>
 
           </div>
@@ -369,7 +325,7 @@
             </div>
           </div>
       </div>
-    </section> -->
+    </section>
 
     <section id="contact" class="container-fluid box text-center">
       <h3><span class="fr">Contactez nous!!</span><span class="eng d-none">Contact us!!</span></h3>
@@ -379,13 +335,14 @@
           <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
             <input type="text" class="col-12" name="nom" placeholder="Nom" required>
             <input type="email" class="col-12" name="email" placeholder="Email" required>
-            <input type="checkbox" name="Logo" value="Logo"> Logo <br>
-            <input type="checkbox" name="ClipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)<br>
-            <input type="checkbox" name="Bumper" value="Bumper"> Bumper <br>
-            <input type="checkbox" name="ClipVJ" value="ClipVJ"> ClipVJ <br>
-            <input type="checkbox" name="ClipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)<br>
-            <input type="checkbox" name="Scenographie" value="Scenographie"> Scénographie
-            <textarea type="text" class="col-12" name="message" placeholder="Message" required></textarea>
+            <input type="checkbox" name="logo" value="Logo"> Logo
+            <input type="checkbox" name="clipAudioReact" value="ClipAudioReact"> ClipAudioReact (Template)
+            <input type="checkbox" name="bumper" value="Bumper"> Bumper
+            <input type="checkbox" name="clipVJ" value="ClipVJ"> ClipVJ <br>
+            <input type="checkbox" name="clipVideo" value="ClipVideo"> ClipVidéo (Sur mesure)
+            <input type="checkbox" name="scenographie" value="Scenographie"> Scénographie
+            <input type="checkbox" name="autre" value="Autre"> Autre
+            <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" required></textarea>
             <input type="submit" class="col-12" value="Envoyer"></input>
           </form>
 

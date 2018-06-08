@@ -148,9 +148,10 @@ body{
     padding-bottom: 2em;
     a{
       color: $blanc;
-    }    
+      align-items: center;
+    }
     .feed{
-      height: 25em;
+      max-height: 25em;
       width: auto;
       padding-left: 1em;
     }
@@ -169,36 +170,18 @@ body{
 // }
 
 #team{
-  .row{
-    // display: flex;
-    // flex-wrap: wrap;
-  }
+  .row{}
 }
 
-// #gallery{
-//   width: 100%;
-//   #galCrea, #galImg, #galVid{
-//     // width: 100%;
-//     div{
-//       width: 100%;
-//       li{
-//         margin-left: 1em;
-//         img{
-//           border-radius: 25%;
-//         }
-//       }
-//     }
-//   }
-// }
 
 #showroom{
   .focus{
     max-height: 100%;
     width: 100%;
-    img{
-      height: 100%;
-      width: auto;
-    }
+  }
+  .display{
+    height: 100%;
+    width: auto;
   }
 }
 

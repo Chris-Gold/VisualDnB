@@ -1,0 +1,21 @@
+{
+  "short_name": "VisualDnB",
+  "name": "VisualDnB",
+  "icons": [
+    {
+      "src": "/img/visualdnb.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/visualdnb.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.hbs",
+  "background_color": "#070C0C",
+  "display": "standalone",
+  "orientation":  "landscape",
+  "theme_color": "#070C0C"
+}

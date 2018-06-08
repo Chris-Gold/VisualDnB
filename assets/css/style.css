@@ -115,9 +115,10 @@ body {
     margin: 0 auto;
     padding-bottom: 2em; }
     #insta #instafeed a {
-      color: #E5E5E4; }
+      color: #E5E5E4;
+      align-items: center; }
     #insta #instafeed .feed {
-      height: 25em;
+      max-height: 25em;
       width: auto;
       padding-left: 1em; }
     #insta #instafeed p {
@@ -126,9 +127,9 @@ body {
 #showroom .focus {
   max-height: 100%;
   width: 100%; }
-  #showroom .focus img {
-    height: 100%;
-    width: auto; }
+#showroom .display {
+  height: 100%;
+  width: auto; }
 
 #contact div.row {
   padding: 2em; }

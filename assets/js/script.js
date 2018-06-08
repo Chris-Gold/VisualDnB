@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   // HEADER SIZE
   var screenHeight = $(window).height();
-  var navHeight = $('#navigation').height();
+  var navHeight = $('#navbarNav').height();
   var headHeight = (screenHeight - navHeight);
   $("header").css({height: headHeight});
   // TRANSITION SIZE
@@ -45,7 +45,6 @@ $(document).ready(function(){
       resolution : 'standard_resolution',
       accessToken : '6921109790.1677ed0.7ad1c946a4b74af5bf14e5575f1052e8',
       sortBy : 'most-recent',
-        // SLICK
       template: '<div>'+
                   '<a href={{link}}>'+
                   '<img class="img-fluid feed" src="{{image}}" alt="slider image"/>'+
@@ -55,9 +54,10 @@ $(document).ready(function(){
         $('#instafeed').slick({
           infinite: true,
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
+          adaptiveHeight: true
         });
-      }      
+      }
     });
     userFeed.run();
 
@@ -70,8 +70,21 @@ $(document).ready(function(){
         frameRate: 50,
         direction: 'backwards'
       });
-    // FOCUS showroom
+
+    $('#bookedLogos').slick({
+      adaptiveHeight: false,
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 5
+    });
+    $('#bookedLogos img').removeAttr('style');
+    // SHOWROOM
       // LOGOS
+      $('#firstLogos').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5
+      });
       $('#firstLogos img').each(function(i){
         var logo = $(this);
         logo.attr('num', i).attr('id', 'logo'+i);
@@ -111,7 +124,13 @@ $(document).ready(function(){
             $('#focusLogo .display').hide().attr('src', srcn).fadeIn();
           }
       });
+
       // CLIP AUDIO React
+      $('#firstAud').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5
+      });
       $('#firstAud img').each(function(i){
         var aud = $(this);
         aud.attr('num', i).attr('id', 'aud'+i);
@@ -152,6 +171,11 @@ $(document).ready(function(){
           }
       });
       // BUMPER
+      $('#firstBumper').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5
+      });
       $('#firstBumper img').each(function(i){
         var bumper = $(this);
         bumper.attr('num', i).attr('id', 'bumper'+i);
@@ -193,6 +217,11 @@ $(document).ready(function(){
         });
 
       // CLIP VJing
+      $('#firstVJ').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5
+      });
       $('#firstVJ img').each(function(i){
         var vj = $(this);
         vj.attr('num', i).attr('id', 'vj'+i);
