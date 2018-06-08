@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage:storage });
 
 router.get('/', function(req, res){
-    res.status(200).render('back/login.hbs');
+    res.status(200).render('back/login.hbs', {title: 'Connexion'});
 });
 
 router.post('/', function(req, res){
@@ -33,7 +33,7 @@ router.get('/visuel', function(req, res){
         if(err){
             throw err;
         }
-        res.render("back/adminVisuel", {visuels: results});
+        res.render("back/adminVisuel", {visuels: results, title:'Visuel du site'});
     })
 });
 
@@ -54,7 +54,7 @@ router.get('/prog', function(req, res){
         if(err){
             throw err;
         }
-        res.render("back/adminProg.hbs", {progs: results});
+        res.render("back/adminProg.hbs", {progs: results, title:'Programmé avec : '});
     })
 });
 
@@ -93,7 +93,7 @@ router.get('/article', function(req, res){
         if(err){
             throw err;
         }
-        res.render("back/adminArticle", {articles: results});
+        res.render("back/adminArticle", {articles: results, title:'Article'});
     })
 });
 
@@ -158,7 +158,7 @@ router.get('/logo', function(req, res){
         if(err){
             throw err;
         }
-        res.render("back/adminLogo", {logos: results});
+        res.render("back/adminLogo", {logos: results, title:'Logos'});
     })
 });
 

@@ -1,94 +1,69 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin/visuel">Visuel <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/article">Article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/logo">Logo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <title>Administration</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
+<section class="col-12 text-center">
+  <form action="/admin/uploadVisuel" method="POST" enctype="multipart/form-data">
+    <input type="file" name="upload1"><br><br>
+    <input type="file" name="upload2"><br><br>
+    <input type="file" name="upload3"><br><br>
+    <input type="file" name="upload4"><br><br>
+    <input type="submit" value="Upload">
+  </form>
+</section>
 
-  <body>
+<form action="/admin/visuel" method="POST">
+  <section id="visuel" class="row">
+    <div class="col-6">
+      {{#each visuels}}
+      <input value="{{this.video}}" class="offset-2 col-8" type="text" name="video" placeholder="Video" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+      <video autoplay="" muted src="{{this.video}}" style="height:400px;"></video>
+    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/admin/visuel">Visuel <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/prog">Programmé avec</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/article">Article</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/logo">Logo</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="col-6">
+      <input value="{{this.transition1}}" class="offset-2 col-8" type="text" name="transition1" placeholder="Transition n°1" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition1}}" alt="" style="height: 400px;">
+    </div>
 
-    <section class="col-12 text-center">
-      <form action="/admin/uploadVisuel" method="POST" enctype="multipart/form-data">
-        <input type="file" name="upload1"><br><br>
-        <input type="file" name="upload2"><br><br>
-        <input type="file" name="upload3"><br><br>
-        <input type="file" name="upload4"><br><br>
-        <input type="submit" value="Upload">
-      </form>
-    </section>
-    
-    <form action="/admin/visuel" method="POST">
-      <section id="visuel" class="row">
-        <div class="col-6">
-          {{#each visuels}}
-          <input value="{{this.video}}" class="offset-2 col-8" type="text" name="video" placeholder="Video" style="margin-top: 180px;">
-        </div>
-        <div class="col-6">
-          <video autoplay="" muted src="{{this.video}}" style="height:400px;"></video>
-        </div>
+    <div class="col-6">
+      <input value="{{this.transition2}}" class="offset-2 col-8" type="text" name="transition2" placeholder="Transition n°2" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition2}}" alt="" style="height: 400px;">
+    </div>
 
-        <div class="col-6">
-          <input value="{{this.transition1}}" class="offset-2 col-8" type="text" name="transition1" placeholder="Transition n°1" style="margin-top: 180px;">
-        </div>
-        <div class="col-6">
-        <img src="../img/{{this.transition1}}" alt="" style="height: 400px;">
-        </div>
-
-        <div class="col-6">
-          <input value="{{this.transition2}}" class="offset-2 col-8" type="text" name="transition2" placeholder="Transition n°2" style="margin-top: 180px;">
-        </div>
-        <div class="col-6">
-        <img src="../img/{{this.transition2}}" alt="" style="height: 400px;">
-        </div>
-
-        <div class="col-6">
-          <input value="{{this.transition3}}" class="offset-2 col-8" type="text" name="transition3" placeholder="Transition n°3" style="margin-top: 180px;">
-        </div>
-        <div class="col-6">
-        <img src="../img/{{this.transition3}}" alt="" style="height: 400px;">
-        {{/each}}
-        </div>
-        <div class="offset-5">
-          <input type="submit" name="" id="" value="Envoyer">
-        </div>
-      </section>
-      <b>{{description}}</b>
-    </form>
-
-    <footer class="box text-center d-flex align-items-center">
-      <div class="w-100">
-        <p>Si un champ est vide alors son contenu aussi</p>
-      </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  </body>
-</html>
+    <div class="col-6">
+      <input value="{{this.transition3}}" class="offset-2 col-8" type="text" name="transition3" placeholder="Transition n°3" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition3}}" alt="" style="height: 400px;">
+    {{/each}}
+    </div>
+    <div class="offset-5">
+      <input type="submit" name="" id="" value="Envoyer">
+    </div>
+  </section>
+  <b>{{description}}</b>
+</form>
