@@ -61,7 +61,7 @@ router.post('/', function(req, res){
     let HelperOptions = {
         from: nom,
         to: 'yellowaformac@gmail.com',
-        subject: logo + ' ' + clipAudioReact + ' ' + bumper + ' ' + clipVJ + ' ' + clipVideo + ' ' + scenographie + ' ' + autre,
+        subject: req.body.subject,
         text: "nom : " + nom + " / " + "Email : " + email + " / " + " Message : " + message
     }
     transporter.sendMail(HelperOptions, (error, info) => {
@@ -74,6 +74,12 @@ router.post('/', function(req, res){
     res.redirect(req.get('referer'));
 });
 
+router.get('/:nom', function(req, res){
+    let nom = req.params.nom;
+    res.status(200).render('front/membre.hbs', {
+        nom: nom
+    });
+});
 
 
 module.exports = router;

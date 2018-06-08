@@ -1,6 +1,5 @@
-// (function($){
 $(document).ready(function(){
-  // $(function() { //on DOM ready
+    // NOMBRE D'OR ratio
   // var posTeam = $('#gallery').offset().top;
   // var posFooter = $('#contact').offset().top;
   // var screenWidth = $(window).width();
@@ -262,6 +261,16 @@ $(document).ready(function(){
           }
       });
 
+      // Fonction destiné à compléter le sujet du mail à envoyer.
+      let buttons = document.querySelectorAll('.inputButton');
 
+      // BOUTONS CONTACT
+      let subject = document.querySelector('#subject');
+      for (let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener('click', function(){
+          console.log(buttons[i].value);
+          subject.value += buttons[i].value + " ";
+        })
+      }
   });
 // })(jQuery);

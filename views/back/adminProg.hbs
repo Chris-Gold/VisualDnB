@@ -47,7 +47,7 @@
         <div class="row text-center">
             <div class="col-6" style="margin-top: 80px;">
                 <p>{{description}}</p>
-                <input type="text" name="url" placeholder="url" value="../img/"><hr>
+                <input type="text" name="url" placeholder="image url" value=""><hr>
                 <input type="text" name="nom" placeholder="nom" value=""><hr>
                 <input type="submit" value="Envoyer">
             </div>
@@ -55,7 +55,7 @@
                 <section id="booked">
                   <div id="bookedLogos" class="container">
                     {{#each progs}}
-                      <img class="img-fluid bubble2 animated rollIn" src="{{this.url}}" title="{{this.nom}}"/>
+                      <img class="img-fluid bubble2 animated rollIn" src="../img/{{this.url}}" title="{{this.nom}}"/>
                       <a href="/admin/delete-prog/{{this._id}}">Supprimer</a>
                     {{/each}}
                   </div>
