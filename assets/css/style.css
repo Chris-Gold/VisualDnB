@@ -1,3 +1,6 @@
+.box {
+  border: 1px solid #E5E5E4; }
+
 .row {
   margin: 0px; }
 
@@ -107,21 +110,26 @@ body {
   height: auto;
   width: 100%; }
   #insta #instafeed {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
     padding-bottom: 2em; }
     #insta #instafeed a {
-      color: #E5E5E4; }
-    #insta #instafeed img {
+      color: #E5E5E4;
+      align-items: center; }
+    #insta #instafeed .feed {
       max-height: 25em;
-      width: auto; }
+      width: auto;
+      padding-left: 1em; }
     #insta #instafeed p {
       padding-top: 1em; }
 
 #showroom .focus {
   max-height: 100%;
   width: 100%; }
-  #showroom .focus img {
-    height: 100%;
-    width: auto; }
+#showroom .display {
+  height: 100%;
+  width: auto; }
 
 #contact div.row {
   padding: 2em; }
