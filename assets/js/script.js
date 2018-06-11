@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   // HEADER SIZE
   var screenHeight = $(window).height();
-  var navHeight = $('#navbarNav').height();
+  var navHeight = $('#navigation').height();
   var headHeight = (screenHeight - navHeight);
   $("header").css({height: headHeight});
   // TRANSITION SIZE
@@ -127,8 +127,8 @@ $(document).ready(function(){
       // CLIP AUDIO React
       $('#firstAud').slick({
         infinite: true,
-        slidesToShow: 5,
-        slidesToScroll: 5
+        slidesToShow: 3,
+        slidesToScroll: 3
       });
       $('#firstAud img').each(function(i){
         var aud = $(this);

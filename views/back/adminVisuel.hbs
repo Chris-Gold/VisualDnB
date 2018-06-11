@@ -35,6 +35,8 @@
     <div class="col-6">
       {{#each visuels}}
       <input value="{{this.video}}" class="offset-2 col-8" type="text" name="video" placeholder="Video" style="margin-top: 180px;">
+      <p class="text-center">Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+      <p class="text-center">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
     </div>
     <div class="col-6">
       <video autoplay="" muted src="{{this.video}}" style="height:400px;"></video>

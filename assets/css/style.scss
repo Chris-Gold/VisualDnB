@@ -26,6 +26,8 @@ body{
   }
   h3{
     font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 
@@ -33,8 +35,9 @@ body{
   display: block;
   z-index: -99999;
   position: fixed;
-  // top: 0;
-  // left:0;
+  height: 115%;
+  width: 100%;
+  top: -50;
 }
 
 #navigation{
@@ -148,7 +151,7 @@ body{
     padding-bottom: 2em;
     a{
       color: $blanc;
-      align-items: center;
+
     }
     .feed{
       max-height: 25em;
@@ -175,10 +178,10 @@ body{
 
 
 #showroom{
-  .container{
-    padding-left: 3em;
-    padding-right: 3em;
-  }
+  // #firstLogos .container{
+  //   padding-left: 1em;
+  //   padding-right: 1em;
+  // }
   .focus{
     max-height: 100%;
     width: 100%;

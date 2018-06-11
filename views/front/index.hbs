@@ -1,8 +1,10 @@
 <header id="header" class="container-fluid text-center">
   <!-- VIDEO PRESENTATION -->
   {{#each visuels}}
-  <video id="topVid"  class="" autoplay="" loop="" muted src="{{this.video}}">
-  </video>
+  <!-- <video id="topVid"  class="" autoplay="" loop="" muted src="">
+  </video> -->
+  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?autoplay=1&loop=1&muted=1" frameborder="10" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
     {{/each}}
 </header>
 
@@ -242,10 +244,10 @@
           <img class="img-fluid showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
           <img class="img-fluid showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
           <img class="img-fluid showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-          <img class="img-fluid showAud" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-          <img class="img-fluid showAud" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-          <img class="img-fluid showAud" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-          <img class="img-fluid showAud" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+          <img class="img-fluid showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+          <img class="img-fluid showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+          <img class="img-fluid showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+          <img class="img-fluid showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
         </div>
     </div>
     <!-- click sur image => FOCUS -->
@@ -301,7 +303,7 @@
           </div>
         </div>
       </div>
-  </div>  
+  </div>
 </section>
 
 <section id="contact" class="container-fluid box text-center">
