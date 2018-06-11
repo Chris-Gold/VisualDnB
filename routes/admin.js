@@ -5,6 +5,7 @@ const Visuel = require('../models/visuel');
 const Article = require('../models/article');
 const Prog = require('../models/prog');
 const Logo = require('../models/logo');
+const User = require('../models/user');
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -23,12 +24,47 @@ router.get('/', function(req, res){
 });
 
 router.post('/', function(req, res){
-    let id = req.body.id;
-    let mdp = req.body.mdp;
-    console.log(id + ' ' + mdp);
+    let username = req.body.username;
+    let password = req.body.password;
+    
+    User.findOne({username: username, password: password}, function(err, user){
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
+        if(!user){
+            return res.status(404).send();
+        }
+        req.session.user = user;
+        return res.redirect('/admin/visuel');
+    })
+})
+
+router.get('/se-deconnecter'), function(req, res){
+    req.session.destroy();
+    return res.status(200).send("Vous vous êtes bien déconnectés.");
+}
+
+router.post('/register', function(req, res){
+    let username = req.body.username;
+    let password = req.body.password;
+
+    let newuser = new User();
+    newuser.username = username;
+    newuser.password = password;
+    newuser.save(function(err, savedUser){
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
+        return res.status(200).send();
+    })
 });
 
 router.get('/visuel', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     Visuel.find(function(err, results){
         if(err){
             throw err;
@@ -50,6 +86,9 @@ router.post('/uploadVisuel',upload.any(),function(req,res,next){
 });
 
 router.get('/prog', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     Prog.find(function(err, results){
         if(err){
             throw err;
@@ -79,6 +118,9 @@ router.post('/uploadProg',upload.any(),function(req,res,next){
 });
 
 router.get('/delete-prog/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     let progId = req.params.id;
     Prog.findByIdAndRemove(progId, function(err){
         if(err){
@@ -89,6 +131,9 @@ router.get('/delete-prog/:id', function(req, res){
 })
 
 router.get('/article', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     Article.find(function(err, results){
         if(err){
             throw err;
@@ -126,6 +171,9 @@ router.post('/uploadArticle',upload.any(),function(req,res,next){
 
 
 router.get('/edit-article/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     let articleId = req.params.id;
     Article.findById(articleId, function(err, result){
         if(err){
@@ -143,6 +191,9 @@ router.post('/edit-article/:id', function(req, res){
     })});
 
 router.get('/delete-article/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     let articleId = req.params.id;
     Article.findByIdAndRemove(articleId, function(err){
         if(err){
@@ -154,6 +205,9 @@ router.get('/delete-article/:id', function(req, res){
 
 
 router.get('/logo', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     Logo.find(function(err, results){
         if(err){
             throw err;
@@ -178,6 +232,9 @@ router.post('/logo', function(req, res){
 });
 
 router.get('/delete-logo/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
     let logoId = req.params.id;
     Logo.findByIdAndRemove(logoId, function(err){
         if(err){
@@ -191,6 +248,5 @@ router.post('/uploadLogo',upload.any(),function(req,res,next){
     console.log(req.files);
     res.redirect('/admin/logo');
 });
-
 
 module.exports = router;

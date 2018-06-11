@@ -2,6 +2,7 @@ const express = require('express'); // On utilise le framework Express pour Node
 const path = require('path'); // Module fourni avec express pour les chemins. (Pour utiliser "join")
 const bodyParser = require('body-parser'); // Permet d'utiliser la method post data
 const hbs = require('express-handlebars');
+const session = require('express-session');
 const mongoose = require('mongoose');
 
 // Routes
@@ -23,6 +24,8 @@ app.set('view engine', 'hbs'); // On défini le moteur de vue comme étant handl
 // BodyParser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use(session({secret:"zefuyku5121ezfeuiyu21", resave: false, saveUninitialized: true}));
 
 // Set Static Folder
 app.use(express.static(__dirname + '/assets')); // On dit que assets contient les fichiers statics
