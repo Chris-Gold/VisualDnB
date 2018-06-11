@@ -75,6 +75,13 @@ router.post('/', function(req, res){
     res.redirect(req.get('referer'));
 });
 
+router.get('/article/:id', function(req, res){
+    let id = req.params.id;
+    res.status(200).render('front/article.hbs', {
+        title: 'Article'
+    });
+});
+
 router.get('/:nom', function(req, res){
     let nom = req.params.nom;
     res.status(200).render('front/membre.hbs', {
