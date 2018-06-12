@@ -15,11 +15,12 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNav">
+    <span class="nav-item">
+      <button id="eng" type="button" class="fr"><img class="img-fluid" src="img/uk.gif"/></button>
+      <button id="fr" type="button" class="eng d-none "><img class="img-fluid" src="img/fr2.gif"/></button>
+    </span>
+
     <ul class="navbar-nav d-flex justify-content-around">
-      <li class="nav-item">
-        <button id="eng" type="button" class="fr"><img class="img-fluid" src="img/uk.gif"/></button>
-        <button id="fr" type="button" class="eng d-none "><img class="img-fluid" src="img/fr2.gif"/></button>
-      </li>
       <li class="nav-item btn-2 ">
         <a class="nav-link " href="#header"><span class="fr">Accueil</span><span class="eng d-none">Home</span></a>
       </li>
@@ -79,7 +80,7 @@
           <p>{{this.description}}</p>
           <a href="article/{{this._id}}" class="da-link">Read more</a>
         </div>
-        <div class="da-img col-12 col-md-6 d-flex justify-content-center"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
+        <div class="da-img col-12 col-md-6"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
       </div>
       {{/each}}
 

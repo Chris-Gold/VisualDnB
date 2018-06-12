@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router(); 
+const router = express.Router();
 
 const Visuel = require('../models/visuel');
 const Article = require('../models/article');
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 	},
 	filename: function(req,file,cb){
 		cb(null, file.originalname);
- 
+
 	}
 });
 const upload = multer({ storage:storage });
@@ -26,7 +26,7 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
     let username = req.body.username;
     let password = req.body.password;
-    
+
     User.findOne({username: username, password: password}, function(err, user){
         if (err) {
             console.log(err);
@@ -79,7 +79,7 @@ router.post('/visuel', function(req, res){
         if (err) throw err;
         res.redirect('/admin/visuel');
     })});
-    
+
 router.post('/uploadVisuel',upload.any(),function(req,res,next){
     console.log(req.files);
     res.redirect('/admin/visuel');
