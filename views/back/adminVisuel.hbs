@@ -34,13 +34,15 @@
 </section>
 
 <form action="/admin/visuel" method="POST">
-  <section id="visuel" class="row">
+  <section id="visuel" class="row text-center">
     <div class="col-6">
       {{#each visuels}}
       <input value="{{this.video}}" class="offset-2 col-8" type="text" name="video" placeholder="Video" style="margin-top: 180px;">
+      <p class="">Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+      <p class="">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
     </div>
-    <div class="col-6">
-      <video autoplay="" muted src="{{this.video}}" style="height:400px;"></video>
+    <div class="col-6 ">
+      <iframe src="https://player.vimeo.com/video/{{this.video}}?autoplay=1&loop=1&muted=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
     <div class="col-6">
