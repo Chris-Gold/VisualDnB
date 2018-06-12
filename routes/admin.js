@@ -40,26 +40,26 @@ router.post('/', function(req, res){
     })
 })
 
-router.get('/se-deconnecter'), function(req, res){
+router.get('/se-deconnecter', function(req, res){
     req.session.destroy();
-    return res.status(200).send("Vous vous êtes bien déconnectés.");
-}
+    return res.redirect('/admin');
+})
 
-router.post('/register', function(req, res){
-    let username = req.body.username;
-    let password = req.body.password;
+// router.post('/register', function(req, res){
+//     let username = req.body.username;
+//     let password = req.body.password;
 
-    let newuser = new User();
-    newuser.username = username;
-    newuser.password = password;
-    newuser.save(function(err, savedUser){
-        if (err) {
-            console.log(err);
-            return res.status(500).send();
-        }
-        return res.status(200).send();
-    })
-});
+//     let newuser = new User();
+//     newuser.username = username;
+//     newuser.password = password;
+//     newuser.save(function(err, savedUser){
+//         if (err) {
+//             console.log(err);
+//             return res.status(500).send();
+//         }
+//         return res.status(200).send();
+//     })
+// });
 
 router.get('/visuel', function(req, res){
     if(!req.session.user){
