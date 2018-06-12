@@ -21,7 +21,11 @@ $(document).ready(function(){
     var target = $(this).attr('href');
     $('html, body').stop().animate({scrollTop: ($(target).offset().top)-navHeight}, 1000 );
   })
-
+  // SUPRESSION CLASS GLDBOX POUR MOBILE
+  var screenWidth = $(window).width();
+  if (screenWidth <= 750){
+    $('*').removeClass('gldBox');
+  }
   // MULTILANGUE
   $('#eng').click(function(){
     $('.fr').addClass('d-none');
