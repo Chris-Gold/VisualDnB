@@ -13,8 +13,7 @@
       <button id="vimMute" type="button" style="display: none">Mute</button>
       <button id="vimUnmute" type="button">Unmute</button>
     </div>
-  </div>
-  <!-- <div data-vimeo-id="{{this.video}}" data-vimeo-autoplay data-vimeo-muted id="topVid"></div> -->
+  </div>  
 
   {{/each}}
 
@@ -53,8 +52,8 @@
 </nav>
 
 {{#each visuels}}
-<section id="trans1" class="img-transition box" style="background: url('../img/{{this.transition1}}')center fixed no-repeat;">
-</section>
+  <section id="trans1" class="img-transition box" style="background: url('../img/{{this.transition1}}')center fixed no-repeat;">
+  </section>
 {{/each}}
 
 <section id="about" class="box">
@@ -71,14 +70,14 @@
   <h3><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
   <div id="bookedLogos" class="container">
     {{#each progs}}
-    <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
+      <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
     {{/each}}
   </div>
 </section>
 
 {{#each visuels}}
-<section id="trans2" class="img-transition box" style="background: url('../img/{{this.transition2}}')center fixed no-repeat;">
-</section>
+  <section id="trans2" class="img-transition box" style="background: url('../img/{{this.transition2}}')center fixed no-repeat;">
+  </section>
 {{/each}}
 
 <section id="presta" class="container-fluid box">
@@ -86,14 +85,14 @@
   <div class="container">
     <div id="da-slider" class="da-slider">
       {{#each articles}}
-      <div class="da-slide row">
-        <div class="col-12 col-md-6">
-          <h4>{{this.titre}}</h4>
-          <p>{{this.description}}</p>
-          <a href="article/{{this._id}}" class="da-link">Read more</a>
+        <div class="da-slide row">
+          <div class="col-12 col-md-6">
+            <h4>{{this.titre}}</h4>
+            <p>{{this.description}}</p>
+            <a href="article/{{this._id}}" class="da-link">Read more</a>
+          </div>
+          <div class="da-img col-12 col-md-6"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
         </div>
-        <div class="da-img col-12 col-md-6"><img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" /></div>
-      </div>
       {{/each}}
 
       <nav class="da-arrows">
@@ -136,8 +135,8 @@
 </section>
 
 {{#each visuels}}
-<section id="trans3" class="img-transition box" style="background: url('../img/{{this.transition3}}')center fixed no-repeat;">
-</section>
+  <section id="trans3" class="img-transition box" style="background: url('../img/{{this.transition3}}')center fixed no-repeat;">
+  </section>
 {{/each}}
 
 <section id="team" class="container-fluid text-center box">
@@ -346,3 +345,9 @@
     </div>
   </div>
 </section>
+
+<footer class="box text-center d-flex align-items-center">
+  <div class="w-100">
+    <p>FOOTER</p>
+  </div>
+</footer>
