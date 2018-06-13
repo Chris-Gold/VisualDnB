@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
 
 const Visuel = require('../models/visuel');
 const Article = require('../models/article');
 const Prog = require('../models/prog');
 const Logo = require('../models/logo');
 const User = require('../models/user');
+const Media = require('../models/media');
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -87,11 +91,6 @@ router.post('/visuel', function(req, res){
         res.redirect('/admin/visuel');
     })});
 
-router.post('/uploadVisuel',upload.any(),function(req,res,next){
-    console.log(req.files);
-    res.redirect('/admin/visuel');
-});
-
 router.get('/prog', function(req, res){
     if(!req.session.user){
         return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
@@ -117,11 +116,6 @@ router.post('/prog', function(req, res){
     function redirect() {
         window.location.assign("http://localhost:8000/admin/prog");
     }
-});
-
-router.post('/uploadProg',upload.any(),function(req,res,next){
-    console.log(req.files);
-    res.redirect('/admin/prog');
 });
 
 router.get('/delete-prog/:id', function(req, res){
@@ -172,7 +166,10 @@ router.post('/article', function(req, res){
 });
 
 router.post('/uploadArticle',upload.any(),function(req,res,next){
-    console.log(req.files);
+    let filenames = req.files.map(function(file) {
+        return file.filename; // or file.originalname
+      });
+    console.log(filenames);
     res.redirect('/admin/article');
 });
 
@@ -192,7 +189,7 @@ router.get('/edit-article/:id', function(req, res){
 
 router.post('/edit-article/:id', function(req, res){
     let articleId = req.params.id;
-    Article.update({_id: articleId}, {url: req.body.url, titre: req.body.titre, date: req.body.date, description: req.body.description, photos: {url1: req.body.url1}}, function(err, numRowsAffected, rawResponse){
+    Article.update({_id: articleId}, {url: req.body.url, titre: req.body.titre, date: req.body.date, description: req.body.description, photos: {url1: req.body.url1, url2: req.body.url2, url3: req.body.url3, url4: req.body.url4, url5: req.body.url5}}, function(err, numRowsAffected, rawResponse){
         if (err) throw err;
         res.redirect(req.get('referer'));
     })});
@@ -209,7 +206,6 @@ router.get('/delete-article/:id', function(req, res){
         res.redirect(req.get('referer'));
     })
 })
-
 
 router.get('/logo', function(req, res){
     if(!req.session.user){
@@ -251,9 +247,48 @@ router.get('/delete-logo/:id', function(req, res){
     })
 })
 
-router.post('/uploadLogo',upload.any(),function(req,res,next){
-    console.log(req.files);
-    res.redirect('/admin/logo');
+router.get('/media', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    Media.find(function(err, results){
+        if(err){
+            throw err;
+        }
+        res.render("back/adminMedia.hbs", {medias: results, title:'Media'});
+    })
 });
 
+router.post('/media',upload.any(),function(req,res,next){
+    let me = new Media();
+    me.filename = req.files.map(function(file) {
+        return file.filename; // or file.originalname
+      });
+    me.save(function(err){
+        if (err){
+            res.render('back/adminMedia.hbs', {title: "Media", description: "Une erreur est survenue"});
+        }
+        res.render('back/adminMedia.hbs', {title: "Media", description: "Media bien enregistré"});
+    })
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin/media");
+    }
+});
+
+router.get('/delete-media/:filename/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let mediaID = req.params.id;
+    let mediaFilename = req.params.filename;
+    Media.findByIdAndRemove(mediaID, function(err){
+        if(err){
+            throw err;
+        }
+        fs.unlink('./assets/img/' + mediaFilename, function (err){
+            if (err) throw err;
+            res.redirect(req.get('referer'));
+        })
+    })
+})
 module.exports = router;

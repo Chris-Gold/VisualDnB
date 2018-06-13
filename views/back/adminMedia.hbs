@@ -8,7 +8,7 @@
         <a class="nav-link" href="/admin/visuel">Visuel</a>
       </li>
       <li class="nav-item btn-2">
-        <a class="nav-link active" href="/admin/prog">Programmé avec</a>
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
       </li>
       <li class="nav-item btn-2">
         <a class="nav-link" href="/admin/article">Article</a>
@@ -17,7 +17,7 @@
         <a class="nav-link" href="/admin/logo">Logo</a>
       </li>
       <li class="nav-item btn-2">
-        <a class="nav-link" href="/admin/media">Media</a>
+        <a class="nav-link active" href="/admin/media">Media</a>
       </li>
       <li class="nav-item btn-2">
         <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
@@ -26,27 +26,18 @@
   </div>
 </nav>
 
-<section>
-  <form action="/admin/prog" method="POST">
-  
-    <div class="row text-center">
-        <div class="col-6" style="margin-top: 80px;">
-            <p>{{description}}</p>
-            <input type="text" name="url" placeholder="image url" value=""><hr>
-            <input type="text" name="nom" placeholder="nom" value=""><hr>
-            <input type="submit" value="Envoyer">
-        </div>
-        <div class="col-6">
-            <section id="booked">
-              <div id="bookedLogos" class="container">
-                {{#each progs}}
-                  <img class="img-fluid bubble2 animated rollIn" src="../img/{{this.url}}" title="{{this.nom}}"/>
-                  <a href="/admin/delete-prog/{{this._id}}">Supprimer</a>
-                {{/each}}
-              </div>
-            </section>
-        </div>
-      </div>
+<section class="col-12 text-center">
+  <form action="/admin/media" method="POST" enctype="multipart/form-data">
+    <input type="file" name="filename" required><br><br>
+    <input type="submit" value="Upload">
+  </form>
+</section>
 
-    </form>
+<section id="booked">
+  <div id="bookedLogos" class="container">
+    {{#each medias}}
+      <img class="img-fluid bubble2 animated rollIn" src="../img/{{this.filename}}" title="{{this.filename}}"/>
+      <a href="/admin/delete-media/{{this.filename}}/{{this._id}}">Supprimer</a>
+    {{/each}}
+  </div>
 </section>
