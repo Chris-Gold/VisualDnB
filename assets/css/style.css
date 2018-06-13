@@ -1,3 +1,7 @@
+@media screen and (min-width: 750px) {
+  #topVid {
+    height: 120%;
+    top: -10em; } }
 .row {
   margin: 0px; }
 
@@ -7,22 +11,29 @@
 body {
   background-color: #070C0C;
   color: #E5E5E4;
-  z-index: 5; }
+  z-index: 0;
+  position: static; }
   body section {
     padding-top: 3em;
     padding-bottom: 3em;
     background-color: #070C0C;
     z-index: 10; }
   body h3 {
-    font-size: 2.5em; }
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em; }
 
-#topVid {
+header #topVid {
+  overflow: hidden;
+  z-index: -50;
   display: block;
-  z-index: -99999;
   position: fixed;
   height: 115%;
   width: 100%;
-  top: -50; }
+  top: -2em; }
+header #vimButton {
+  position: relative;
+  top: 90%; }
 
 #navigation {
   z-index: 20;
@@ -67,9 +78,11 @@ body {
   height: 700px; }
 
 #trans1, #trans2, #trans3 {
+  z-index: 20;
   background-size: cover; }
 
 #about {
+  z-index: 10;
   height: auto;
   padding-top: 2em;
   padding-bottom: 2em; }
@@ -124,8 +137,8 @@ body {
       padding-top: 1em; }
 
 #showroom .focus {
-  max-height: 100%;
-  width: 100%; }
+  max-height: 90%;
+  width: auto; }
 #showroom .display {
   height: 100%;
   width: auto; }

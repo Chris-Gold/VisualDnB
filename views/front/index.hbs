@@ -1,9 +1,23 @@
-<header id="header" class="container-fluid text-center">
+<header class="container-fluid text-center">
   <!-- VIDEO PRESENTATION -->
   {{#each visuels}}
-  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?autoplay=1&loop=1&muted=1"  webkitallowfullscreen mozallowfullscreen allowfullscreen>
+
+  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?loop=1&muted=1&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
   </iframe>
-    {{/each}}
+  <div id="vimButton" class="row">
+    <div id="pause" class="col-6 text-left">
+      <button id="vimPlay" type="button" style="display: none">Play</button>
+      <button id="vimPause" type="button">Pause</button>
+    </div>
+    <div id="mute" class="col-6 text-right">
+      <button id="vimMute" type="button" style="display: none">Mute</button>
+      <button id="vimUnmute" type="button">Unmute</button>
+    </div>
+  </div>
+  <!-- <div data-vimeo-id="{{this.video}}" data-vimeo-autoplay data-vimeo-muted id="topVid"></div> -->
+
+  {{/each}}
+
 </header>
 
 <nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">

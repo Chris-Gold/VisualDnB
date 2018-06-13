@@ -41,7 +41,7 @@ $(document).ready(function(){
 			bgincrement	: 0
 		});
 
-    // INSTAFEED
+  // INSTAFEED
     var userFeed = new Instafeed({
       get: 'user',
       userId : '6921109790',
@@ -276,5 +276,26 @@ $(document).ready(function(){
           subject.value += buttons[i].value + " ";
         })
       }
+
+      // VIMEO IFRAME INTRO
+      var vimeo = new Vimeo.Player('topVid');
+      $('#vimPlay').on('click', function(){
+        vimeo.play();
+      })
+      $('#vimPause').on('click', function(){
+        vimeo.pause();
+      })
+      $('#vimMute').on('click', function(){
+        vimeo.setVolume(0);
+      })
+      $('#vimUnmute').on('click', function(){
+        vimeo.setVolume(1);
+      })
+      $('#pause').children().click(function(){
+        $('#pause button').toggle();
+      })
+      $('#mute').children().click(function(){
+        $('#mute button').toggle();
+      })
   });
 // })(jQuery);
