@@ -32,7 +32,8 @@
         <input type="text" name="url" placeholder="url" value="{{article.url}}"><br><br>
         <input type="text" name="titre" placeholder="titre" value="{{article.titre}}"><br><br>
         <input type="text" name="date" placeholder="date" value="{{article.date}}"><br><br>
-        <textarea type="text" name="description" placeholder="description">{{article.description}}</textarea><br><br>
+        <textarea name="description" id="editeur" class="ckeditor" cols="80" rows="10">{{article.description}}</textarea><br>
+        {{!-- <textarea type="text" name="description" placeholder="description">{{article.description}}</textarea><br><br> --}}
         <input type="text" name="url1" placeholder="url1" value="{{article.photos.url1}}"><br><br>
         <input type="text" name="url2" placeholder="url2" value="{{article.photos.url2}}"><br><br>
         <input type="text" name="url3" placeholder="url3" value="{{article.photos.url3}}"><br><br>
@@ -45,7 +46,7 @@
     <b>URL : </b> <img src="../../img/{{article.url}}" alt="" style="height: 200px;"><br><br>
     <b>Titre : </b> <b>{{article.titre}}</b><br><br>
     <b>Date : </b> <b>{{article.date}}</b><br><br>
-    <b>Description : </b> <b>{{article.description}}</b><br><br>
+    <b>Description : </b> <b>{{{article.description}}}</b><br><br>
     <b>URL1 : </b> <img src="../../img/{{article.photos.url1}}" alt="" style="height: 200px;"><br><br>
     <b>URL2 : </b> <img src="../../img/{{article.photos.url2}}" alt="" style="height: 200px;"><br><br>
     <b>URL3 : </b> <img src="../../img/{{article.photos.url3}}" alt="" style="height: 200px;"><br><br>

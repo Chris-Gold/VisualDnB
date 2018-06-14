@@ -192,7 +192,8 @@ router.post('/edit-article/:id', function(req, res){
     Article.update({_id: articleId}, {url: req.body.url, titre: req.body.titre, date: req.body.date, description: req.body.description, photos: {url1: req.body.url1, url2: req.body.url2, url3: req.body.url3, url4: req.body.url4, url5: req.body.url5}}, function(err, numRowsAffected, rawResponse){
         if (err) throw err;
         res.redirect(req.get('referer'));
-    })});
+    })
+});
 
 router.get('/delete-article/:id', function(req, res){
     if(!req.session.user){

@@ -67,13 +67,7 @@ $(document).ready(function(){
     // GOLDEN BOX class
     var gldWidth = $('.gldBox').width();
     $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
-    // SIMPLY SCROLL
-      $(".scroller").simplyScroll();
-      $("#galImg .scroller").simplyScroll({
-        frameRate: 50,
-        direction: 'backwards'
-      });
-
+    
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
