@@ -1,9 +1,8 @@
 <header class="container-fluid text-center">
   <!-- VIDEO PRESENTATION -->
   {{#each visuels}}
-
-  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?loop=1&muted=1&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-  </iframe>
+  <iframe id="topVid" src="http://player.vimeo.com/video/{{this.video}}?muted=1&loop=1&autoplay=1" frameborder="0">
+  </iframe>  
   <div id="vimButton" class="row">
     <div id="pause" class="col-6 text-left">
       <button id="vimPlay" type="button" style="display: none">Play</button>
@@ -13,7 +12,7 @@
       <button id="vimMute" type="button" style="display: none">Mute</button>
       <button id="vimUnmute" type="button">Unmute</button>
     </div>
-  </div>  
+  </div>
 
   {{/each}}
 
