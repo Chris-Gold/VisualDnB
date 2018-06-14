@@ -1,13 +1,28 @@
-@media screen and (min-width: 750px) {
-  #topVid {
-    height: 120%;
-    top: -10em; } }
+.box {
+  border: 1px solid #E5E5E4; }
+
 .row {
   margin: 0px; }
 
 .container-fluid {
   padding: 0px; }
 
+@media (min-height: 650px) and (max-height: 900px) {
+  body header #topVid {
+    height: 125%;
+    overflow: hidden;
+    top: -8em; }
+  body header #vimButton button {
+    font-size: 30px; }
+  body #showroom .next, body #showroom .prev {
+    font-size: 7em; } }
+@media (min-height: 910px) {
+  body header #topVid {
+    top: -8em; }
+  body header #vimButton button {
+    font-size: 50px; }
+  body #showroom .next, body #showroom .prev {
+    font-size: 10em; } }
 body {
   background-color: #070C0C;
   color: #E5E5E4;
@@ -22,6 +37,8 @@ body {
     font-size: 2.5em;
     padding-top: 1em;
     padding-bottom: 0.5em; }
+  body i {
+    color: #05b72f; }
 
 header #topVid {
   overflow: hidden;
@@ -30,10 +47,19 @@ header #topVid {
   position: fixed;
   height: 115%;
   width: 100%;
-  top: -2em; }
+  top: -1em; }
 header #vimButton {
   position: relative;
   top: 90%; }
+  header #vimButton button {
+    transition: width 350ms ease-in-out;
+    background-color: transparent;
+    border: none;
+    outline: none; }
+  header #vimButton button:hover {
+    cursor: pointer;
+    border: none;
+    opacity: 0.8; }
 
 #navigation {
   z-index: 20;
@@ -136,6 +162,18 @@ header #vimButton {
     #insta #instafeed p {
       padding-top: 1em; }
 
+#showroom button {
+  background-color: transparent;
+  border: none;
+  font-size: 4em; }
+#showroom .prev, #showroom .next {
+  height: 100%;
+  width: 100%;
+  outline: none; }
+#showroom button:hover {
+  cursor: pointer;
+  border: none;
+  opacity: 0.8; }
 #showroom .focus {
   max-height: 90%;
   width: auto; }
