@@ -37,10 +37,10 @@
             <input type="submit" value="Envoyer">
         </div>
         <div class="col-6">
-            <section id="booked">
-              <div id="bookedLogos" class="container">
+            <section id="">
+              <div id="" class="container">
                 {{#each progs}}
-                  <img class="img-fluid bubble2 animated rollIn" src="../img/{{this.url}}" title="{{this.nom}}"/>
+                  <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
                   <a href="/admin/delete-prog/{{this._id}}">Supprimer</a>
                 {{/each}}
               </div>

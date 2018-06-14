@@ -2,9 +2,9 @@ $noir : #070C0C;
 $blanc : #E5E5E4;
 $vert : #05b72f;
 
-// .box{
-//   border: 1px solid $blanc;
-// }
+.box{
+  border: 1px solid $blanc;
+}
 
 .row{
   margin: 0px;
@@ -21,9 +21,40 @@ $vert : #05b72f;
         overflow: hidden;
         top: -8em;
       }
+      #vimButton{
+        button{
+          font-size: 30px;
+        }
+      }
+    }
+    #showroom{
+      .next, .prev{
+        font-size: 7em;
+      }
     }
   }
 }
+
+@media (min-height: 910px){
+  body{
+    header{
+      #topVid{
+        top: -8em;
+      }
+      #vimButton{
+        button{
+          font-size: 50px;
+        }
+      }
+    }
+    #showroom{
+      .next, .prev{
+        font-size: 10em;
+      }
+    }
+  }
+}
+
 body{
   background-color : $noir;
   color : $blanc;
@@ -40,6 +71,9 @@ body{
     padding-top: 1em;
     padding-bottom: 0.5em;
   }
+  i{
+    color: $vert;
+  }
 }
 
 header{
@@ -50,11 +84,22 @@ header{
     position: fixed;
     height: 115%;
     width: 100%;
-    top: -2em;
+    top: -1em;
   }
   #vimButton{
     position: relative;
     top: 90%;
+    button{
+      transition: width 350ms ease-in-out;
+      background-color: rgba(0,0,0,0);
+      border: none;
+      outline: none;
+    }
+    button:hover{
+      cursor: pointer;
+      border: none;
+      opacity: 0.8;
+    }
   }
 }
 
@@ -194,6 +239,21 @@ header{
 
 
 #showroom{
+  button{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 4em;
+  }
+  .prev, .next{
+    height: 100%;
+    width: 100%;
+    outline: none;
+  }
+  button:hover{
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+  }
   .focus{
     max-height: 90%;
     width: auto;
