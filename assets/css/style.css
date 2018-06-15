@@ -13,7 +13,7 @@
     font-size: 30px; }
   body #showroom .next, body #showroom .prev {
     font-size: 7em; } }
-@media (min-height: 910px) {
+@media (min-width: 910px) {
   body header #topVid {
     top: -8em; }
   body header #vimButton button {
@@ -36,6 +36,15 @@ body {
     padding-bottom: 0.5em; }
   body i {
     color: #05b72f; }
+
+.toGreen {
+  color: #E5E5E4;
+  transition: all 280ms ease-in-out; }
+
+.toGreen:hover {
+  color: #05b72f;
+  letter-spacing: 0.2em;
+  transition: all 400ms ease-in-out; }
 
 header #topVid {
   overflow: hidden;
@@ -102,7 +111,7 @@ header #vimButton {
 
 #trans1, #trans2, #trans3 {
   z-index: 20;
-  background-size: cover; }
+  background-size: 100%; }
 
 #about {
   z-index: 10;
@@ -127,12 +136,14 @@ header #vimButton {
   height: 10em;
   border-radius: 100%;
   padding: 20px;
+  border: none;
   transition: all 280ms ease-in-out;
   transform: rotate(-360deg); }
 
 .bubble:hover {
   transition: all 280ms ease-in-out;
   transform: rotate(360deg);
+  border: 0.5em solid rgba(5, 183, 47, 0.5);
   width: 11em;
   height: 11em; }
 
@@ -177,6 +188,8 @@ header #vimButton {
 #showroom .display {
   height: 100%;
   width: auto; }
+#showroom p {
+  height: 100%; }
 
 #contact div.row {
   padding: 2em; }
@@ -197,23 +210,13 @@ header #vimButton {
 input, textarea {
   font-weight: bold; }
 
-input[type=text], input[type=email] {
+input[type=text], input[type=email], input[type=password] {
   height: 2.5em;
   border-radius: 1em; }
 
-input[type=text]:focus, input[type=email]:focus, textarea:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
   background-color: transparent;
   color: #05b72f; }
-
-p {
-  color: #E5E5E4;
-  letter-spacing: normal;
-  transition: all 280ms ease-in-out; }
-
-p :hover {
-  color: #05b72f;
-  letter-spacing: 0.2em;
-  transition: all 280ms ease-in-out; }
 
 #submit:hover {
   color: #E5E5E4;
@@ -226,7 +229,8 @@ p :hover {
   background-color: #070C0C; }
 
 #calendrier iframe {
-  width: 100%; }
+  width: 100%;
+  border-color: #05b72f; }
 
 footer {
   height: 100px;

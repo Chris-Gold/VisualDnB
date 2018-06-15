@@ -35,7 +35,7 @@ $vert : #05b72f;
   }
 }
 
-@media (min-height: 910px){
+@media (min-width: 910px){
   body{
     header{
       #topVid{
@@ -74,6 +74,16 @@ body{
   i{
     color: $vert;
   }
+}
+
+.toGreen{
+  color: $blanc;
+  transition: all 280ms ease-in-out;
+}
+.toGreen:hover{
+  color: $vert;
+  letter-spacing: 0.2em;
+  transition: all 400ms ease-in-out;
 }
 
 header{
@@ -155,7 +165,7 @@ header{
 #trans1, #trans2, #trans3{
   z-index: 20;
   // background: url('../img/trans.jpg')center fixed no-repeat;
-  background-size : cover;
+  background-size : 100%;
 }
 
 #about{
@@ -184,12 +194,14 @@ header{
   height: 10em;
   border-radius: 100%;
   padding: 20px;
+  border: none;
   transition: all 280ms ease-in-out;
   transform: rotate(-360deg);
 }
 .bubble:hover{
   transition: all 280ms ease-in-out;
   transform: rotate(360deg);
+  border: 0.5em solid rgba(5, 183, 47, 0.5);
   width: 11em;
   height: 11em;
 }
@@ -262,6 +274,9 @@ header{
     height: 100%;
     width: auto;
   }
+  p{
+    height: 100%;
+  }
 }
 
 #contact{
@@ -292,24 +307,13 @@ header{
 input, textarea{
   font-weight: bold;
 }
-input[type=text], input[type=email]{
+input[type=text], input[type=email], input[type=password]{
   height: 2.5em;
   border-radius: 1em;
 }
-input[type=text]:focus, input[type=email]:focus, textarea:focus{
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus{
   background-color: rgba(0,0,0,0);
   color: $vert;
-}
-
-p{
-  color: $blanc;
-  letter-spacing: normal;
-  transition: all 280ms ease-in-out;
-}
-p :hover{
-  color: $vert;
-  letter-spacing: 0.2em;
-  transition: all 280ms ease-in-out;
 }
 
 #submit:hover{
@@ -327,6 +331,7 @@ p :hover{
 
 #calendrier iframe{
   width: 100%;
+  border-color: #05b72f;
 }
 
 footer{
