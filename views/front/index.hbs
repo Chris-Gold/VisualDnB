@@ -317,17 +317,18 @@
       <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
         <input type="text" class="col-12" name="nom" placeholder="Nom" required>
         <input type="email" class="col-12" name="email" placeholder="Email" required>
-        <input type="button" class="inputButton" value="Logo" name="logo">
-        <input type="button" class="inputButton" value="ClipAudioReact" name="clipAudioReact">
-        <input type="button" class="inputButton" value="Bumper" name="bumper">
-        <input type="button" class="inputButton" value="ClipVJ" name="clipVJ">
-        <input type="button" class="inputButton" value="ClipVideo" name="clipVideo">
-        <input type="button" class="inputButton" value="Scenographie" name="scenographie">
-        <input type="button" class="inputButton" value="Autre" name="autre">
-        <p>* Les boutons servent à remplir le sujet du mail.</p>
+        <p><span class="fr">Vous êtes intéressé par :</span><span class="eng d-none">You are interesting in :</span></p>
+        <input type="button" class="inputButton btn btn-outline-success" value="Logo" name="logo">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipAudioReact" name="clipAudioReact">
+        <input type="button" class="inputButton btn btn-outline-success" value="Bumper" name="bumper">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipVJ" name="clipVJ">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipVideo" name="clipVideo">
+        <input type="button" class="inputButton btn btn-outline-success" value="Scenographie" name="scenographie">
+        <input type="button" class="inputButton btn btn-outline-success" value="Autre" name="autre">
         <input type="text" class="col-12" id="subject" name="subject" placeholder="Sujet" required>
-        <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" required></textarea>
-        <input type="submit" class="col-12" value="Envoyer"></input>
+        <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" style="border-radius:1em;
+        " required></textarea>
+        <input type="submit" id="submit" class="col-12" value="Envoyer">
       </form>
 
       <div id="calendrier" class="col-12 col-md-6 box d-flex text-center">

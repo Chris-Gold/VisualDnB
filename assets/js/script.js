@@ -15,7 +15,7 @@ $(document).ready(function(){
     $("header").css({height: headHeight});
   // VIMEO IFRAME + BUTTONS
 
-    var vimeo = new Vimeo.Player('topVid');    
+    var vimeo = new Vimeo.Player('topVid');
     $('#vimPlay').on('click', function(){
       vimeo.play();
     })
@@ -297,5 +297,8 @@ $(document).ready(function(){
         subject.value += buttons[i].value + " ";
       })
     }
+
+  // SUBMIT
+  
   });
 // })(jQuery);

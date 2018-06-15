@@ -1,6 +1,3 @@
-.box {
-  border: 1px solid #E5E5E4; }
-
 .row {
   margin: 0px; }
 
@@ -189,6 +186,41 @@ header #vimButton {
 
 #contactForm input, textarea {
   margin: 1em 0px 1em 0px; }
+
+#submit {
+  height: 3em;
+  border: none;
+  background: #05b72f;
+  border-radius: 50px;
+  transition: all 280ms ease-in-out; }
+
+input, textarea {
+  font-weight: bold; }
+
+input[type=text], input[type=email] {
+  height: 2.5em;
+  border-radius: 1em; }
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  background-color: transparent;
+  color: #05b72f; }
+
+p {
+  color: #E5E5E4;
+  letter-spacing: normal;
+  transition: all 280ms ease-in-out; }
+
+p :hover {
+  color: #05b72f;
+  letter-spacing: 0.2em;
+  transition: all 280ms ease-in-out; }
+
+#submit:hover {
+  color: #E5E5E4;
+  border: none;
+  box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
+  background: #048522;
+  transition: all 280ms ease-in-out; }
 
 #calendrier {
   background-color: #070C0C; }
