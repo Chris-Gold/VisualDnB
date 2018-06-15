@@ -59,11 +59,7 @@ router.get('/se-deconnecter', function(req, res){
 // router.post('/register', function(req, res){
 //     let username = req.body.username;
 //     let password = req.body.password;
-<<<<<<< HEAD
-
-=======
 //
->>>>>>> 2ec24c7b428765ae36878a1c3ca9d29206eefbeb
 //     let newuser = new User();
 //     newuser.username = username;
 //     newuser.password = password;
@@ -302,9 +298,5 @@ router.get('/delete-media/:filename/:id', function(req, res){
         })
     })
 })
-<<<<<<< HEAD
 
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 2ec24c7b428765ae36878a1c3ca9d29206eefbeb
