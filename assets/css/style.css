@@ -166,6 +166,10 @@ header #vimButton {
     #insta #instafeed p {
       padding-top: 1em; }
 
+.slick-prev:before,
+.slick-next:before {
+  color: #05b72f; }
+
 #showroom button {
   background-color: transparent;
   border: none;
@@ -203,16 +207,16 @@ header #vimButton {
   border-radius: 50px;
   transition: all 280ms ease-in-out; }
 
-input, textarea {
-  font-weight: bold; }
-
 input[type=text], input[type=email], input[type=password] {
   height: 2.5em;
-  border-radius: 1em; }
+  border-radius: 1em;
+  transition: all 280ms ease-in-out; }
 
 input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
   background-color: transparent;
-  color: #05b72f; }
+  color: #05b72f;
+  font-weight: bold;
+  transition: all 280ms ease-in-out; }
 
 #submit:hover {
   color: #E5E5E4;
@@ -227,6 +231,11 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, tex
 #calendrier iframe {
   width: 100%;
   border-color: #05b72f; }
+
+hr {
+  background-color: #E5E5E4;
+  color: #E5E5E4;
+  margin: 0; }
 
 footer {
   height: 100px;
