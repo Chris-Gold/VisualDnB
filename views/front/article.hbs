@@ -1,18 +1,20 @@
     <header id="postHead">
-      <img src="{{headPic}}" alt=""/>
+      <img src="{{article.url}}" alt=""/>
     </header>
 
-    <h2 id="postTitle">{{titre}}</h2>
+    <h2 id="postTitle">{{article.titre}}</h2>
+
+    {{article.date}}
 
     <section id="postContentText" class="container-fluid">
       <div class="container">
-        {{text}}
+        {{{article.description}}}
       </div>
     </section>
 
     <section id="postPics" class="container-fluid">
       <div class="container">
-        {{picture}}
+        <img src="{{article.photos.url1}}" alt="">
       </div>
     </section>
 

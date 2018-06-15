@@ -77,9 +77,16 @@ router.post('/', function(req, res){
 
 router.get('/article/:id', function(req, res){
     let id = req.params.id;
-    res.status(200).render('front/article.hbs', {
-        title: 'Article'
-    });
+    if (id.match(/^[0-9a-fA-F]{24}$/)) {
+        // Yes, it's a valid ObjectId, proceed with `findById` call.
+        Article.findById(id, function (err, result){
+            if (err) throw err;
+            res.status(200).render('front/article.hbs', {
+                title: 'Article',
+                article:result
+            });
+      });
+    };
 });
 
 router.get('/:nom', function(req, res){
