@@ -61,6 +61,14 @@ $(document).ready(function(){
       $('.fr').removeClass('d-none');
     })
 
+  // SCROLL ZOOM
+    // $(window).on('scroll', function(){
+    //   var posGen = window.scroolY,
+    //       posTrans1 = $('#trans1')
+    //
+    // })
+
+
   // SLIDER PARALLAX
     $('#da-slider').cslider({
 			bgincrement	: 0
@@ -299,6 +307,6 @@ $(document).ready(function(){
     }
 
   // SUBMIT
-  
+
   });
 // })(jQuery);

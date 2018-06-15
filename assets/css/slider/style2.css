@@ -6,8 +6,8 @@
 	/* margin: 30px auto; */
 	overflow: hidden;
 	background: transparent url(../images/waves.gif) repeat 0% 0%;
-	border-top: 8px solid #efc34a;
-	border-bottom: 8px solid #efc34a;
+	border-top: 8px solid #05b72f;
+	border-bottom: 8px solid #05b72f;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
 	-webkit-transition: background-position 1s ease-out 0.3s;
 	-moz-transition: background-position 1s ease-out 0.3s;
@@ -33,8 +33,14 @@
 .da-slider-fb  .da-slide.da-slide-current{
 	left: 0px;
 }
+.da-slide p, .da-slide iframe{
+	display: none;
+}
+.da-slide p:nth-of-type(3){
+	display: inline;
+}
 .da-slide h4,
-.da-slide p,
+.da-slide p:nth-of-type(3),
 .da-slide .da-link,
 .da-slide .da-img{
 	position: absolute;
@@ -45,6 +51,10 @@
 .da-slider-fb .da-slide p,
 .da-slider-fb .da-slide .da-link{
 	left: 10%;
+	opacity: 1;
+}
+.da-slider-fb .da-slide p{
+	left: 15%;
 	opacity: 1;
 }
 .da-slider-fb .da-slide .da-img{
@@ -65,7 +75,7 @@
 .da-slide p{
 	/* width: 45%; */
 	top: 155px;
-	color: #916c05;
+	color: #05b72f;
 	font-size: 18px;
 	line-height: 26px;
 	height: 80px;
@@ -78,7 +88,7 @@
 .da-slide .da-img{
 	text-align: center;
 	width: 50%;
-	/* top: 50%; */
+	top: 15%;
 	height: auto;
 	line-height: 320px;
 	left: 100%; /*60%*/
@@ -192,11 +202,14 @@
 .da-arrows span.da-arrows-next{
 	right: 15px;
 }
-
+.da-slide-current p:nth-of-type(3){
+	width: 10em;
+	text-overflow: ellipsis;
+	left: 10%;
+	opacity: 1;
+}
 .da-slide-current h4,
-.da-slide-current p,
 .da-slide-current .da-link{
-
 	left: 10%;
 	opacity: 1;
 }
