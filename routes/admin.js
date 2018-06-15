@@ -57,19 +57,19 @@ router.get('/se-deconnecter', function(req, res){
 })
 
 // router.post('/register', function(req, res){
-    // let username = req.body.username;
-    // let password = req.body.password;
+//     let username = req.body.username;
+//     let password = req.body.password;
 
-    // let newuser = new User();
-    // newuser.username = username;
-    // newuser.password = password;
-    // newuser.save(function(err, savedUser){
-    //     if (err) {
-    //         console.log(err);
-    //         return res.status(500).send();
-    //     }
-    //     return res.status(200).send();
-    // })
+//     let newuser = new User();
+//     newuser.username = username;
+//     newuser.password = password;
+//     newuser.save(function(err, savedUser){
+//         if (err) {
+//             console.log(err);
+//             return res.status(500).send();
+//         }
+//         return res.status(200).send();
+//     })
 // });
 
 router.get('/visuel', function(req, res){
@@ -154,6 +154,12 @@ router.post('/article', function(req, res){
     art.photos.url3 = req.body.url3;
     art.photos.url4 = req.body.url4;
     art.photos.url5 = req.body.url5;
+    art.photos.url6 = req.body.url6;
+    art.photos.url6 = req.body.url6;
+    art.photos.url7 = req.body.url7;
+    art.photos.url8 = req.body.url8;
+    art.photos.url9 = req.body.url9;
+    art.photos.url10 = req.body.url10;
     art.save(function(err){
         if (err){
             res.render('back/adminArticle.hbs', {title: "Administration", description: "Une erreur s'est produite"});

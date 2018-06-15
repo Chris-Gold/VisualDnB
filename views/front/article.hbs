@@ -1,27 +1,92 @@
-    <header id="postHead">
-      <img src="{{article.url}}" alt=""/>
-    </header>
+<div style="margin:20px;"></div>
 
-    <h2 id="postTitle">{{article.titre}}</h2>
+<header id="container-fluid">
+  <div class="container text-center">
+    <img style="height:500px;" src="../img/{{article.url}}" alt=""/>
+  </div>
+</header>
 
-    {{article.date}}
+<div style="margin:20px;"></div>
 
-    <section id="postContentText" class="container-fluid">
-      <div class="container">
-        {{{article.description}}}
-      </div>
-    </section>
+<div class="text-center">
+  <h2 id="postTitle">{{article.titre}}</h2><hr>
+  <p>{{article.date}}</p>
+</div>
 
-    <section id="postPics" class="container-fluid">
-      <div class="container">
-        <img src="{{article.photos.url1}}" alt="">
-      </div>
-    </section>
+<div style="margin:20px;"></div>
 
-    <hr>
+<section id="postContentText">
+  <div class="container">
+    {{{article.description}}}
+  </div>
+</section>
 
-    <footer class="box text-center d-flex align-items-center">
-      <div class="w-100">
-        <p>FOOTER</p>
-      </div>
-    </footer>
+<section class="img-fluid">
+  <div style="margin:20px;"></div>
+
+  <div class="col-12 text-center">
+    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="row col-12">
+    <div class="col-12 col-md-6 text-right">
+      <img style="height:300px;" src="../img/{{article.photos.url1}}" alt="">
+    </div>
+    <div class="col-12 col-md-6 text-left">
+      <img style="height:300px;" src="../img/{{article.photos.url2}}" alt="">
+    </div>
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="col-12 text-center">
+    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="row col-12">
+    <div class="col-12 col-md-6 text-right">
+      <img style="height:300px;" src="../img/{{article.photos.url4}}" alt="">
+    </div>
+      <div class="col-12 col-md-6 text-left">
+      <img style="height:300px;" src="../img/{{article.photos.url5}}" alt="">
+    </div>
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="col-12 text-center">
+    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="row col-12">
+    <div class="col-12 col-md-6 text-right">
+      <img style="height:300px;" src="../img/{{article.photos.url4}}" alt="">
+    </div>
+      <div class="col-12 col-md-6 text-left">
+      <img style="height:300px;" src="../img/{{article.photos.url5}}" alt="">
+    </div>
+  </div>
+
+  <div style="margin:20px;"></div>
+
+  <div class="col-12 text-center">
+    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
+  </div>
+
+  <div style="margin:20px;"></div>
+</section>
+
+
+<hr>
+
+<footer class="box text-center d-flex align-items-center">
+  <div class="w-100">
+    <p>FOOTER</p>
+  </div>
+</footer>

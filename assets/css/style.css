@@ -1,21 +1,238 @@
-/*
-Errno::ENOENT: No such file or directory @ rb_sysopen - style.scss
+.row {
+  margin: 0px; }
 
-Backtrace:
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:484:in `read'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:484:in `update_stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `each'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:294:in `watch'
-/usr/lib/ruby/vendor_ruby/sass/plugin.rb:109:in `method_missing'
-/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:356:in `watch_or_update'
-/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:51:in `process_result'
-/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:52:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
-/usr/bin/sass:8:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - style.scss"; }
+.container-fluid {
+  padding: 0px; }
+
+@media (min-height: 650px) and (max-height: 900px) {
+  body header #topVid {
+    height: 125%;
+    overflow: hidden;
+    top: -8em; }
+  body header #vimButton button {
+    font-size: 30px; }
+  body #showroom .next, body #showroom .prev {
+    font-size: 7em; } }
+@media (min-height: 910px) {
+  body header #topVid {
+    top: -8em; }
+  body header #vimButton button {
+    font-size: 50px; }
+  body #showroom .next, body #showroom .prev {
+    font-size: 10em; } }
+body {
+  background-color: #070C0C;
+  color: #E5E5E4;
+  z-index: 0;
+  position: static; }
+  body section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: #070C0C;
+    z-index: 10; }
+  body h3 {
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em; }
+  body i {
+    color: #05b72f; }
+
+header #topVid {
+  overflow: hidden;
+  z-index: -50;
+  display: block;
+  position: fixed;
+  height: 115%;
+  width: 100%;
+  top: -1em; }
+header #vimButton {
+  position: relative;
+  top: 90%; }
+  header #vimButton button {
+    transition: width 350ms ease-in-out;
+    background-color: transparent;
+    border: none;
+    outline: none; }
+  header #vimButton button:hover {
+    cursor: pointer;
+    border: none;
+    opacity: 0.8; }
+
+#navigation {
+  z-index: 20;
+  background-color: #070C0C;
+  font-size: 1.5em;
+  width: 100%; }
+  #navigation div, #navigation ul {
+    width: 100%; }
+  #navigation button {
+    height: 1.5em;
+    margin: 0;
+    border: 0;
+    background-color: transparent; }
+    #navigation button img {
+      height: 1.5em; }
+  #navigation .btn-2:after,
+  #navigation .btn-2:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+    color: #05b72f; }
+  #navigation .btn-2:hover:after,
+  #navigation .btn-2:hover:before {
+    backface-visibility: hidden;
+    border-color: #05b72f;
+    color: #05b72f;
+    transition: width 350ms ease-in-out;
+    width: 70%; }
+  #navigation .btn-2:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%; }
+
+.img-transition {
+  width: 100%;
+  height: 700px; }
+
+#trans1, #trans2, #trans3 {
+  z-index: 20;
+  background-size: cover; }
+
+#about {
+  z-index: 10;
+  height: auto;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+  #about img {
+    padding-bottom: 1em; }
+
+#booked {
+  max-width: 100%;
+  height: auto; }
+
+.bubble2 {
+  width: 8em;
+  height: 8em;
+  border-radius: 100%;
+  padding: 20px; }
+
+.bubble {
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  padding: 20px;
+  transition: all 280ms ease-in-out;
+  transform: rotate(-360deg); }
+
+.bubble:hover {
+  transition: all 280ms ease-in-out;
+  transform: rotate(360deg);
+  width: 11em;
+  height: 11em; }
+
+#presta {
+  height: auto;
+  width: 100%; }
+  #presta #da-slider, #presta .da-slider {
+    width: 100%; }
+
+#insta {
+  height: auto;
+  width: 100%; }
+  #insta #instafeed {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 2em; }
+    #insta #instafeed a {
+      color: #E5E5E4; }
+    #insta #instafeed .feed {
+      max-height: 25em;
+      width: auto;
+      padding-left: 1em; }
+    #insta #instafeed p {
+      padding-top: 1em; }
+
+#showroom button {
+  background-color: transparent;
+  border: none;
+  font-size: 4em; }
+#showroom .prev, #showroom .next {
+  height: 100%;
+  width: 100%;
+  outline: none; }
+#showroom button:hover {
+  cursor: pointer;
+  border: none;
+  opacity: 0.8; }
+#showroom .focus {
+  max-height: 90%;
+  width: auto; }
+#showroom .display {
+  height: 100%;
+  width: auto; }
+
+#contact div.row {
+  padding: 2em; }
+
+#contactForm {
+  background-color: #070C0C; }
+
+#contactForm input, textarea {
+  margin: 1em 0px 1em 0px; }
+
+#submit {
+  height: 3em;
+  border: none;
+  background: #05b72f;
+  border-radius: 50px;
+  transition: all 280ms ease-in-out; }
+
+input, textarea {
+  font-weight: bold; }
+
+input[type=text], input[type=email] {
+  height: 2.5em;
+  border-radius: 1em; }
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  background-color: transparent;
+  color: #05b72f; }
+
+p {
+  color: #E5E5E4;
+  letter-spacing: normal;
+  transition: all 280ms ease-in-out; }
+
+p :hover {
+  color: #05b72f;
+  letter-spacing: 0.2em;
+  transition: all 280ms ease-in-out; }
+
+#submit:hover {
+  color: #E5E5E4;
+  border: none;
+  box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
+  background: #048522;
+  transition: all 280ms ease-in-out; }
+
+#calendrier {
+  background-color: #070C0C; }
+
+#calendrier iframe {
+  width: 100%; }
+
+footer {
+  height: 100px;
+  background-color: #070C0C; }
+  footer p {
+    width: 100%;
+    height: 100%; }
+
+/*# sourceMappingURL=style.css.map */

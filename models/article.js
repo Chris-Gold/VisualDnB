@@ -11,7 +11,13 @@ const articleSchema = new Schema({
         url2: String,
         url3: String,
         url4: String,
-        url5: String
+        url5: String,
+        url6: String,
+        url7: String,
+        url8: String,
+        url9: String,
+        url10: String
+
     }
 });
 
