@@ -101,10 +101,10 @@
             <h4>{{this.titre}}</h4>
             <p>{{{this.date}}}</p>
             <p class="">{{{this.description}}}</p>
-            <a href="article/{{this._id}}" class="da-link">Read more</a>
+            <a href="article/{{this._id}}" class="da-link"><span class="fr">Plus d'infos...</span><span class="eng d-none">Read more...</span></a>
           </div>
           <div class="da-img col-12 col-md-6">
-            <img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" />
+            <img class="img-fluid" src="../img/{{this.url}}" alt="image01" />
           </div>
         </div>
       {{/each}}
