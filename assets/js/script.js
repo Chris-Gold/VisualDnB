@@ -62,11 +62,26 @@ $(document).ready(function(){
     })
 
   // SCROLL ZOOM
-    // $(window).on('scroll', function(){
-    //   var posGen = window.scroolY,
-    //       posTrans1 = $('#trans1')
-    //
-    // })
+    $(window).on('scroll', function(){
+      var posGen = window.scrollY,
+          scrn = $(window).height(),
+          posTrans1 = $('#trans1').position().top,
+          posTrans2 = $('#trans2').position().top,
+          posTrans3 = $('#trans3').position().top;
+          
+      // TRANSITION 1
+      if (posGen <= (posTrans1 + scrn)){
+        $('#trans1').stop().animate({'background-size':+100+(posGen-(posTrans1-scrn))*0.0125+'%'}, 20);
+      }
+      // TRANSITION 2
+      if (posGen >= (posTrans2 - scrn) && posGen <= (posTrans2 + scrn)){
+        $('#trans2').stop().animate({'background-size':+125-(posGen-(posTrans2-scrn))*0.0125+'%'}, 20);
+      }
+      // TRANSITION 3
+      if (posGen >= (posTrans3 - scrn) && posGen <= (posTrans3 + scrn)){
+        $('#trans3').stop().animate({'background-size':+100+(posGen-(posTrans3-scrn))*0.0125+'%'}, 20);
+      }
+    })
 
 
   // SLIDER PARALLAX
@@ -102,13 +117,24 @@ $(document).ready(function(){
     $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
 
   // PROGRAMME AVEC Carousel Slick
+  if (window.matchMedia("(max-width: 950px)").matches) {
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
-      slidesToShow: 5,
+      slidesToShow: 3,
       slidesToScroll: 5
     });
     $('#bookedLogos img').removeAttr('style');
+  } else {
+  $('#bookedLogos').slick({
+    adaptiveHeight: false,
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 5
+  });
+  $('#bookedLogos img').removeAttr('style');
+  }
+    
 
   // SHOWROOM
     // LOGOS
