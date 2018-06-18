@@ -20,7 +20,7 @@ router.get('/', function(req, res){
     Article.find({}, function(err, allarticles){
         if (err) throw err;
         articles = allarticles;
-    })
+    }).sort({_id:-1})
     Prog.find({}, function(err, allprogs){
         if (err) throw err;
         progs = allprogs;

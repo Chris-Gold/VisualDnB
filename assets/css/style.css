@@ -148,6 +148,8 @@ header #vimButton {
   width: 100%; }
   #presta #da-slider, #presta .da-slider {
     width: 100%; }
+    #presta #da-slider h4, #presta .da-slider h4 {
+      font-size: 20px; }
 
 #insta {
   height: auto;
@@ -191,38 +193,38 @@ header #vimButton {
 #showroom p {
   height: 100%; }
 
-#contact #contact div.row {
-  padding: 2em; }
-#contact #contactForm {
-  background-color: #070C0C; }
-  #contact #contactForm input, #contact #contactForm textarea {
-    margin: 1em 0px 1em 0px; }
-#contact input[type=text], #contact input[type=email], #contact input[type=password] {
-  height: 2.5em;
-  border-radius: 1em;
-  transition: all 280ms ease-in-out; }
-#contact input[type=text]:focus, #contact input[type=email]:focus, #contact input[type=password]:focus, #contact textarea:focus {
-  background-color: transparent;
-  color: #05b72f;
-  font-weight: bold;
-  transition: all 280ms ease-in-out; }
-#contact #submit {
-  height: 3em;
-  border: none;
-  background: #05b72f;
-  border-radius: 50px;
-  transition: all 280ms ease-in-out; }
-#contact #submit:hover {
-  color: #E5E5E4;
-  border: none;
-  box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
-  background: #048522;
-  transition: all 280ms ease-in-out; }
-#contact #calendrier {
-  background-color: #070C0C; }
-#contact #calendrier iframe {
-  width: 100%;
-  border-color: #05b72f; }
+#contact {
+  padding-bottom: 3em; }
+  #contact #contactForm {
+    background-color: #070C0C; }
+    #contact #contactForm input, #contact #contactForm textarea {
+      margin: 1em 0px 1em 0px; }
+  #contact input[type=text], #contact input[type=email], #contact input[type=password] {
+    height: 2.5em;
+    border-radius: 1em;
+    transition: all 280ms ease-in-out; }
+  #contact input[type=text]:focus, #contact input[type=email]:focus, #contact input[type=password]:focus, #contact textarea:focus {
+    background-color: transparent;
+    color: #05b72f;
+    font-weight: bold;
+    transition: all 280ms ease-in-out; }
+  #contact #submit {
+    height: 3em;
+    border: none;
+    background: #05b72f;
+    border-radius: 50px;
+    transition: all 280ms ease-in-out; }
+  #contact #submit:hover {
+    color: #E5E5E4;
+    border: none;
+    box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
+    background: #048522;
+    transition: all 280ms ease-in-out; }
+  #contact #calendrier {
+    background-color: #070C0C; }
+  #contact #calendrier iframe {
+    width: 100%;
+    border-color: #05b72f; }
 
 hr {
   background-color: #E5E5E4;
@@ -259,11 +261,11 @@ footer {
   max-height: 300px;
   width: auto; }
 
-#postModal, .modal-dialog, .modal-content, .modal-body {
-  height: 100%;
-  width: 100%; }
-  #postModal #modalFocus, .modal-dialog #modalFocus, .modal-content #modalFocus, .modal-body #modalFocus {
-    min-height: 100%;
-    width: auto; }
+#postModal, .modal-content, .modal-dialog, .modal-body {
+  min-width: 80%;
+  height: auto; }
+  #postModal #modalFocus, .modal-content #modalFocus, .modal-dialog #modalFocus, .modal-body #modalFocus {
+    height: auto;
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

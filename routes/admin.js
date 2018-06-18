@@ -140,7 +140,7 @@ router.get('/article', function(req, res){
             throw err;
         }
         res.render("back/adminArticle", {articles: results, title:'Article'});
-    })
+    }).sort({_id:-1})
 });
 
 router.post('/article', function(req, res){

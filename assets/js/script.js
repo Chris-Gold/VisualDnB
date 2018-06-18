@@ -97,13 +97,24 @@ $(document).ready(function(){
     $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
 
   // PROGRAMME AVEC Carousel Slick
+  if (window.matchMedia("(max-width: 950px)").matches) {
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
-      slidesToShow: 5,
+      slidesToShow: 3,
       slidesToScroll: 5
     });
     $('#bookedLogos img').removeAttr('style');
+  } else {
+  $('#bookedLogos').slick({
+    adaptiveHeight: false,
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 5
+  });
+  $('#bookedLogos img').removeAttr('style');
+  }
+    
 
   // SHOWROOM
     // LOGOS

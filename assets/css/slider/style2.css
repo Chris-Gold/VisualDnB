@@ -33,7 +33,7 @@
 .da-slider-fb  .da-slide.da-slide-current{
 	left: 0px;
 }
-.da-slide p, .da-slide iframe{
+.da-slide p, .da-slide iframe, .wrap, #primary, .entry-content{
 	display: none;
 }
 .da-slide p:nth-of-type(1), .da-slide p:nth-of-type(3){
@@ -47,6 +47,7 @@
 	position: absolute;
 	opacity: 0;
 	left: 100%;
+	padding-bottom: 5px;
 }
 .da-slider-fb .da-slide h4,
 .da-slider-fb .da-slide p,
@@ -94,10 +95,11 @@
 .da-slide .da-img{
 	text-align: center;
 	width: 50%;
-	top: 15%;
+	top: 5%;
 	height: auto;
 	line-height: 320px;
 	left: 100%; /*60%*/
+	padding-bottom: 5px;
 }
 .da-slide .da-link{
 	top: 15em; /*depends on p height*/
@@ -223,6 +225,7 @@
 .da-slide-current .da-img{
 	left: 45%;
 	opacity: 1;
+	padding-bottom: 5px;
 }
 /* Animation classes and animations */
 

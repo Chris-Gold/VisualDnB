@@ -17,7 +17,6 @@ const articleSchema = new Schema({
         url8: String,
         url9: String,
         url10: String
-
     }
 });
 
