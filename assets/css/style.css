@@ -191,44 +191,36 @@ header #vimButton {
 #showroom p {
   height: 100%; }
 
-#contact div.row {
+#contact #contact div.row {
   padding: 2em; }
-
-#contactForm {
+#contact #contactForm {
   background-color: #070C0C; }
-
-#contactForm input, textarea {
-  margin: 1em 0px 1em 0px; }
-
-#submit {
+  #contact #contactForm input, #contact #contactForm textarea {
+    margin: 1em 0px 1em 0px; }
+#contact input[type=text], #contact input[type=email], #contact input[type=password] {
+  height: 2.5em;
+  border-radius: 1em;
+  transition: all 280ms ease-in-out; }
+#contact input[type=text]:focus, #contact input[type=email]:focus, #contact input[type=password]:focus, #contact textarea:focus {
+  background-color: transparent;
+  color: #05b72f;
+  font-weight: bold;
+  transition: all 280ms ease-in-out; }
+#contact #submit {
   height: 3em;
   border: none;
   background: #05b72f;
   border-radius: 50px;
   transition: all 280ms ease-in-out; }
-
-input[type=text], input[type=email], input[type=password] {
-  height: 2.5em;
-  border-radius: 1em;
-  transition: all 280ms ease-in-out; }
-
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
-  background-color: transparent;
-  color: #05b72f;
-  font-weight: bold;
-  transition: all 280ms ease-in-out; }
-
-#submit:hover {
+#contact #submit:hover {
   color: #E5E5E4;
   border: none;
   box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
   background: #048522;
   transition: all 280ms ease-in-out; }
-
-#calendrier {
+#contact #calendrier {
   background-color: #070C0C; }
-
-#calendrier iframe {
+#contact #calendrier iframe {
   width: 100%;
   border-color: #05b72f; }
 
@@ -243,5 +235,35 @@ footer {
   footer p {
     width: 100%;
     height: 100%; }
+
+#postHeader {
+  padding-bottom: 3em; }
+  #postHeader img {
+    max-height: 500px; }
+
+#postTitle h2 {
+  font-size: 3em;
+  padding-bottom: 0.5em; }
+
+#postContent {
+  padding-top: 3em;
+  padding-bottom: 2em; }
+
+#postPics div {
+  padding-bottom: 3em; }
+#postPics .hover-shadow {
+  transition: 0.3s; }
+#postPics .hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+#postPics img {
+  max-height: 300px;
+  width: auto; }
+
+#postModal, .modal-dialog, .modal-content, .modal-body {
+  height: 100%;
+  width: 100%; }
+  #postModal #modalFocus, .modal-dialog #modalFocus, .modal-content #modalFocus, .modal-body #modalFocus {
+    min-height: 100%;
+    width: auto; }
 
 /*# sourceMappingURL=style.css.map */
