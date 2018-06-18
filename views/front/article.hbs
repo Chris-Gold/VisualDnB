@@ -1,91 +1,66 @@
-<div style="margin:20px;"></div>
-
-<form method="get" action="/" class="col-12 text-center">
-    <button type="submit" class="inputButton btn btn-outline-success">Retour</button>
-</form>
-
-<div style="margin:20px;"></div>
-
-<header id="container-fluid">
-  <div class="container text-center">
-    <img style="height:500px;" src="../img/{{article.url}}" alt=""/>
-  </div>
+<header id="postHeader" class="container-fluid text-center">
+  <img class="img-fluid" src="../img/{{article.url}}" alt=""/>
 </header>
 
-<div style="margin:20px;"></div>
-
-<div class="text-center">
-  <h2 id="postTitle">{{article.titre}}</h2><hr>
+<div id="postTitle" class="text-center">
+  <h2 class="toGreen">{{article.titre}}</h2><hr>
   <p>{{article.date}}</p>
 </div>
 
-<div style="margin:20px;"></div>
-
-<section id="postContentText">
+<section id="postContent">
   <div class="container">
     {{{article.description}}}
   </div>
 </section>
 
-<section class="img-fluid">
-  <div style="margin:20px;"></div>
-
-  <div class="col-12 text-center">
-    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
-  </div>
-
-  <div style="margin:20px;"></div>
-
-  <div class="row col-12">
-    <div class="col-12 col-md-6 text-right">
-      <img style="height:300px;" src="../img/{{article.photos.url1}}" alt="">
+<section class="text-center container">
+  <div id="postPics" class="row">
+    <div class="col-12">
+      <img class="hover-shadow" src="../img/{{article.photos.url1}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
-    <div class="col-12 col-md-6 text-left">
-      <img style="height:300px;" src="../img/{{article.photos.url2}}" alt="">
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url2}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
-  </div>
-
-  <div style="margin:20px;"></div>
-
-  <div class="col-12 text-center">
-    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
-  </div>
-
-  <div style="margin:20px;"></div>
-
-  <div class="row col-12">
-    <div class="col-12 col-md-6 text-right">
-      <img style="height:300px;" src="../img/{{article.photos.url4}}" alt="">
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url3}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
-      <div class="col-12 col-md-6 text-left">
-      <img style="height:300px;" src="../img/{{article.photos.url5}}" alt="">
+    <div class="col-12">
+      <img class="hover-shadow" src="../img/{{article.photos.url4}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
-  </div>
-
-  <div style="margin:20px;"></div>
-
-  <div class="col-12 text-center">
-    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
-  </div>
-
-  <div style="margin:20px;"></div>
-
-  <div class="row col-12">
-    <div class="col-12 col-md-6 text-right">
-      <img style="height:300px;" src="../img/{{article.photos.url4}}" alt="">
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url5}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
-      <div class="col-12 col-md-6 text-left">
-      <img style="height:300px;" src="../img/{{article.photos.url5}}" alt="">
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url6}}" alt="" data-toggle="modal" data-target="#postModal">
+    </div>
+    <div class="col-12">
+      <img class="hover-shadow" src="../img/{{article.photos.url7}}" alt="" data-toggle="modal" data-target="#postModal">
+    </div>
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url8}}" alt="" data-toggle="modal" data-target="#postModal">
+    </div>
+    <div class="col-6">
+      <img class="hover-shadow" src="../img/{{article.photos.url9}}" alt="" data-toggle="modal" data-target="#postModal">
+    </div>
+    <div class="col-12">
+      <img class="hover-shadow" src="../img/{{article.photos.url10}}" alt="" data-toggle="modal" data-target="#postModal">
     </div>
   </div>
 
-  <div style="margin:20px;"></div>
+    <!-- >>>>>>>>> MODAL <<<<<<<<< -->
+  <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
-  <div class="col-12 text-center">
-    <img style="height:300px;" src="../img/{{article.photos.url3}}" alt="">
+        <div class="modal-body">
+          <img id="modalFocus" class="img-fluid" src="">
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div style="margin:20px;"></div>
 </section>
 
 

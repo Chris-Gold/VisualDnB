@@ -13,27 +13,7 @@ $(document).ready(function(){
     var navHeight = $('#navigation').height();
     var headHeight = (screenHeight - navHeight);
     $("header").css({height: headHeight});
-  // VIMEO IFRAME + BUTTONS
 
-    var vimeo = new Vimeo.Player('topVid');
-    $('#vimPlay').on('click', function(){
-      vimeo.play();
-    })
-    $('#vimPause').on('click', function(){
-      vimeo.pause();
-    })
-    $('#vimMute').on('click', function(){
-      vimeo.setVolume(0);
-    })
-    $('#vimUnmute').on('click', function(){
-      vimeo.setVolume(1);
-    })
-    $('#pause').children().click(function(){
-      $('#pause button').toggle();
-    })
-    $('#mute').children().click(function(){
-      $('#mute button').toggle();
-    })
 
   // TRANSITION SIZE
     $(".img-transition").css({height: screenHeight*0.8})
@@ -68,7 +48,7 @@ $(document).ready(function(){
           posTrans1 = $('#trans1').position().top,
           posTrans2 = $('#trans2').position().top,
           posTrans3 = $('#trans3').position().top;
-          
+
       // TRANSITION 1
       if (posGen <= (posTrans1 + scrn)){
         $('#trans1').stop().animate({'background-size':+100+(posGen-(posTrans1-scrn))*0.0125+'%'}, 20);
@@ -332,7 +312,32 @@ $(document).ready(function(){
       })
     }
 
-  // SUBMIT
+  // ARTICLE MODAL
+    $(".hover-shadow").click(function(){
+      var location = $(this).attr('src');
+      console.log(location);
+      $("#modalFocus").attr("src", location);
+    })
 
-  });
+    // VIMEO IFRAME + BUTTONS
+      var vimeo = new Vimeo.Player('topVid');
+      $('#vimPlay').on('click', function(){
+        vimeo.play();
+      })
+      $('#vimPause').on('click', function(){
+        vimeo.pause();
+      })
+      $('#vimMute').on('click', function(){
+        vimeo.setVolume(0);
+      })
+      $('#vimUnmute').on('click', function(){
+        vimeo.setVolume(1);
+      })
+      $('#pause').children().click(function(){
+        $('#pause button').toggle();
+      })
+      $('#mute').children().click(function(){
+        $('#mute button').toggle();
+      })
+});
 // })(jQuery);
