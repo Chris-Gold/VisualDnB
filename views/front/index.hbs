@@ -87,15 +87,12 @@
         <div class="da-slide row">
           <div class="col-12 col-md-6">
             <h4>{{this.titre}}</h4>
-<<<<<<< HEAD
-            <p class="text-truncate">{{{this.description}}}</p>
-=======
-            <p class="">{{{this.description}}}</p>
->>>>>>> 2ec24c7b428765ae36878a1c3ca9d29206eefbeb
+            <p class="">{{{this.date}}}</p>
+            <p class="text-nowrap">{{{this.description}}}</p>
             <a href="article/{{this._id}}" class="da-link">Read more</a>
           </div>
           <div class="da-img col-12 col-md-6">
-            <img class="img-fluid" src="https://visualdnb.files.wordpress.com/2018/04/10ansbigroom-012-e1523480499310.jpg?w=1024&h=515&crop=1" alt="image01" />
+            <img class="img-fluid" src="../img/{{this.url}}" alt="image01" />
           </div>
         </div>
       {{/each}}
