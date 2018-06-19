@@ -331,7 +331,7 @@ footer{
     height: 100%;
   }
 }
-// >>>>>>>>>>>>>>>> CSS ARTICLES <<<<<<<<<<<<<
+// >>>>>>>>>>>>>>>> CSS ADMIN ARTICLES <<<<<<<<<<<<<
 #postHeader{
   padding-bottom: 3em;
   img{
@@ -373,5 +373,24 @@ footer{
   #modalFocus{
     height: auto;
     width: 100%;
+  }
+}
+
+// >>>>>>>>>>>>>>>> CSS ADMIN SHOWROOM <<<<<<<<<<<<<
+#adminLogo, #adminAudreact, #adminBumpers, #adminVJing{
+  padding-top: 1em;
+  padding-bottom: 2em;
+  height: 100%;
+
+  form{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+  }
+  iframe{
+    max-width: 50%;
+    height: auto;
   }
 }

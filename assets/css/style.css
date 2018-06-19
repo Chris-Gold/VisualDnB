@@ -268,4 +268,18 @@ footer {
     height: auto;
     width: 100%; }
 
+#adminLogo, #adminAudreact, #adminBumpers, #adminVJing {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  height: 100%; }
+  #adminLogo form, #adminAudreact form, #adminBumpers form, #adminVJing form {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    text-align: center; }
+  #adminLogo iframe, #adminAudreact iframe, #adminBumpers iframe, #adminVJing iframe {
+    max-width: 50%;
+    height: auto; }
+
 /*# sourceMappingURL=style.css.map */
