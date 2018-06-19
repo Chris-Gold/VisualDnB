@@ -273,8 +273,9 @@ header{
 }
 
 #contact{
+  padding-bottom: 3em;
   #contact div.row{
-    padding: 2em;
+    // padding: 2em;
   }
   #contactForm{
     background-color : $noir;
@@ -366,11 +367,11 @@ footer{
   }
 }
 
-#postModal, .modal-dialog, .modal-content, .modal-body{
-  height: 100%;
-  width: 100%;
+#postModal, .modal-content, .modal-dialog, .modal-body{
+  min-width: 80%;
+  height: auto;
   #modalFocus{
-    min-height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
   }
 }

@@ -6,6 +6,9 @@ const Visuel = require('../models/visuel');
 const Article = require('../models/article');
 const Prog = require('../models/prog');
 const Logo = require('../models/logo');
+const Audreact = require('../models/audreact');
+const Bumpers = require('../models/bumpers');
+const Vjing = require('../models/vjing');
 
 // GET l'url, si = '/' alors affiche le fichier index.html
 router.get('/', function(req, res){ 
@@ -25,10 +28,22 @@ router.get('/', function(req, res){
         if (err) throw err;
         progs = allprogs;
     })
+    Audreact.find(function(err, allaudreacts){
+        if(err)throw err;
+        audreacts = allaudreacts;
+    })
+    Bumpers.find(function(err, allbumpers){
+        if(err)throw err;
+        bumpers = allbumpers;
+    })
+    Vjing.find(function(err, allvjings){
+        if(err)throw err;
+        vjings = allvjings;
+    })
     Logo.find({}, function(err, alllogos){
         if (err) throw err;
         logos = alllogos;
-        res.render("front/index",{visuels:visuels, articles:articles, progs:progs, logos:logos, title:'Visual DNB'});
+        res.render("front/index",{visuels:visuels, articles:articles, progs:progs, logos:logos, audreacts:audreacts, bumpers:bumpers, vjings:vjings, title:'Visual DNB'});
     })
     
 });

@@ -10,6 +10,9 @@ const Prog = require('../models/prog');
 const Logo = require('../models/logo');
 const User = require('../models/user');
 const Media = require('../models/media');
+const Audreact = require('../models/audreact');
+const Bumpers = require('../models/bumpers');
+const Vjing = require('../models/vjing');
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -214,30 +217,83 @@ router.get('/delete-article/:id', function(req, res){
     })
 })
 
-router.get('/logo', function(req, res){
+router.get('/showroom', function(req, res){
     if(!req.session.user){
         return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
     }
-    Logo.find(function(err, results){
-        if(err){
-            throw err;
-        }
-        res.render("back/adminLogo", {logos: results, title:'Logos'});
+    Logo.find(function(err, alllogos){
+        if(err)throw err;
+        logos = alllogos;
+    })
+    Audreact.find(function(err, allaudreacts){
+        if(err)throw err;
+        audreacts = allaudreacts;
+    })
+    Bumpers.find(function(err, allbumpers){
+        if(err)throw err;
+        bumpers = allbumpers;
+    })
+    Vjing.find(function(err, allvjings){
+        if(err)throw err;
+        vjings = allvjings;
+        res.render("back/adminShowroom",{audreacts:audreacts, bumpers:bumpers, vjings:vjings, logos:logos, title:'Showroom'});
     })
 });
 
-router.post('/logo', function(req, res){
+router.post('/showroom-logo', function(req, res){
     let lo = new Logo();
     lo.url = req.body.url;
     lo.nom = req.body.nom;
     lo.save(function(err){
         if (err){
-            res.render('back/adminLogo.hbs', {title: "Administration", description: "Une erreur est survenue"});
+            res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
         }
-        res.render('back/adminLogo.hbs', {title: "Administration", description: "Logo bien enregistré"});
+        res.render('back/adminShowroom.hbs', {title: "Administration", description: "Logo bien enregistré"});
     })
     function redirect() {
-        window.location.assign("http://localhost:8000/admin/logo");
+        window.location.assign("http://localhost:8000/admin/showroom");
+    }
+});
+
+router.post('/showroom-audreact', function(req, res){
+    let aud = new Audreact();
+    aud.url = req.body.url;
+    aud.save(function(err){
+        if (err){
+            res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
+        }
+        res.render('back/adminShowroom.hbs', {title: "Administration", description: "Audio React bien enregistré"});
+    })
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin/showroom");
+    }
+});
+
+router.post('/showroom-bumpers', function(req, res){
+    let bump = new Bumpers();
+    bump.url = req.body.url;
+    bump.save(function(err){
+        if (err){
+            res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
+        }
+        res.render('back/adminShowroom.hbs', {title: "Administration", description: "Bumpers bien enregistré"});
+    })
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin/showroom");
+    }
+});
+
+router.post('/showroom-vjing', function(req, res){
+    let bump = new Vjing();
+    vj.url = req.body.url;
+    vj.save(function(err){
+        if (err){
+            res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
+        }
+        res.render('back/adminShowroom.hbs', {title: "Administration", description: "Vjing bien enregistré"});
+    })
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin/showroom");
     }
 });
 
@@ -247,6 +303,46 @@ router.get('/delete-logo/:id', function(req, res){
     }
     let logoId = req.params.id;
     Logo.findByIdAndRemove(logoId, function(err){
+        if(err){
+            throw err;
+        }
+        res.redirect(req.get('referer'));
+    })
+})
+
+router.get('/delete-audreact/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let audreactId = req.params.id;
+    Audreact.findByIdAndRemove(audreactId, function(err){
+        if(err){
+            throw err;
+        }
+        res.redirect(req.get('referer'));
+    })
+})
+
+
+router.get('/delete-bumpers/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let bumpersId = req.params.id;
+    Bumpers.findByIdAndRemove(bumpersId, function(err){
+        if(err){
+            throw err;
+        }
+        res.redirect(req.get('referer'));
+    })
+})
+
+router.get('/delete-vjing/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let vjingId = req.params.id;
+    Vjing.findByIdAndRemove(vjingId, function(err){
         if(err){
             throw err;
         }

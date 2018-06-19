@@ -114,7 +114,7 @@ $(document).ready(function(){
   });
   $('#bookedLogos img').removeAttr('style');
   }
-    
+
 
   // SHOWROOM
     // LOGOS
@@ -339,5 +339,8 @@ $(document).ready(function(){
       $('#mute').children().click(function(){
         $('#mute button').toggle();
       })
+
+      // VIMEO SHOWROOM
+                                   
 });
 // })(jQuery);
