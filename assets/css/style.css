@@ -172,11 +172,12 @@ header #vimButton {
 .slick-next:before {
   color: #05b72f; }
 
-#showroom button {
+#showroom .buttons {
+  padding: 1em; }
+#showroom .prev, #showroom .next {
   background-color: transparent;
   border: none;
-  font-size: 4em; }
-#showroom .prev, #showroom .next {
+  font-size: 4em;
   height: 100%;
   width: 100%;
   outline: none; }
@@ -278,8 +279,13 @@ footer {
     display: inline-block;
     align-items: center;
     text-align: center; }
+  #adminLogo .content, #adminAudreact .content, #adminBumpers .content, #adminVJing .content {
+    max-width: 50%; }
+    #adminLogo .content img, #adminAudreact .content img, #adminBumpers .content img, #adminVJing .content img {
+      max-height: 100px;
+      width: auto;
+      padding-bottom: 5px; }
   #adminLogo iframe, #adminAudreact iframe, #adminBumpers iframe, #adminVJing iframe {
-    max-width: 50%;
     height: auto; }
 
 /*# sourceMappingURL=style.css.map */

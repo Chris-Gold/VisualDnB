@@ -244,12 +244,13 @@ header{
 }
 
 #showroom{
-  button{
+  .buttons{
+    padding: 1em;
+  }
+  .prev, .next{
     background-color: rgba(0,0,0,0);
     border: none;
     font-size: 4em;
-  }
-  .prev, .next{
     height: 100%;
     width: 100%;
     outline: none;
@@ -381,7 +382,6 @@ footer{
   padding-top: 1em;
   padding-bottom: 2em;
   height: 100%;
-
   form{
     width: 100%;
     height: 100%;
@@ -389,8 +389,15 @@ footer{
     align-items: center;
     text-align: center;
   }
-  iframe{
+  .content{
     max-width: 50%;
+    img{
+      max-height: 100px;
+      width: auto;
+      padding-bottom: 5px;
+    }
+  }
+  iframe{
     height: auto;
   }
 }

@@ -116,7 +116,7 @@ $(document).ready(function(){
   }
 
 
-  // SHOWROOM
+// SHOWROOM
     // LOGOS
     $('#firstLogos').slick({
       infinite: true,
@@ -169,45 +169,53 @@ $(document).ready(function(){
       slidesToShow: 3,
       slidesToScroll: 3
     });
-    $('#firstAud img').each(function(i){
+    $('#firstAud a').each(function(i){
       var aud = $(this);
       aud.attr('num', i).attr('id', 'aud'+i);
-      aud.click(function(){
+      aud.click(function(e){
+        e.preventDefault();
         $('#firstAud .active').removeClass('active');
         aud.addClass('active');
-        $('#focusAud .display').hide().attr('src',this.src).fadeIn();
+        $('#focusAud .display').hide().attr('src', this.href).fadeIn();
         setTimeout(function(){
           $('.showAud').removeAttr('data-target');
         }, 1000);
       });
     });
-    $('#aud0').addClass('active');
-    $('#focusAud .display').hide().attr('src',$('#aud0').attr('src')).fadeIn();
-    $('#focusAud .next').click(function(){
+    // $('#aud0').addClass('active');
+    // $('#fnlFocusAud .display').hide().attr('src', $('#aud0').attr('href')).fadeIn();
+    $('#focusAud .next').click(function(e){
+      e.preventDefault();
       var audNext = $('#firstAud .active');
       var idNext = Number(audNext.attr('num'))+1;
-      var last = $('#firstAud').children().length;
+      var last = $('#firstAud a').length;
       if(idNext == last){
         $('#focusAud .next').attr('disabled');
       }else{
-          var srcn = $('#aud'+idNext).attr('src');
+          var srcNext = $('#aud'+idNext).attr('href');
           $('#firstAud .active').removeClass('active');
           $('#aud'+idNext).addClass('active');
-          $('#focusAud .display').hide().attr('src', srcn).fadeIn();
+          $('#focusAud .display').hide().attr('src', srcNext).fadeIn();
         }
     });
-    $('#focusAud .prev').click(function(){
-      var audNext = $('#firstAud .active');
-      var idNext = Number(audNext.attr('num'))-1;
-      if(idNext == "-1"){
+    $('#focusAud .prev').click(function(e){
+      e.preventDefault();
+      var audPrev = $('#firstAud .active');
+      var idPrev = Number(audPrev.attr('num'))-1;
+      if(idPrev == "-1"){
         $('#focusAud .prev').attr('disabled');
       }else{
-          var srcn = $('#aud'+idNext).attr('src');
+          var srcPrev = $('#aud'+idPrev).attr('href');
           $('#firstAud .active').removeClass('active');
-          $('#aud'+idNext).addClass('active');
-          $('#focusAud .display').hide().attr('src', srcn).fadeIn();
+          $('#aud'+idPrev).addClass('active');
+          $('#focusAud .display').hide().attr('src', srcPrev).fadeIn();
         }
     });
+    $('#reduceAud').click(function(e){
+      e.preventDefault();
+      $('#focusAud').addClass('collapsing').removeClass('collapse show');
+      $('#firstAud a').attr('data-target',"#focusAud");
+    })
     // BUMPER
     $('#firstBumper').slick({
       infinite: true,
@@ -341,6 +349,10 @@ $(document).ready(function(){
       })
 
       // VIMEO SHOWROOM
-                                   
+      // $('#firstAud a').click(function(e){
+      //   e.preventDefault();
+      //
+      //   $('#fnlFocusAud').attr("src", $(this).attr("href"));
+      // })
 });
 // })(jQuery);
