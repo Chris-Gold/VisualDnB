@@ -108,7 +108,8 @@ router.get('/prog', function(req, res){
 
 router.post('/prog', function(req, res){
     let pg = new Prog();
-    pg.url = req.body.url;
+    pg.image = req.body.image;
+    pg.video = req.body.video;
     pg.nom = req.body.nom;
     pg.save(function(err){
         if (err){
@@ -272,7 +273,8 @@ router.post('/showroom-audreact', function(req, res){
 
 router.post('/showroom-bumpers', function(req, res){
     let bump = new Bumpers();
-    bump.url = req.body.url;
+    bump.image = req.body.image;
+    bump.video = req.body.video;
     bump.save(function(err){
         if (err){
             res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
