@@ -257,7 +257,8 @@ router.post('/showroom-logo', function(req, res){
 
 router.post('/showroom-audreact', function(req, res){
     let aud = new Audreact();
-    aud.url = req.body.url;
+    aud.video = req.body.video;
+    aud.image = req.body.image;
     aud.save(function(err){
         if (err){
             res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
