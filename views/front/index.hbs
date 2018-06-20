@@ -1,7 +1,7 @@
 <header id="header" class="container-fluid text-center">
   <!-- VIDEO PRESENTATION -->
   {{#each visuels}}
-  <iframe id="topVid" src="http://player.vimeo.com/video/{{this.video}}?muted=1&loop=1&autoplay=1" frameborder="0">
+  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?muted=1&loop=1&autoplay=1" frameborder="0">
   </iframe>
   <div id="vimButton" class="row">
     <div id="pause" class="col-6 text-left">
@@ -13,9 +13,7 @@
       <button id="vimUnmute" type="button"><i class="fas fa-volume-up fa-lg"></i></button>
     </div>
   </div>
-
   {{/each}}
-
 </header>
 
 <nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
@@ -235,26 +233,24 @@
           </div>
         </div>
       </div>
+  </div>
 
   <div id="showAud">
       <!-- DERNIERS CLIPS -->
       <div class="row gldBox showFirst align-items-center box">
         <h3 class="col-12 text-center toGreen"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
           <div id="firstAud" class="container">
-            <img class="img-fluid showAud" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-            <img class="img-fluid showAud" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+            {{#each audreacts}}
+              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.url}}?muted=1" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                Video
+              </a>
+            {{/each}}
           </div>
       </div>
-      <div id="focusAud" class="row gldBox collapse box">
+      <div id="focusAud" class="row gldBox  box">
         <div class="col-8 gldBox container focus">
             <!-- FOCUS VIDEO -->
-            <img class="img-fluid display" src=""/>
+            <iframe id="fnlFocusAud" class="display" src="" style="width: 100%;"></iframe>
         </div>
         <div class="col-4 box">
           <div class="container box" style="height: 50%;">

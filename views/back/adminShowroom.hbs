@@ -14,7 +14,7 @@
         <a class="nav-link" href="/admin/article">Article</a>
       </li>
       <li class="nav-item btn-2">
-        <a class="nav-link active" href="/admin/logo">Showroom<span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="/admin/showroom">Showroom<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item btn-2">
         <a class="nav-link" href="/admin/media">Media</a>
@@ -34,7 +34,7 @@
           <p>{{description}}</p>
           <input type="text" name="url" placeholder="image url" value=""><br><br>
           <input type="text" name="nom" placeholder="nom" value=""><br><br>
-          <input type="submit" value="Envoyer">
+          <input type="submit" value="Envoyer" class="btn btn-success">
       </div>
     </form>
 
@@ -55,17 +55,24 @@
     <form id="postAudreact" action="/admin/showroom-audreact" method="POST" class="col-6">
       <div  style="margin-top: 80px;">
           <p>{{description}}</p>
-          <input type="text" name="url" placeholder="image url" value=""><br><br>
-          <input type="submit" value="Envoyer">
+          <input type="text" name="url" placeholder="video url" value=""><br><br>
+          <input type="submit" value="Envoyer" class="btn btn-success">
+          <p class="">*Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+          <p class="">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
       </div>
     </form>
 
-    <div id="contentAudreact" class="col-6 container">
-      {{#each audreact}}
-      <iframe src="http://player.vimeo.com/video/{{this.url}}?muted=1&loop=1&autoplay=1" frameborder="0">
-      </iframe>
-        <a href="/admin/delete-audreact/{{this._id}}">Supprimer</a>
-      {{/each}}
+    <div id="contentAudreact" class="col-6 container text-center">
+      <div class="row">
+        {{#each audreacts}}
+        <div class="content">
+          <img src="../img/{{this.img}}" class="img-fluid" /><br>
+          <iframe src="http://player.vimeo.com/video/{{this.video}}" frameborder="0">
+          </iframe><br>
+          <a href="/admin/delete-audreact/{{this._id}}">Supprimer</a>
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </section>
@@ -78,14 +85,16 @@
     <form id="postBumpers" action="/admin/showroom-bumpers" method="POST" class="col-6">
       <div  style="margin-top: 80px;">
           <p>{{description}}</p>
-          <input type="text" name="url" placeholder="image url" value=""><br><br>
-          <input type="submit" value="Envoyer">
+          <input type="text" name="url" placeholder="video url" value=""><br><br>
+          <input type="submit" value="Envoyer" class="btn btn-success">
+          <p class="">*Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+          <p class="">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
       </div>
     </form>
 
     <div id="contentBumpers" class="col-6 container">
       {{#each bumpers}}
-      <iframe src="http://player.vimeo.com/video/{{this.url}}?muted=1&loop=1&autoplay=1" frameborder="0">
+      <iframe src="http://player.vimeo.com/video/{{this.url}}" frameborder="0">
       </iframe>
         <a href="/admin/delete-bumpers/{{this._id}}">Supprimer</a>
       {{/each}}
@@ -101,14 +110,16 @@
     <form id="postVJing" action="/admin/showroom-vjing" method="POST" class="col-6">
       <div  style="margin-top: 80px;">
           <p>{{description}}</p>
-          <input type="text" name="url" placeholder="image url" value=""><br><br>
-          <input type="submit" value="Envoyer">
+          <input type="text" name="url" placeholder="video url" value=""><br><br>
+          <input type="submit" value="Envoyer" class="btn btn-success">
+          <p class="">*Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+          <p class="">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
       </div>
     </form>
 
     <div id="contentVJing" class="col-6 container">
-      {{#each vj}}
-      <iframe src="http://player.vimeo.com/video/{{this.url}}?muted=1&loop=1&autoplay=1" frameborder="0">
+      {{#each vjings}}
+      <iframe src="http://player.vimeo.com/video/{{this.url}}" frameborder="0">
       </iframe>
         <a href="/admin/delete-vjing/{{this._id}}">Supprimer</a>
       {{/each}}
