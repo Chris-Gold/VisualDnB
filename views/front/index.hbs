@@ -364,13 +364,67 @@
         <input type="button" class="inputButton btn btn-outline-success" value="Bumper" name="bumper">
         <input type="button" class="inputButton btn btn-outline-success" value="ClipVJ" name="clipVJ">
         <input type="button" class="inputButton btn btn-outline-success" value="ClipVideo" name="clipVideo">
-        <input type="button" class="inputButton btn btn-outline-success" value="Scenographie" name="scenographie">
+        <input id="sceno" type="button" class="inputButton btn btn-outline-success" value="Scenographie" name="scenographie" data-toggle="modal" data-target="#infos">
         <input type="button" class="inputButton btn btn-outline-success" value="Autre" name="autre">
         <input type="text" class="col-12" id="subject" name="subject" placeholder="Sujet" required>
         <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" style="border-radius:1em;
         " required></textarea>
         <input type="submit" id="submit" class="col-12" value="Envoyer">
       </form>
+      <!-- >>>>>>>>> MODAL INFO<<<<<<<<< -->
+      <section id="infos" class="modal fade text-center" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title w-100 toGreenMod" id="modalLabel"><span class="fr">Informations complementaires</span><span class="eng d-none">Further informations</span></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <p class="fr">Afin de repondre au mieux à vos attentes en ce qui concerne nos prestations de scénographie, nous avons besoin de renseignements complementaires pour pouvoir établir un devis précis : </p>
+              <p class="eng d-none">In order to best meet your expectations regarding our scenography services, we need additional information to establish an accurate quote : </p>
+
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <h5 class="toGreenMod"><span class="fr">Côté organisation</span><span class="eng d-none">On the organisation side</span></h5>
+                  <ul>
+                    <li><span class="fr">Nom de la soirée</span><span class="eng d-none">Name of the party</span></li>
+                    <li><span class="fr">Date et horaires de la soirée</span><span class="eng d-none">Party's date and time</span></li>
+                    <li><span class="fr">Lieu de la soirée</span><span class="eng d-none">Place of the party</span></li>
+                    <li><span class="fr">Nom de la salle</span><span class="eng d-none">Venue's name</span></li>
+                    <li><span class="fr">Capacité d'accueil de la salle</span><span class="eng d-none">Capacity of the room</span></li>
+                    <li><span class="fr">Prix d'entrée</span><span class="eng d-none">Entry price</span></li>
+                    <li><span class="fr">Nom des artistes</span><span class="eng d-none">Artists names</span></li>
+                  </ul>
+              </div>
+
+              <div class="col-sm-12 col-md-6">
+                <h5 class="toGreenMod"><span class="fr">Côté technique</span><span class="eng d-none">On the technical side</span></h5>
+                <ul>
+                  <li><span class="fr">Fiche technique de la salle</span><span class="eng d-none">Venue's technical sheet</span></li>
+                  <li><span class="fr">Nombre de praticables sur scene</span><span class="eng d-none">Number of practicables on stage</span></li>
+                  <li><span class="fr">Heure d'arrivée possible pour l'installation</span><span class="eng d-none">Possible arrival time for installation</span></li>
+                  <li><span class="fr">Durée d'installation possible</span><span class="eng d-none">Possible installation time</span></li>
+                  <li><span class="fr">Dossier de presse des artistes (logo, typographie...)</span><span class="eng d-none">Artist's press pack (logos, typography...)</span></li>
+                  <li><span class="fr">Affiche de la soirée au format .PSD (Photoshop)</span><span class="eng d-none">Party's poster in ".psd" format (Photoshop)</span></li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <p class="fr">Merci de revenir vers nous avec tous ces éléments en votre possession</p>
+                <p class="eng d-none">Thank you for coming back to us with all these elements in your possession</p>
+              </div>
+            </div>
+          </div>
+
+            <div class="modal-footer w-100 row text-center">
+              <img class="img-fluid col-12" src="../img/visualdnb.png"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <div id="calendrier" class="col-12 col-md-6 box d-flex text-center">
         <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;hl=fr&amp;bgcolor=%23ffffff&amp;src=chris.ratsimba87%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FParis" style="border-width:0" scrolling="no"></iframe>
