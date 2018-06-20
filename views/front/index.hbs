@@ -241,28 +241,35 @@
         <h3 class="col-12 text-center toGreen"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
           <div id="firstAud" class="container">
             {{#each audreacts}}
-              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.url}}?muted=1" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                Video
+              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid" src="../img/{{this.image}}"/>
               </a>
             {{/each}}
           </div>
       </div>
-      <div id="focusAud" class="row gldBox  box">
+      <div id="focusAud" class="row gldBox collapse box">
         <div class="col-8 gldBox container focus">
             <!-- FOCUS VIDEO -->
             <iframe id="fnlFocusAud" class="display" src="" style="width: 100%;"></iframe>
         </div>
         <div class="col-4 box">
           <div class="container box" style="height: 50%;">
+            <span class="text-center">
+              <button id="reduceAud" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+            </span>
             <p class="d-flex align-items-center toGreen">
               <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
             </p>
               <!-- texte descriptif -->
           </div>
-          <div class="row align-items-center box" style="height: 50%;">
-              <button type="button" class="col-6 prev text-left"><i class="fas fa-caret-square-left fa-lg"></i></button>
-              <button type="button" class="col-6 next text-right"><i class="fas fa-caret-square-right fa-lg"></i></button>
+          <div class="row align-items-center box buttons" style="height: 50%;">
+            <div class="col-6 buttons">
+              <button type="button" class="prev"><i class="fas fa-caret-square-left fa-lg"></i></button>
+            </div>
+            <div class="col-6 buttons">
+              <button type="button" class="next"><i class="fas fa-caret-square-right fa-lg"></i></button>
+            </div>
           </div>
         </div>
       </div>

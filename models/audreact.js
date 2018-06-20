@@ -2,7 +2,8 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 const audreactSchema = new Schema({
-    url: String
+    image: String,
+    video: String
 });
 
 const Audreact = mongoose.model("Audreact", audreactSchema);
