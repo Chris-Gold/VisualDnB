@@ -240,9 +240,9 @@
       <div class="row gldBox showFirst align-items-center box">
         <h3 class="col-12 text-center toGreen"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
           <div id="firstAud" class="container">
-            {{#each audreacts}}
-              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                <img class="img-fluid" src="../img/{{this.image}}"/>
+            {{#each videos}}
+              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.id}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid" src="{{this.pictures.thumbnail}}"/>
               </a>
             {{/each}}
           </div>
@@ -407,13 +407,13 @@
                   <li><span class="fr">Nombre de praticables sur scene</span><span class="eng d-none">Number of practicables on stage</span></li>
                   <li><span class="fr">Heure d'arrivée possible pour l'installation</span><span class="eng d-none">Possible arrival time for installation</span></li>
                   <li><span class="fr">Durée d'installation possible</span><span class="eng d-none">Possible installation time</span></li>
-                  <li><span class="fr">Dossier de presse des artistes (logo, typographie...)</span><span class="eng d-none">Artist's press pack (logos, typography...)</span></li>
-                  <li><span class="fr">Affiche de la soirée au format .PSD (Photoshop)</span><span class="eng d-none">Party's poster in ".psd" format (Photoshop)</span></li>
+                  <li><span class="fr">Dossier de presse des artistes (logo, typographie, photos...)</span><span class="eng d-none">Artist's press pack (logos, typography, photos...)</span></li>
+                  <li><span class="fr">Affiche de la soirée au format ".psd" (Photoshop)</span><span class="eng d-none">Party's poster in ".psd" format (Photoshop)</span></li>
                 </ul>
               </div>
               <div class="col-12">
-                <p class="fr">Merci de revenir vers nous avec tous ces éléments en votre possession</p>
-                <p class="eng d-none">Thank you for coming back to us with all these elements in your possession</p>
+                <p class="fr">Merci de revenir vers nous avec tous ces éléments en votre possession.</p>
+                <p class="eng d-none">Thank you for coming back to us with all these elements in your possession.</p>
               </div>
             </div>
           </div>
@@ -435,8 +435,17 @@
 
 <hr>
 
-<footer class="box text-center d-flex align-items-center">
-  <div class="w-100">
-    <p>FOOTER</p>
+<footer class="box text-center container-fluid d-flex h-100">
+  <div class="container" style="padding-top: 3em; padding-bottom: 3em;">
+    <div class="w-100 row ">
+      <div class="col-6 w-100 d-flex justify-content-around align-items-center">
+        <a target="_blank" href="https://www.facebook.com/DNBVisual/"><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/visualdnb/"><i class="fab fa-instagram fa-5x"></i></a>
+        <a target="_blank" href="https://vimeo.com/user85777322"><i class="fab fa-vimeo fa-5x"></i></a>
+      </div>
+      <div class="col-6 h-100 d-flex align-items-center">
+        <p class="toGreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
   </div>
 </footer>
