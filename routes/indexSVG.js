@@ -128,11 +128,11 @@ router.get('/membres/:nom', function(req, res){
     });
 });
 
-// router.get('/videos', (req, res) => {
-//   getVideos()
-//   .then((videos) => res.send(videos))
-//   .catch((error) => res.send(error));
-// });
+router.get('/videos', (req, res) => {
+  getVideos()
+  .then((videos) => res.send(videos))
+  .catch((error) => res.send(error));
+});
 
 // router.get('/videos', async (req, res) => {
 //   try {

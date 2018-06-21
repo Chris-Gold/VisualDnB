@@ -240,9 +240,9 @@
       <div class="row gldBox showFirst align-items-center box">
         <h3 class="col-12 text-center toGreen"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
           <div id="firstAud" class="container">
-            {{#each videos}}
-              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.id}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                <img class="img-fluid" src="{{this.pictures.thumbnail}}"/>
+            {{#each audreacts}}
+              <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                <img class="img-fluid" src="{{this.image}}"/>
               </a>
             {{/each}}
           </div>
