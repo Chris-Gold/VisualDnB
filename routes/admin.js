@@ -287,8 +287,9 @@ router.post('/showroom-bumpers', function(req, res){
 });
 
 router.post('/showroom-vjing', function(req, res){
-    let bump = new Vjing();
-    vj.url = req.body.url;
+    let vj = new Vjing();
+    vj.image = req.body.image;
+    vj.video = req.body.video;
     vj.save(function(err){
         if (err){
             res.render('back/adminShowroom.hbs', {title: "Administration", description: "Une erreur est survenue"});
