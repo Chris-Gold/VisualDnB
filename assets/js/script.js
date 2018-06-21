@@ -327,32 +327,26 @@ $(document).ready(function(){
       $("#modalFocus").attr("src", location);
     })
 
-    // VIMEO IFRAME + BUTTONS
-      var vimeo = new Vimeo.Player('topVid');
-      $('#vimPlay').on('click', function(){
-        vimeo.play();
-      })
-      $('#vimPause').on('click', function(){
-        vimeo.pause();
-      })
-      $('#vimMute').on('click', function(){
-        vimeo.setVolume(0);
-      })
-      $('#vimUnmute').on('click', function(){
-        vimeo.setVolume(1);
-      })
-      $('#pause').children().click(function(){
-        $('#pause button').toggle();
-      })
-      $('#mute').children().click(function(){
-        $('#mute button').toggle();
-      })
-
-      // VIMEO SHOWROOM
-      // $('#firstAud a').click(function(e){
-      //   e.preventDefault();
-      //
-      //   $('#fnlFocusAud').attr("src", $(this).attr("href"));
-      // })
+  // VIMEO IFRAME + BUTTONS
+    var vimeo = new Vimeo.Player('topVid');
+    $('#vimPlay').on('click', function(){
+      vimeo.play();
+    })
+    $('#vimPause').on('click', function(){
+      vimeo.pause();
+    })
+    $('#vimMute').on('click', function(){
+      vimeo.setVolume(0);
+    })
+    $('#vimUnmute').on('click', function(){
+      vimeo.setVolume(1);
+    })
+    $('#pause').children().click(function(){
+      $('#pause button').toggle();
+    })
+    $('#mute').children().click(function(){
+      $('#mute button').toggle();
+    })
+    
 });
 // })(jQuery);

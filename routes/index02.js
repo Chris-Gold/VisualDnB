@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router(); 
+const router = express.Router();
 const nodemailer = require('nodemailer');
 
 const Visuel = require('../models/visuel');
@@ -10,12 +10,18 @@ const Audreact = require('../models/audreact');
 const Bumpers = require('../models/bumpers');
 const Vjing = require('../models/vjing');
 
+const { getVideos, getAlbums, getAlbum } = require('../libs/vimeo');
+
 // GET l'url, si = '/' alors affiche le fichier index.html
-router.get('/', function(req, res){ 
+router.get('/', async (req, res) => {
+    const videos = await getVideos();
+
     let visuels = {};
     let articles = {};
     let progs = {};
     let logos = {};
+
+
     Visuel.find({}, function(err, allvisuels){
         if(err) throw err;
         visuels = allvisuels;
@@ -43,12 +49,22 @@ router.get('/', function(req, res){
     Logo.find({}, function(err, alllogos){
         if (err) throw err;
         logos = alllogos;
-        res.render("front/index",{visuels:visuels, articles:articles, progs:progs, logos:logos, audreacts:audreacts, bumpers:bumpers, vjings:vjings, title:'Visual DNB'});
+        res.render("front/index", {
+          videos,
+          visuels:visuels,
+          articles:articles,
+          progs:progs,
+          logos:logos,
+          audreacts:audreacts,
+          bumpers:bumpers,
+          vjings:vjings,
+          title:'Visual DNB'
+        });
     })
-    
+
 });
 
-// POST 
+// POST
 router.post('/', function(req, res){
     let nom = req.body.nom;
     let email = req.body.email;
@@ -104,13 +120,58 @@ router.get('/article/:id', function(req, res){
     };
 });
 
-router.get('/:nom', function(req, res){
+router.get('/membres/:nom', function(req, res){
     let nom = req.params.nom;
     res.status(200).render('front/membre.hbs', {
         title: nom,
         nom: nom
     });
 });
+
+// router.get('/videos', (req, res) => {
+//   getVideos()
+//   .then((videos) => res.send(videos))
+//   .catch((error) => res.send(error));
+// });
+
+// router.get('/videos', async (req, res) => {
+//   try {
+//     const data = await getVideos();
+//
+//     res.json(data);
+//
+//     return
+//   } catch ({ message: json }) {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(json);
+//   }
+// });
+//
+// router.get('/albums', async (req, res) => {
+//   try {
+//     const data = await getAlbums();
+//
+//     res.json(data);
+//   } catch (error) {
+//     console.log('error', error);
+//
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(error);
+//   }
+// });
+//
+// router.get('/albums/:id', async ({ params: { id: albumId } }, res) => {
+//   try {
+//     const data = await getAlbum({ id });
+//
+//     res.json(data);
+//   } catch (error) {
+//     console.log('error', error);
+//
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(error);
+//   }
+// });
 
 
 module.exports = router;
