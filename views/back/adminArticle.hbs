@@ -20,6 +20,9 @@
         <a class="nav-link" href="/admin/media">Media</a>
       </li>
       <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
         <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
       </li>
     </ul>
@@ -29,7 +32,7 @@
 <section>
     <form action="/admin/article" method="POST">
         <div class="row text-center">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <input type="text" name="url" placeholder="image url" value=""><br><br>
                 <input type="text" name="titre" placeholder="titre" value=""><br><br>
                 <input type="text" name="date" placeholder="date" value=""><br><br>
@@ -49,7 +52,7 @@
                 <p>{{description}}</p>
             </div>
             {{!-- Tous les articles --}}
-            <div class="row col-6">
+            <div class="row col-12 col-md-6">
                 {{#each articles}}
                 <div class="col-6">
                   <h4>{{this.titre}}</h4>

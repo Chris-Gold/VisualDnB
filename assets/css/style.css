@@ -244,6 +244,9 @@ footer {
   footer i {
     color: #E5E5E4; }
 
+#membre {
+  background: url("../img/"); }
+
 #postHeader {
   padding-bottom: 3em; }
   #postHeader img {
