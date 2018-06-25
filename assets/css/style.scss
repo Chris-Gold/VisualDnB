@@ -348,18 +348,46 @@ footer{
   }
 }
 
-// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
-#membre{
-  background: url('../img/')
+// >>>>>>>>>>>>>>> ARTICLES <<<<<<<<<<<<<<
+.bg{
+  background: url('../img/Page_Perso_Assets_BG_V1.png')center repeat fixed;
 }
+
+#postHeader{
+  padding-bottom: 0;
+  .container{
+    max-width: 90%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+
+#postPics{
+  max-width: 80%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: rgba(7, 12, 12, 0.6);
+}
+
+// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
+// #membre{
+//   background: url('../img/')
+// }
 
 
 
 // >>>>>>>>>>>>>>>> ADMIN ARTICLES <<<<<<<<<<<<<
+#post{
+  .back{
+    color: $vert;
+  }
+}
+
 #postHeader{
   padding-bottom: 3em;
   img{
-    max-height:500px;
+    max-height: 800px;
+    min-height: 500px;
   }
 }
 
@@ -368,6 +396,10 @@ footer{
     font-size: 3em;
     padding-bottom: 0.5em;
   }
+}
+
+#postTitle, #postContent{
+  background-color: rgba(7, 12, 12, 0.8);
 }
 
 #postContent{
