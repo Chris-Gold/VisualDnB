@@ -28,3 +28,59 @@
     </ul>
   </div>
 </nav>
+
+<section class="row">
+  <div class="col-12 col-md-6 text-center">
+    <form action="/admin/edit-membre/{{membre._id}}" method="POST">
+      <input type="text" name="urlPicture" placeholder="Picture" value="{{membre.urlPicture}}"><br><br>
+      <input type="text" name="urlNom" placeholder="Nom image" value="{{membre.urlNom}}"><br><br>
+      <input type="text" name="nom" placeholder="Nom texte" value="{{membre.nom}}"><br><br>
+      <input type="text" name="urlSerial" placeholder="Visual Serial" value="{{membre.urlSerial}}"><br><br>
+      <input type="text" name="skills" placeholder="Technical skills*" value="{{membre.skills}}"><br><br>
+      <input type="email" name="contact" placeholder="Contact" value="{{membre.contact}}"><br><br>
+      <input type="text" name="site" placeholder="Web Site" value="{{membre.site}}"><br><br>
+      <textarea name="description" placeholder="Description">{{membre.description}}</textarea><br>
+      <!-- PHOTOS -->
+      {{#each membre.photos}}
+      <input type="text" name="urlPhotos" placeholder="Photos" value="{{this.urlPhoto}}"><br><br>
+      {{/each}}
+      <!-- SOUNDCLOUD -->
+      <input type="text" name="urlSound" placeholder="Soundcloud" value="{{membre.urlSound}}"><br><br>
+      <!-- VIDEOS -->
+      {{#each membre.videos}}
+      <input type="text" name="urlVideos" placeholder="videos" value="{{this.urlVideo}}"><br><br>
+      {{/each}}
+      <input type="submit" class="btn btn-success" value="Envoyer">
+    </form>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="text-center">
+      <b>Picture : </b> <img src="../../img/{{membre.urlPicture}}" alt="" style="height: 200px;"><br><br>
+      <b>Nom : </b> <b>{{membre.nom}}</b><br>
+        <img class="img-fluid" src="../../img/{{membre.urlNom}}">
+      <br>
+      <b>Skills : </b> <b>{{membre.skill}}</b><br><br>
+      <b>Contact : </b> <b>{{membre.contact}}</b><br><br>
+      <b>Site : </b> <b>{{membre.site}}</b><br><br>
+    </div>
+    <b>Description : </b> <b>{{{membre.description}}}</b><br><br>
+    <div class="text-center">
+      <div>
+        {{#each membre.photos}}
+        <b>URL photo : </b> <img src="../../img/{{this.urlPhoto}}" alt="" style="height: 200px;"><br><br>
+        {{/each}}
+      </div>
+
+      <div>
+        {{#each membre.videos}}
+        <b>URL video : </b> <img src="../../img/{{this.urlVideo}}" alt="" style="height: 200px;"><br><br>
+        {{/each}}
+      </div>
+
+      <div>
+        <b>Soundcloud : </b>{{membre.urlSound}}
+      </div>
+
+    </div>
+  </div>
+</section>
