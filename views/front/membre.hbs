@@ -1,5 +1,113 @@
-    <header>
-      <!-- VIDEO PRESENTATION -->
-    </header>
-    
-        <b>Membre = {{nom}}</b>
+<section class="contaier-fluid">
+  <div class="container">
+    <div id="membre">
+      <div class="row">
+        <div id="membreId" class="col-12 col-md-6">
+          <div class="row">
+            <div id="membrePic" class="col-6 col-md-3">
+              <img class="img-fluid" src=""/>
+            </div>
+
+            <div id="membreDetails" class="col-6 col-md-3">
+              <div id="membreNom">
+                <img class="img-fluid" src=""/>
+              </div>
+
+              <div id="membreSerial">
+                <img class="img-fluid" src=""/>
+              </div>
+
+              <div id="membreSkills">
+                <p></p>
+              </div>
+
+              <div id="membreContact">
+                <a href="mailto:...">Adresse mail</a>
+              </div>
+
+              <div id="membreSite">
+                <a target="_blank" href="#">Site Web</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="memebreDesc" class="col-12 col-md-6">
+          <div class="container">
+            <hr>
+            <p id="description">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="content">
+      <div class="row">
+        <div id="pictures" class="col-12 col-md-8">
+          <div id="picContent" class="d-flex flew-wrap justify-content-around">
+            {{#each membre.pictures}}
+            <div >
+              <img class="img-fluid" src="../img/{{this.membre.pictures.pic}}" title="{{this.membre.pictures.pic.name}}" alt="" data-toggle="modal" data-target="#picModal">
+            </div>
+            {{/each}}
+          </div>
+          <!-- >>>>>>>>>>>>> MODAL PICTURE <<<<<<<<<<<<<<<<< -->
+          <div id="picModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-body">
+                  <img id="picFocus" src="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sounds" class="col-sm-12 order-sm-2 col-md-4 order-md-1">
+          <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/233661698&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+
+        <hr>
+
+        <div id="videos" class="col-12 order-sm-1 order-md-2">
+          <div id="vidContent" class="d-flex flew-wrap justify-content-around">
+            {{#each membre.videos}}
+            <div >
+              <a class="showAud" target="#fnlFocusAud"
+                href="{{this.membre.videos.video.url}}" frameborder="0"
+                data-toggle="collapse" data-target="#vidModal"
+                aria-controls="vidModal" aria-expanded="false">
+                <img class="img-fluid" src="../img/{{this.membre.videos.video.thumbnail}}"
+                      title="{{this.membre.videos.video.name}}" alt=""
+                      data-toggle="modal" data-target="#vidModal"/>
+              </a>
+            </div>
+            {{/each}}
+          </div>
+          <!-- >>>>>>>>>>>>> MODAL PICTURE <<<<<<<<<<<<<<<<< -->
+          <div id="vidModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-body">
+                  <iframe id="vidFocus" src=""/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

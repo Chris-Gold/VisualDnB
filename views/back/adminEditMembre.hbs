@@ -11,13 +11,13 @@
         <a class="nav-link" href="/admin/prog">Programmé avec</a>
       </li>
       <li class="nav-item btn-2">
-        <a class="nav-link" href="/admin/article">Article</a>
+        <a class="nav-link active" href="/admin/article">Article<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item btn-2">
         <a class="nav-link" href="/admin/showroom">Showroom</a>
       </li>
       <li class="nav-item btn-2">
-        <a class="nav-link active" href="/admin/media">Media</a>
+        <a class="nav-link" href="/admin/media">Media</a>
       </li>
       <li class="nav-item btn-2">
         <a class="nav-link" href="/admin/membres">Membres</a>
@@ -28,22 +28,3 @@
     </ul>
   </div>
 </nav>
-
-<section class="col-12 text-center">
-  <form action="/admin/media" method="POST" enctype="multipart/form-data">
-    <input type="file" name="filename" required><br><br>
-    <input type="submit" class="btn btn-success" value="Upload">
-  </form>
-</section>
-
-<section id="" class="container text-center">
-  <div id="" class="row">
-    {{#each medias}}
-    <div class="content col-sm-6 col-md-4 col-lg-2">
-      <img class="img-fluid bubble2" src="../img/{{this.filename}}" title="{{this.filename}}"/><br>
-      <p class="text-truncate">{{this.filename}}</p>
-      <a href="/admin/delete-media/{{this.filename}}/{{this._id}}">Supprimer</a>
-    </div>
-    {{/each}}
-  </div>
-</section>

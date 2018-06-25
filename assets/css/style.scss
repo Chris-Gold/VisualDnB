@@ -252,10 +252,6 @@ header{
   }
 }
 
-#team{
-  .row{}
-}
-
 #showroom{
   .buttons{
     padding: 1em;
@@ -351,6 +347,13 @@ footer{
     color: $blanc;
   }
 }
+
+// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
+#membre{
+  background: url('../img/')
+}
+
+
 
 // >>>>>>>>>>>>>>>> ADMIN ARTICLES <<<<<<<<<<<<<
 #postHeader{
