@@ -13,6 +13,7 @@ const Media = require('../models/media');
 const Audreact = require('../models/audreact');
 const Bumpers = require('../models/bumpers');
 const Vjing = require('../models/vjing');
+const Membre = require('../models/membre');
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -193,7 +194,7 @@ router.get('/edit-article/:id', function(req, res){
         if(err){
             throw err;
         }
-        res.render("back/adminEditArticle", {article: result});
+        res.render("back/adminEditArticle", {article: result, title:"Edit-Article"});
     })
 });
 
@@ -396,6 +397,116 @@ router.get('/delete-media/:filename/:id', function(req, res){
             if (err) throw err;
             res.redirect(req.get('referer'));
         })
+    })
+})
+
+router.get('/membres', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    Membre.find(function(err, results){
+        if(err){
+            throw err;
+        }
+        res.render("back/adminMembres.hbs", {membres: results, title:'Membres'});
+    })
+});
+
+router.post('/membres', function(req, res){
+    let mem = new Membre();
+    mem.urlPicture = req.body.urlPicture;
+    mem.urlNom = req.body.urlNom;
+    mem.nom = req.body.nom;
+    mem.urlSerial = req.body.urlSerial;
+    mem.skills = req.body.skills;
+    mem.contact = req.body.contact;
+    mem.site = req.body.site;
+    mem.description = req.body.description;
+    mem.urlSound = req.body.urlSound;
+    mem.urlPhoto.url1 = req.body.purl1;
+    mem.urlPhoto.url2 = req.body.purl2;
+    mem.urlPhoto.url3 = req.body.purl3;
+    mem.urlPhoto.url4 = req.body.purl4;
+    mem.urlPhoto.url5 = req.body.purl5;
+    mem.urlPhoto.url6 = req.body.purl6;
+    mem.urlPhoto.url6 = req.body.purl6;
+    mem.urlPhoto.url7 = req.body.purl7;
+    mem.urlPhoto.url8 = req.body.purl8;
+    mem.urlPhoto.url9 = req.body.purl9;
+    mem.urlPhoto.url10 = req.body.purl10;
+    mem.urlVideo.url1 = req.body.vurl1;
+    mem.urlVideo.url2 = req.body.vurl2;
+    mem.urlVideo.url3 = req.body.vurl3;
+    mem.save(function(err){
+        if (err){
+            res.render('back/adminMembres.hbs', {title: "Membres", description: "Une erreur s'est produite"});
+        }
+        res.render('back/adminMembres.hbs', {title: "Membres", description: "new Membre crée"});
+    })
+    function redirect() {
+        window.location.assign("http://localhost:8000/admin/membres");
+    }
+});
+
+router.get('/edit-membre/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let membreId = req.params.id;
+    Article.findById(membreId, function(err, result){
+        if(err){
+            throw err;
+        }
+        res.render("back/adminEditMembre", {membre: result, title:"Edit-Membre"});
+    })
+});
+
+router.post('/edit-membre/:id', function(req, res){
+    let membreId = req.params.id;
+    Article.update({_id: membreId},
+        {
+        urlPicture: req.body.urlPicture,
+        urlNom: req.body.nom,
+        nom: req.body.nom,
+        urlSerial: req.body.urlSerial,
+        skills: req.body.skills,
+        contact: req.body.contact,
+        site: req.body.site,
+        description: req.body.description,
+        urlSound: req.body.urlSound,
+        ulrPhoto: {
+            url1: req.body.purl1,
+            url2: req.body.purl2,
+            url3: req.body.purl3,
+            url4: req.body.purl4,
+            url5: req.body.purl5,
+            url5: req.body.purl6,
+            url5: req.body.purl7,
+            url5: req.body.purl8,
+            url5: req.body.purl9,
+            url5: req.body.purl10
+            },
+        urlVideo: {
+            url1: req.body.vurl1,
+            url2: req.body.vurl2,
+            url3: req.body.vurl3
+        }
+        }, function(err, numRowsAffected, rawResponse){
+        if (err) throw err;
+        res.redirect(req.get('referer'));
+    })
+});
+
+router.get('/delete-membre/:id', function(req, res){
+    if(!req.session.user){
+        return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
+    }
+    let membreId = req.params.id;
+    Membre.findByIdAndRemove(membreId, function(err){
+        if(err){
+            throw err;
+        }
+        res.redirect(req.get('referer'));
     })
 })
 
