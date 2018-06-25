@@ -9,11 +9,10 @@ const Logo = require('../models/logo');
 const Audreact = require('../models/audreact');
 const Bumpers = require('../models/bumpers');
 const Vjing = require('../models/vjing');
-
+const Membre = require('../models/membre');
 
 // GET l'url, si = '/' alors affiche le fichier index.html
 router.get('/', function (req, res){
-
     let visuels = {};
     let articles = {};
     let progs = {};
@@ -23,26 +22,37 @@ router.get('/', function (req, res){
         if(err) throw err;
         visuels = allvisuels;
     })
+
     Article.find({}, function(err, allarticles){
         if (err) throw err;
         articles = allarticles;
     }).sort({_id:-1})
+
     Prog.find({}, function(err, allprogs){
         if (err) throw err;
         progs = allprogs;
     })
+
     Audreact.find(function(err, allaudreacts){
         if(err)throw err;
         audreacts = allaudreacts;
     })
+
     Bumpers.find(function(err, allbumpers){
         if(err)throw err;
         bumpers = allbumpers;
     })
+
     Vjing.find(function(err, allvjings){
         if(err)throw err;
         vjings = allvjings;
     })
+
+    Membre.find(function(err, allmembres){
+        if(err)throw err;
+        membres = allmembres;
+    })
+
     Logo.find({}, function(err, alllogos){
         if (err) throw err;
         logos = alllogos;
@@ -54,13 +64,12 @@ router.get('/', function (req, res){
           audreacts:audreacts,
           bumpers:bumpers,
           vjings:vjings,
+          membres:membres,
           title:'Visual DNB'
         });
     })
-
 });
 
-// POST
 router.post('/', function(req, res){
     let nom = req.body.nom;
     let email = req.body.email;
@@ -72,6 +81,8 @@ router.post('/', function(req, res){
     let scenographie = req.body.scenographie;
     let autre = req.body.autre;
     let message = req.body.message;
+
+
 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -86,12 +97,14 @@ router.post('/', function(req, res){
             rejectUnauthorized: false
         }
     })
+
     let HelperOptions = {
         from: nom,
         to: 'yellowaformac@gmail.com',
         subject: req.body.subject,
         text: "nom : " + nom + " / " + "Email : " + email + " / " + " Message : " + message
     }
+
     transporter.sendMail(HelperOptions, (error, info) => {
         if (error){
             console.log(error);
@@ -123,6 +136,5 @@ router.get('/membres/:nom', function(req, res){
         nom: nom
     });
 });
-
 
 module.exports = router;

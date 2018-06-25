@@ -104,11 +104,16 @@
     </form>
 
     <div id="contentBumpers" class="col-6 container">
-      {{#each bumpers}}
-      <iframe src="http://player.vimeo.com/video/{{this.url}}" frameborder="0">
-      </iframe>
-        <a href="/admin/delete-bumpers/{{this._id}}">Supprimer</a>
-      {{/each}}
+      <div class="row">
+        {{#each bumpers}}
+        <div class="content text-center">
+          <img src="../img/{{this.image}}" class="img-fluid" /><br>
+          <iframe src="http://player.vimeo.com/video/{{this.video}}" frameborder="0">
+          </iframe><br>
+          <a href="/admin/delete-bumpers/{{this._id}}">Supprimer</a>
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </section>
@@ -131,11 +136,16 @@
     </form>
 
     <div id="contentVJing" class="col-6 container">
-      {{#each vjings}}
-      <iframe src="http://player.vimeo.com/video/{{this.url}}" frameborder="0">
-      </iframe>
-        <a href="/admin/delete-vjing/{{this._id}}">Supprimer</a>
-      {{/each}}
+      <div class="row">
+        {{#each vjings}}
+        <div class="content text-center">
+          <img src="../img/{{this.image}}" class="img-fluid" /><br>
+          <iframe src="http://player.vimeo.com/video/{{this.video}}" frameborder="0">
+          </iframe><br>
+          <a href="/admin/delete-vjing/{{this._id}}">Supprimer</a>
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </section>

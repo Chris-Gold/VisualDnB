@@ -164,41 +164,15 @@
 {{/each}}
 
 <section id="team" class="container-fluid text-center box">
-  <h3 class="toGreen"><span class="fr">Membres de l'équipe</span><span class="eng d-none">Team members</span></h3>
+  <h3 class="toGreen"><span class="fr">Membres de l'équipe</span><span class="eng d-none">Team members</span></h3><br>
   <div class="container">
     <div class="row">
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <img class="img-fluid bubble" src="img/visualdnb.png"/>
-        <p>Visual DnB</p>
-      </div>
+        {{#each membres}}
+        <div class="col-3">
+          <h4><a href="/membres/{{this._id}}">{{this.nom}}</a></h4>
+          <p>{{this.urlSerial}}</p><br>
+        </div>
+        {{/each}}
     </div>
   </div>
 </section>
