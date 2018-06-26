@@ -453,7 +453,7 @@ router.get('/edit-membre/:id', function(req, res){
         return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
     }
     let membreId = req.params.id;
-    Article.findById(membreId, function(err, result){
+    Membre.findById(membreId, function(err, result){
         if(err){
             throw err;
         }
@@ -463,10 +463,10 @@ router.get('/edit-membre/:id', function(req, res){
 
 router.post('/edit-membre/:id', function(req, res){
     let membreId = req.params.id;
-    Article.update({_id: membreId},
+    Membre.update({_id: membreId},
         {
         urlPicture: req.body.urlPicture,
-        urlNom: req.body.nom,
+        urlNom: req.body.urlNom,
         nom: req.body.nom,
         urlSerial: req.body.urlSerial,
         skills: req.body.skills,
@@ -480,11 +480,11 @@ router.post('/edit-membre/:id', function(req, res){
             url3: req.body.purl3,
             url4: req.body.purl4,
             url5: req.body.purl5,
-            url5: req.body.purl6,
-            url5: req.body.purl7,
-            url5: req.body.purl8,
-            url5: req.body.purl9,
-            url5: req.body.purl10
+            url6: req.body.purl6,
+            url7: req.body.purl7,
+            url8: req.body.purl8,
+            url9: req.body.purl9,
+            url10: req.body.purl10
             },
         urlVideo: {
             url1: req.body.vurl1,
