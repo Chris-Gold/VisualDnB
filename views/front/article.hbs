@@ -1,28 +1,32 @@
 <section id="post" class="text-center">
-  <p> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
+  <p>
+    <a class="back" href="/#presta">Retour vers la page principale</a>
+  </p>
 
   <header id="postHeader" class="container-fluid ">
-    <div class="container bg">
-      <img class="img-fluid" src="../img/{{article.url}}" alt=""/>
+    <div class="container bg" style="border-radius: 10px;">
+      <img class="img-fluid" src="../img/{{article.url}}" alt="" />
     </div>
   </header>
 
-  <div class="container-fluid bg">
-    <section id="postTitle" class="text-center container">
-      <h2 class="toBig">{{article.titre}}</h2>
-      <p>{{article.date}}</p>
-    </section>
+  <section id="postText" class="container-fluid">
+    <div id="postSubText" class="container">
+      <div id="postTitle" class="text-center filter">
+        <h2 class="toBig">{{article.titre}}</h2>
+        <p>{{article.date}}</p>
+      </div>
 
-    <section id="postContent" class="container">
-        <div class="filter">
-          {{{article.description}}}
-        </div>
-    </section>
-  </div>
+      <div id="postContent" class="container filter">
+          <div class="">
+            {{{article.description}}}
+          </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="bg text-center container-fluid">
-    <div id="postPics" class="container">
-      <div class="row">
+  <section id="postPics" class="text-center container-fluid">
+    <div class="bg">
+      <div class="row filter">
         <div class="col-12">
           <img class="hover-shadow img-fluid" src="../img/{{article.photos.url1}}" alt="" data-toggle="modal" data-target="#postModal">
         </div>
@@ -53,8 +57,10 @@
         <div class="col-12">
           <img class="hover-shadow img-fluid" src="../img/{{article.photos.url10}}" alt="" data-toggle="modal" data-target="#postModal">
         </div>
+        <p>
+          <a class="back" href="/#presta">Retour vers la page principale</a>
+        </p>
       </div>
-      <p> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
     </div>
   </section>
 </section>

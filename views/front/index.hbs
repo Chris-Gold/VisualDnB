@@ -77,11 +77,11 @@
 
 <section id="booked" class="text-center box">
   <h3 class="toBig"><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
-  <div id="bookedLogos" class="container">
+    <div id="bookedLogos" class="container">
     {{#each progs}}
       <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
     {{/each}}
-  </div>
+    </div>
 </section>
 
 {{#each visuels}}
@@ -96,10 +96,15 @@
       {{#each articles}}
         <div class="da-slide row">
           <div class="col-12 col-md-6">
-            <h4>{{this.titre}}</h4>
+            <h4 class="toBig">{{this.titre}}</h4>
             <p>{{{this.date}}}</p>
-            <p>{{{this.description}}}</p>
-            <a href="article/{{this._id}}" class="da-link"><span class="fr">Plus d'infos...</span><span class="eng d-none">Read more...</span></a>
+            {{{this.description}}}
+            <button type="button" class="btn btn-success da-link" onclick="window.location.href='/article/{{this._id}}'">
+              <!-- <a href="article/" class="da-link"> -->
+                <span class="fr">Plus d'infos...</span>
+                <span class="eng d-none">Read more...</span>
+              <!-- </a> -->
+            </button>
           </div>
           <div class="da-img col-12 col-md-6">
             <img class="img-fluid" src="../img/{{this.url}}" alt="image01" />
@@ -175,7 +180,11 @@
     <div class="row">
         {{#each membres}}
         <div class="col-3">
-          <h4><a href="/membres/{{this._id}}"><img class="urlNom" src="../img/{{this.urlPicture}}" alt=""></a></h4>
+          <h4>
+            <a href="/membres/{{this._id}}">
+              <img class="urlNom" src="../img/{{this.urlPicture}}" alt="">
+            </a>
+          </h4>
           <img class="urlSerial" src="../img/{{this.urlSerial}}" alt=""><br>
         </div>
         {{/each}}
@@ -186,13 +195,13 @@
 <section id="showroom" class="container-fluid text-center box">
   <div class="bgFirst">
     <div class="bgOver">
-      <div id="showLogo" class="filter">
+      <div id="showLogo" class="filter1">
           <!-- DERNIERS LOGOS -->
           <div class="row gldBox showFirst align-items-center box">
             <h3 class="col-12 text-center toBig"><span class="fr">Nos Logos</span><span class="eng d-none">Our Logos</span></h3>
               <div id="firstLogos" class="container">
                 {{#each logos}}
-                  <img class="img-fluid showLogo" src="../img/{{this.url}}" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false"/>
+                  <img class="img-fluid showLogo hover-shadow" src="../img/{{this.url}}" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false"/>
                 {{/each}}
               </div>
           </div>
@@ -204,27 +213,34 @@
             </div>
             <div class="col-4 box">
               <div class="container box d-flex align-items-center" style="height: 50%;">
+                <span class="text-center">
+                  <button id="reduceLogo" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+                </span>
                 <p class="d-flex align-items-center toBig">
                   <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
                   <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
                 </p>  <!-- texte descriptif -->
               </div>
-              <div class="row align-items-center box" style="height: 50%;">
-                  <button type="button" class="col-6 prev text-left"><i class="fas fa-caret-square-left fa-lg"></i></button>
-                  <button type="button" class="col-6 next text-right"><i class="fas fa-caret-square-right fa-lg"></i></button>
+              <div class="row align-items-center box buttons" style="height: 50%;">
+                <div class="col-6 buttons">
+                  <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+                </div>
+                <div class="col-6 buttons">
+                  <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+                </div>
               </div>
             </div>
           </div>
       </div>
 
-      <div id="showAud" class="filter">
+      <div id="showAud" class="filter2">
           <!-- DERNIERS CLIPS -->
           <div class="row gldBox showFirst align-items-center box">
             <h3 class="col-12 text-center toBig"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
               <div id="firstAud" class="container">
                 {{#each audreacts}}
                   <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
-                    <img class="img-fluid" src="../img/{{this.image}}"/>
+                    <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
                   </a>
                 {{/each}}
               </div>
@@ -247,85 +263,93 @@
               </div>
               <div class="row align-items-center box buttons" style="height: 50%;">
                 <div class="col-6 buttons">
-                  <button type="button" class="prev"><i class="fas fa-caret-square-left fa-lg"></i></button>
+                  <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
                 </div>
                 <div class="col-6 buttons">
-                  <button type="button" class="next"><i class="fas fa-caret-square-right fa-lg"></i></button>
+                  <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
                 </div>
               </div>
             </div>
           </div>
       </div>
 
-      <div id="showBumper" class="filter">
+      <div id="showBumper" class="filter3">
           <!-- DERNIERS CLIPS -->
         <div class="row gldBox showFirst align-items-center box">
           <h3 class="col-12 text-center toBig"><span class="fr">Nos Bumpers</span><span class="eng d-none">Our Bumpers</span></h3>
             <div id="firstBumper" class="container">
-              <img class="img-fluid showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
-              <img class="img-fluid showBumper" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+              {{#each bumpers}}
+                <a class="showBumper" target="#fnlFocusBumper" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+                  <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
+                </a>
+              {{/each}}
             </div>
         </div>
         <!-- click sur image => FOCUS -->
         <div id="focusBumper" class="row gldBox collapse box">
           <div class="col-8 gldBox container focus">
               <!-- FOCUS VIDEO -->
-              <img class="img-fluid display" src=""/>
+              <iframe id="fnlFocusBumper" class="display" src="" style="width: 100%;"></iframe>
           </div>
           <div class="col-4 box">
             <div class="container box" style="height: 50%;">
+              <span class="text-center">
+                <button id="reduceBumper" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+              </span>
               <p class="d-flex align-items-center toBig">
                 <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
                 <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
               </p>
                 <!-- texte descriptif -->
             </div>
-            <div class="row align-items-center box" style="height: 50%;">
-                <button type="button" class="col-6 prev text-left"><i class="fas fa-caret-square-left fa-lg"></i></button>
-                <button type="button" class="col-6 next text-right"><i class="fas fa-caret-square-right fa-lg"></i></button>
+            <div class="row align-items-center box buttons" style="height: 50%;">
+              <div class="col-6 buttons">
+                <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+              </div>
+              <div class="col-6 buttons">
+                <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="showVJ" class="filter">
+      <div id="showVJ" class="filter4">
         <!-- DERNIERS CLIPS -->
         <div class="row gldBox showFirst align-items-center box">
           <h3 class="col-12 text-center toBig"><span class="fr">Nos clip VJing</span><span class="eng d-none">Our VJing clips</span></h3>
             <div id="firstVJ" class="container">
-              <img class="img-fluid showVJ" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showVJ" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showVJ" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showVJ" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showAud" src="https://www.chassimages.com/mag/wp-content/uploads/2018/02/Gregory-Bonnet.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showAud" src="http://www.svo-odisee.be/wp-content/uploads/image11.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showAud" src="http://www.lemondedelaphoto.com/local/cache-vignettes/L700xH467/arton13553-4b40e.jpg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
-              <img class="img-fluid showAud" src="https://www.hivolda.no/sites/default/files/2017-04/elephant.jpeg" alt="Firehouse" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+              {{#each vjings}}
+                <a class="showVJ" target="#fnlFocusVJ" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                  <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
+                </a>
+              {{/each}}
             </div>
         </div>
       <!-- click sur image => FOCUS -->
         <div id="focusVJ" class="row gldBox collapse box">
           <div class="col-8 gldBox container focus">
-            <!-- FOCUS VIDEO -->
-            <img class='display img-fluid' src="" />
+              <!-- FOCUS VIDEO -->
+              <iframe id="fnlFocusVJ" class="display" src="" style="width: 100%;"></iframe>
           </div>
           <div class="col-4 box">
             <div class="container box" style="height: 50%;">
+              <span class="text-center">
+                <button id="reduceVJ" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+              </span>
               <p class="d-flex align-items-center toBig">
                 <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
                 <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
               </p>
                   <!-- texte descriptif -->
             </div>
-            <div class="row align-items-center box" style="height: 50%;">
-                <button type="button" class="col-6 prev text-left"><i class="fas fa-caret-square-left fa-lg"></i></button>
-                <button type="button" class="col-6 next text-right"><i class="fas fa-caret-square-right fa-lg"></i></button>
+            <div class="row align-items-center box buttons" style="height: 50%;">
+              <div class="col-6 buttons">
+                <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+              </div>
+              <div class="col-6 buttons">
+                <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+              </div>
             </div>
           </div>
         </div>

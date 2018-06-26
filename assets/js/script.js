@@ -78,7 +78,7 @@ $(document).ready(function(){
       sortBy : 'most-recent',
       template: '<div>'+
                   '<a href={{link}}>'+
-                  '<img class="img-fluid feed" src="{{image}}" alt="slider image"/>'+
+                  '<img class="img-fluid hover-shadow feed" src="{{image}}" alt="slider image"/>'+
                   '<p class="text-center text-truncate">{{caption}}</p>'+
                   '</a></div>',
       after: function(){
@@ -86,7 +86,10 @@ $(document).ready(function(){
           infinite: true,
           slidesToShow: 3,
           slidesToScroll: 3,
-          adaptiveHeight: true
+          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          speed: 2000
         });
       }
     });
@@ -97,24 +100,42 @@ $(document).ready(function(){
     $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
 
   // PROGRAMME AVEC Carousel Slick
-  if (window.matchMedia("(max-width: 950px)").matches) {
+    // if (window.matchMedia("(max-width: 950px)").matches) {
+    //   $('#bookedLogos').slick({
+    //     adaptiveHeight: false,
+    //     infinite: true,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 5
+    //   });
+    //   $('#bookedLogos img').removeAttr('style');
+    // } else {
+    // $('#bookedLogos').slick({
+    //   adaptiveHeight: false,
+    //   infinite: true,
+    //   slidesToShow: 5,
+    //   slidesToScroll: 5
+    // });
+    // $('#bookedLogos img').removeAttr('style');
+    // }
+
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 5
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      speed: 2000,
+      responsive: [
+        {
+          breakpoint: 950,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        }
+      ]
     });
-    $('#bookedLogos img').removeAttr('style');
-  } else {
-  $('#bookedLogos').slick({
-    adaptiveHeight: false,
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 5
-  });
-  $('#bookedLogos img').removeAttr('style');
-  }
-
 
 // SHOWROOM
     // LOGOS
@@ -162,7 +183,11 @@ $(document).ready(function(){
           $('#focusLogo .display').hide().attr('src', srcn).fadeIn();
         }
     });
-
+    $('#reduceLogo').click(function(e){
+      e.preventDefault();
+      $('#focusLogo').addClass('collapsing').removeClass('collapse show');
+      $('#firstLogos a').attr('data-target',"#focusLogo");
+    })
     // CLIP AUDIO React
     $('#firstAud').slick({
       infinite: true,
@@ -182,8 +207,8 @@ $(document).ready(function(){
         }, 1000);
       });
     });
-    // $('#aud0').addClass('active');
-    // $('#fnlFocusAud .display').hide().attr('src', $('#aud0').attr('href')).fadeIn();
+    $('#aud0').addClass('active');
+    $('#fnlFocusAud .display').hide().attr('src', $('#aud0').attr('href')).fadeIn();
     $('#focusAud .next').click(function(e){
       e.preventDefault();
       var audNext = $('#firstAud .active');
@@ -261,7 +286,11 @@ $(document).ready(function(){
             $('#focusBumper .display').hide().attr('src', srcn).fadeIn();
           }
       });
-
+    $('#reduceBumper').click(function(e){
+      e.preventDefault();
+      $('#focusBumper').addClass('collapsing').removeClass('collapse show');
+      $('#firstBumper a').attr('data-target',"#focusBumper");
+    })
     // CLIP VJing
     $('#firstVJ').slick({
       infinite: true,
@@ -307,7 +336,11 @@ $(document).ready(function(){
           $('#focusVJ .display').hide().attr('src', srcn).fadeIn();
         }
     });
-
+    $('#reduceVJ').click(function(e){
+      e.preventDefault();
+      $('#focusVJ').addClass('collapsing').removeClass('collapse show');
+      $('#firstVJ a').attr('data-target',"#focusVJ");
+    })
   // Fonction destiné à compléter le sujet du mail à envoyer.
     let buttons = document.querySelectorAll('.inputButton');
 
@@ -347,6 +380,6 @@ $(document).ready(function(){
     $('#mute').children().click(function(){
       $('#mute button').toggle();
     })
-    
+
 });
 // })(jQuery);
