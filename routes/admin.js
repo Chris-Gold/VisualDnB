@@ -453,7 +453,7 @@ router.get('/edit-membre/:id', function(req, res){
         return res.status(401).send("Êtes vous sûr d'être enregistrés ?");
     }
     let membreId = req.params.id;
-    Article.findById(membreId, function(err, result){
+    Membre.findById(membreId, function(err, result){
         if(err){
             throw err;
         }
@@ -463,7 +463,7 @@ router.get('/edit-membre/:id', function(req, res){
 
 router.post('/edit-membre/:id', function(req, res){
     let membreId = req.params.id;
-    Article.update({_id: membreId},
+    Membre.update({_id: membreId},
         {
         urlPicture: req.body.urlPicture,
         urlNom: req.body.nom,

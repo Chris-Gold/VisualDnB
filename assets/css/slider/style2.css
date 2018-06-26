@@ -82,15 +82,15 @@
 	top: 10em;
 }
 .da-slide p{
+	text-overflow: ellipsis;
 	color: #05b72f;
 	font-size: 18px;
 	line-height: 26px;
 	height: 80px;
-	overflow: hidden;
 	font-style: italic;
 	font-family: 'Economica', Arial, sans-serif;
 	font-weight: 400;
-	font-style: italic;
+	/* font-style: italic; */
 }
 .da-slide .da-img{
 	text-align: center;
@@ -102,21 +102,26 @@
 	padding-bottom: 5px;
 }
 .da-slide .da-link{
-	top: 15em; /*depends on p height*/
+	top: 20em; /*depends on p height*/
 	border-radius: 30px;
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
-	color: #fff;
+	/* box-shadow: 0px 1px 1px rgba(0,0,0,0.1); */
+	color: #E5E5E4;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-	border: 8px solid rgba(255,255,255,0.8);
+	/* border: 8px solid rgba(255,255,255,0.8); */
 	padding: 2px 20px 0px;
-	font-size: 18px;
+	font-size: 15px;
 	line-height: 30px;
 	/* width: 80px; */
 	text-align: center;
 	background: rgba(255,255,255,0.2);
+	transition: all 280ms ease-in-out;
 }
+
 .da-slide .da-link:hover{
 	background: rgba(255,255,255,0.3);
+	text-decoration: none;
+	transition: all 280ms ease-in-out;
+	letter-spacing: 0.2em;
 }
 .da-dots{
 	width: 100%;
