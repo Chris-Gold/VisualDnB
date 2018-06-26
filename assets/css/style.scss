@@ -74,7 +74,7 @@ body{
   .container-fluid{
     padding: 0px;
   }
-
+  // EFFET LETTER SPACING
   .toBig{
     color: $blanc;
     transition: all 280ms ease-in-out;
@@ -96,7 +96,7 @@ body{
   // EFFET BACKGROUND
   .bgFirst{
     background: url('../img/bgFirst.png') center fixed;
-    background-size: cover;
+    // background-size: cover;
   }
   .bgOver{
     background-color: transparent;
@@ -237,7 +237,6 @@ header{
   height: auto;
   width: 100%;
   #da-slider, .da-slider{
-    width: 100%;
     h4{
       font-size: 20px;
     }
@@ -309,14 +308,20 @@ header{
       margin : 1em 0px 1em 0px;
     }
   }
-  input[type=text], input[type=email], input[type=password]{
+  input[type=text], input[type=email]{
+    background-color : $noir;
+    color: $vert;
     height: 2.5em;
     border-radius: 1em;
     transition: all 280ms ease-in-out;
   }
-  input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus{
-    background-color: rgba(0,0,0,0);
+  textarea{
+    background-color : $noir;
     color: $vert;
+  }
+  input[type=text]:focus, input[type=email]:focus, textarea:focus{
+    background-color: $blanc;
+    color: $noir;
     font-weight: bold;
     transition: all 280ms ease-in-out;
   }

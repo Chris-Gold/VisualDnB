@@ -49,8 +49,7 @@ body {
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out; }
   body .bgFirst {
-    background: url("../img/bgFirst.png") center fixed;
-    background-size: cover; }
+    background: url("../img/bgFirst.png") center fixed; }
   body .bgOver {
     background-color: transparent;
     background: url("../img/bgOver.png") center repeat; }
@@ -162,10 +161,8 @@ header #vimButton {
   padding-bottom: 2em;
   height: auto;
   width: 100%; }
-  #presta #da-slider, #presta .da-slider {
-    width: 100%; }
-    #presta #da-slider h4, #presta .da-slider h4 {
-      font-size: 20px; }
+  #presta #da-slider h4, #presta .da-slider h4 {
+    font-size: 20px; }
 
 #insta {
   height: auto;
@@ -214,13 +211,18 @@ header #vimButton {
     background-color: #070C0C; }
     #contact #contactForm input, #contact #contactForm textarea {
       margin: 1em 0px 1em 0px; }
-  #contact input[type=text], #contact input[type=email], #contact input[type=password] {
+  #contact input[type=text], #contact input[type=email] {
+    background-color: #070C0C;
+    color: #05b72f;
     height: 2.5em;
     border-radius: 1em;
     transition: all 280ms ease-in-out; }
-  #contact input[type=text]:focus, #contact input[type=email]:focus, #contact input[type=password]:focus, #contact textarea:focus {
-    background-color: transparent;
-    color: #05b72f;
+  #contact textarea {
+    background-color: #070C0C;
+    color: #05b72f; }
+  #contact input[type=text]:focus, #contact input[type=email]:focus, #contact textarea:focus {
+    background-color: #E5E5E4;
+    color: #070C0C;
     font-weight: bold;
     transition: all 280ms ease-in-out; }
   #contact #submit {
