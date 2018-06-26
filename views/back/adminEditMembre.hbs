@@ -32,25 +32,33 @@
 <section class="row">
   <div class="col-12 col-md-6 text-center">
     <form action="/admin/edit-membre/{{membre._id}}" method="POST">
-      <input type="text" name="urlPicture" placeholder="Picture" value="{{membre.urlPicture}}"><br><br>
-      <input type="text" name="urlNom" placeholder="Nom image" value="{{membre.urlNom}}"><br><br>
-      <input type="text" name="nom" placeholder="Nom texte" value="{{membre.nom}}"><br><br>
-      <input type="text" name="urlSerial" placeholder="Visual Serial" value="{{membre.urlSerial}}"><br><br>
-      <input type="text" name="skills" placeholder="Technical skills*" value="{{membre.skills}}"><br><br>
-      <input type="email" name="contact" placeholder="Contact" value="{{membre.contact}}"><br><br>
-      <input type="text" name="site" placeholder="Web Site" value="{{membre.site}}"><br><br>
-      <textarea name="description" placeholder="Description">{{membre.description}}</textarea><br>
-      <!-- PHOTOS -->
-      {{#each membre.photos}}
-      <input type="text" name="urlPhotos" placeholder="Photos" value="{{this.urlPhoto}}"><br><br>
-      {{/each}}
-      <!-- SOUNDCLOUD -->
-      <input type="text" name="urlSound" placeholder="Soundcloud" value="{{membre.urlSound}}"><br><br>
-      <!-- VIDEOS -->
-      {{#each membre.videos}}
-      <input type="text" name="urlVideos" placeholder="videos" value="{{this.urlVideo}}"><br><br>
-      {{/each}}
-      <input type="submit" class="btn btn-success" value="Envoyer">
+       <input type="text" name="urlPicture" placeholder="Picture" value="{{membre.urlPicture}}"><br><br>
+        <input type="text" name="urlNom" placeholder="Nom image" value="{{membre.urlNom}}"><br><br>
+        <input type="text" name="nom" placeholder="Nom texte" value="{{membre.nom}}"><br><br>
+        <input type="text" name="urlSerial" placeholder="Visual Serial" value="{{membre.urlSerial}}"><br><br>
+        <input type="text" name="skills" placeholder="Technical skills" value="{{membre.skills}}"><br><br>
+        <input type="email" name="contact" placeholder="Contact" value="{{membre.contact}}"><br><br>
+        <input type="text" name="site" placeholder="Web Site" value="{{membre.site}}"><br><br>
+        <textarea name="description" id="description" class="ckeditor" cols="80" rows="10">{{membre.description}}</textarea><br>
+        <!-- SOUNDCLOUD -->
+        <input type="text" name="urlSound" placeholder="Soundcloud" value="{{membre.urlSound}}"><br><br>
+        <!-- PHOTOS -->
+        <input type="text" name="purl1" placeholder="image url1" value="{{membre.urlPhoto.url1}}"><br><br>
+        <input type="text" name="purl2" placeholder="image url2" value="{{membre.urlPhoto.url2}}"><br><br>
+        <input type="text" name="purl3" placeholder="image url3" value="{{membre.urlPhoto.url3}}"><br><br>
+        <input type="text" name="purl4" placeholder="image url4" value="{{membre.urlPhoto.url4}}"><br><br>
+        <input type="text" name="purl5" placeholder="image url5" value="{{membre.urlPhoto.url5}}"><br><br>
+        <input type="text" name="purl6" placeholder="image url6" value="{{membre.urlPhoto.url6}}"><br><br>
+        <input type="text" name="purl7" placeholder="image url7" value="{{membre.urlPhoto.url7}}"><br><br>
+        <input type="text" name="purl8" placeholder="image url8" value="{{membre.urlPhoto.url8}}"><br><br>
+        <input type="text" name="purl9" placeholder="image url9" value="{{membre.urlPhoto.url9}}"><br><br>
+        <input type="text" name="purl10" placeholder="image url10" value="{{membre.urlPhoto.url10}}"><br><br>
+        <!-- VIDEOS -->
+        <input type="text" name="vurl1" placeholder="video url1" value="{{membre.urlVideo.url1}}"><br><br>
+        <input type="text" name="vurl2" placeholder="video url2" value="{{membre.urlVideo.url2}}"><br><br>
+        <input type="text" name="vurl3" placeholder="video url3" value="{{membre.urlVideo.url3}}"><br><br>
+
+        <input type="submit" class="btn btn-success" value="Envoyer">
     </form>
   </div>
   <div class="col-12 col-md-6">
@@ -79,9 +87,9 @@
       </div>
 
       <div>
-        {{#each membre.videos}}
-        <b>URL video : </b> <img src="../../img/{{membre.urlVideo}}" alt="" style="height: 200px;"><br><br>
-        {{/each}}
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url1}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url2}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url3}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
 
       <div>

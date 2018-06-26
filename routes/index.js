@@ -129,12 +129,18 @@ router.get('/article/:id', function(req, res){
     };
 });
 
-router.get('/membres/:nom', function(req, res){
-    let nom = req.params.nom;
-    res.status(200).render('front/membre.hbs', {
-        title: nom,
-        nom: nom
-    });
+router.get('/membres/:id', function(req, res){
+    let membreId = req.params.id;
+    if (membreId.match(/^[0-9a-fA-F]{24}$/)) {
+        // Yes, it's a valid ObjectId, proceed with `findById` call.
+        Membre.findById(membreId, function (err, result){
+            if (err) throw err;
+            res.status(200).render('front/membre.hbs', {
+                membres:result,
+                title: 'Membre'
+            });
+      });
+    };
 });
 
 module.exports = router;

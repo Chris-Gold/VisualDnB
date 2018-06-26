@@ -283,6 +283,30 @@ footer {
 #membre {
   background: url("../img/Page_Perso_Assets_BG_V2.png") center fixed; }
 
+#membrePic {
+  padding: 20px 0px 0px 0px; }
+
+#membreNom {
+  padding: 20px 0px 0px 0px; }
+
+#membreSite {
+  padding: 0px 0px 20px 0px; }
+
+#description {
+  padding: 20px 0px 0px 0px; }
+
+#content {
+  padding: 20px 0px 0px 0px; }
+
+#picContent img {
+  padding: 0px 10px 20px 10px; }
+
+.urlNom {
+  width: 75%; }
+
+.urlSerial {
+  width: 75%; }
+
 #postHeader {
   padding-bottom: 3em; }
   #postHeader img {

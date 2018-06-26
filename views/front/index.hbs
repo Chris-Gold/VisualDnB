@@ -175,8 +175,8 @@
     <div class="row">
         {{#each membres}}
         <div class="col-3">
-          <h4><a href="/membres/{{this._id}}">{{this.nom}}</a></h4>
-          <p>{{this.urlSerial}}</p><br>
+          <h4><a href="/membres/{{this._id}}"><img class="urlNom" src="../img/{{this.urlPicture}}" alt=""></a></h4>
+          <img class="urlSerial" src="../img/{{this.urlSerial}}" alt=""><br>
         </div>
         {{/each}}
     </div>

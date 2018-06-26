@@ -1,59 +1,69 @@
-<section class="container-fluid">
-  <p class="w-100 text-center"> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
-  <div class="container">
-    <div id="membre">
+<section id="membre" class="container-fluid">
+  <div class="container-fluid filter">
+    <p class="w-100 text-center"> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
+    <div>
       <div class="row">
-        <div id="membreId" class="col-12 col-md-6">
+        <div id="membreId" class="col-12">
           <div class="row">
-            <div id="membrePic" class="col-6 col-md-3">
-              <img class="img-fluid" src=""/>
+            <div id="membrePic" class="col-12 text-center">
+              <img class="img-fluid" src="../img/{{membres.urlPicture}}"/>
             </div>
 
-            <div id="membreDetails" class="col-6 col-md-3">
+            <div id="membreDetails" class="col-4 offset-4 text-center">
               <div id="membreNom">
-                <img class="img-fluid" src=""/>
+                <img class="img-fluid" src="../img/{{membres.urlNom}}"/>
               </div>
 
-              <div id="membreSerial">
-                <img class="img-fluid" src=""/>
+              <div id="membreSerial" class="col-10">
+                <img class="img-fluid" src="../img/{{membres.urlSerial}}"/>
               </div>
 
-              <div id="membreSkills">
+              {{!-- <div id="membreSkills">
                 <p></p>
-              </div>
+              </div> --}}
 
               <div id="membreContact">
-                <a href="mailto:...">Adresse mail</a>
+                <a href="mailto:{{membres.contact}}">{{membres.contact}}</a>
               </div>
 
               <div id="membreSite">
-                <a target="_blank" href="#">Site Web</a>
+                <a target="_blank" href="{{membres.site}}">{{membres.site}}</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="memebreDesc" class="col-12 col-md-6">
-          <div class="container">
+        <div id="membreDesc" class="col-12">
+          <div class="container text-center">
             <hr>
             <p id="description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit voluptatum 
+              accusantium voluptatibus doloremque, vitae eligendi quod perferendis laudantium, 
+              quae exercitationem, fuga odit? Quod atque libero, nostrum eius aperiam ducimus nam.
             </p>
+            <hr>
           </div>
         </div>
       </div>
     </div>
 
-    <hr>
-
     <div id="content">
       <div class="row">
-        <div id="pictures" class="col-12 col-md-8">
+        <div id="pictures" class="col-12">
           <div id="picContent" class="d-flex flew-wrap justify-content-around">
-            {{#each membre.pictures}}
-            <div >
-              <img class="img-fluid" src="../img/{{this.membre.pictures.pic}}" title="{{this.membre.pictures.pic.name}}" alt="" data-toggle="modal" data-target="#picModal">
+            <div class="row">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url1}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url2}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url3}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url4}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url5}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url6}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url7}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url8}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url9}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url10}}" alt="" data-toggle="modal" data-target="#picModal">
             </div>
-            {{/each}}
+
           </div>
           <!-- >>>>>>>>>>>>> MODAL PICTURE <<<<<<<<<<<<<<<<< -->
           <div id="picModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
@@ -71,9 +81,9 @@
           </div>
         </div>
 
-        <div id="sounds" class="col-sm-12 order-sm-2 col-md-4 order-md-1">
+        {{!-- <div id="sounds" class="col-sm-12 order-sm-2 col-md-4 order-md-1">
           <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/233661698&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-        </div>
+        </div> --}}
 
         <hr>
 
