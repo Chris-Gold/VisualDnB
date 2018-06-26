@@ -34,20 +34,28 @@ body {
     margin: 0px; }
   body .container-fluid {
     padding: 0px; }
-  body .toGreen {
+  body .toBig {
     color: #E5E5E4;
     transition: all 280ms ease-in-out; }
-  body .toGreen:hover {
-    color: #05b72f;
+  body .toBig:hover {
+    color: #E5E5E4;
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out; }
-  body .toGreenMod {
+  body .toBigMod {
     color: #070C0C;
     transition: all 280ms ease-in-out; }
-  body .toGreenMod:hover {
-    color: #05b72f;
+  body .toBigMod:hover {
+    color: #070C0C;
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out; }
+  body .bgFirst {
+    background: url("../img/bgFirst.png") center fixed;
+    background-size: cover; }
+  body .bgOver {
+    background-color: transparent;
+    background: url("../img/bgOver.png") center repeat; }
+  body .filter {
+    background-color: rgba(7, 12, 12, 0.8); }
   body .bubble2 {
     width: 8em;
     height: 8em;
@@ -67,6 +75,8 @@ body {
     border: 0.5em solid rgba(5, 183, 47, 0.5);
     width: 11em;
     height: 11em; }
+  body .back {
+    color: #05b72f; }
   body .slick-prev:before,
   body .slick-next:before {
     color: #05b72f; }
@@ -149,6 +159,7 @@ header #vimButton {
   height: auto; }
 
 #presta {
+  padding-bottom: 2em;
   height: auto;
   width: 100%; }
   #presta #da-slider, #presta .da-slider {
@@ -173,27 +184,29 @@ header #vimButton {
     #insta #instafeed p {
       padding-top: 1em; }
 
-#showroom .buttons {
-  padding: 1em; }
-#showroom .prev, #showroom .next {
-  background-color: transparent;
-  border: none;
-  font-size: 4em;
-  height: 100%;
-  width: 100%;
-  outline: none; }
-#showroom button:hover {
-  cursor: pointer;
-  border: none;
-  opacity: 0.8; }
-#showroom .focus {
-  max-height: 90%;
-  width: auto; }
-#showroom .display {
-  height: 100%;
-  width: auto; }
-#showroom p {
-  height: 100%; }
+#showroom {
+  background-color: #070C0C; }
+  #showroom .buttons {
+    padding: 1em; }
+  #showroom .prev, #showroom .next {
+    background-color: transparent;
+    border: none;
+    font-size: 4em;
+    height: 100%;
+    width: 100%;
+    outline: none; }
+  #showroom button:hover {
+    cursor: pointer;
+    border: none;
+    opacity: 0.8; }
+  #showroom .focus {
+    max-height: 90%;
+    width: auto; }
+  #showroom .display {
+    height: 100%;
+    width: auto; }
+  #showroom p {
+    height: 100%; }
 
 #contact {
   padding-bottom: 3em; }
@@ -244,17 +257,66 @@ footer {
   footer i {
     color: #E5E5E4; }
 
+.bg {
+  background: url("../img/Page_Perso_Assets_BG_V1.png") center repeat fixed; }
+
+#post {
+  padding: 0; }
+
+#postHeader {
+  padding-bottom: 0; }
+  #postHeader .container {
+    max-width: 90%; }
+    #postHeader .container img {
+      padding-top: 3em;
+      padding-bottom: 3em; }
+
+#postPics {
+  border-radius: 5%;
+  max-width: 80%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: rgba(7, 12, 12, 0.6); }
+
 #membre {
-  background: url("../img/"); }
+  background: url("../img/Page_Perso_Assets_BG_V2.png") center fixed; }
+
+#membrePic {
+  padding: 20px 0px 0px 0px; }
+
+#membreNom {
+  padding: 20px 0px 0px 0px; }
+
+#membreSite {
+  padding: 0px 0px 20px 0px; }
+
+#description {
+  padding: 20px 0px 0px 0px; }
+
+#content {
+  padding: 20px 0px 0px 0px; }
+
+#picContent img {
+  padding: 0px 10px 20px 10px; }
+
+.urlNom {
+  width: 75%; }
+
+.urlSerial {
+  width: 75%; }
 
 #postHeader {
   padding-bottom: 3em; }
   #postHeader img {
-    max-height: 500px; }
+    max-height: 800px;
+    min-height: 500px; }
 
 #postTitle h2 {
   font-size: 3em;
   padding-bottom: 0.5em; }
+
+#postTitle, #postContent {
+  background-color: rgba(7, 12, 12, 0.8); }
 
 #postContent {
   padding-top: 3em;

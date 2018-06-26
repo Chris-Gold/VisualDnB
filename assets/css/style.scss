@@ -75,25 +75,37 @@ body{
     padding: 0px;
   }
 
-  .toGreen{
+  .toBig{
     color: $blanc;
     transition: all 280ms ease-in-out;
   }
-  .toGreen:hover{
-    color: $vert;
+  .toBig:hover{
+    color: $blanc;
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out;
   }
-  .toGreenMod{
+  .toBigMod{
     color: $noir;
     transition: all 280ms ease-in-out;
   }
-  .toGreenMod:hover{
-    color: $vert;
+  .toBigMod:hover{
+    color: $noir;
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out;
   }
-
+  // EFFET BACKGROUND
+  .bgFirst{
+    background: url('../img/bgFirst.png') center fixed;
+    background-size: cover;
+  }
+  .bgOver{
+    background-color: transparent;
+    background: url('../img/bgOver.png') center repeat;
+  }
+  .filter{
+    background-color: rgba(7,12,12,0.8);
+  }
+  // IMAGE BUBBLE
   .bubble2{
     width: 8em;
     height: 8em;
@@ -116,7 +128,9 @@ body{
     width: 11em;
     height: 11em;
   }
-
+  .back{
+    color: $vert;
+  }
   .slick-prev:before,
   .slick-next:before {
     color: $vert;
@@ -219,6 +233,7 @@ header{
 }
 
 #presta{
+  padding-bottom: 2em;
   height: auto;
   width: 100%;
   #da-slider, .da-slider{
@@ -253,6 +268,7 @@ header{
 }
 
 #showroom{
+  background-color: $noir;
   .buttons{
     padding: 1em;
   }
@@ -348,18 +364,74 @@ footer{
   }
 }
 
-// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
-#membre{
-  background: url('../img/')
+// >>>>>>>>>>>>>>> ARTICLES <<<<<<<<<<<<<<
+.bg{
+  background: url('../img/Page_Perso_Assets_BG_V1.png')center repeat fixed;
+}
+#post{
+  padding: 0;
+}
+#postHeader{
+  padding-bottom: 0;
+  .container{
+    max-width: 90%;
+    img{
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+  }
 }
 
+#postPics{
+  border-radius: 5%;
+  max-width: 80%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: rgba(7, 12, 12, 0.6);
+}
 
+// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
+#membre{
+  background: url('../img/Page_Perso_Assets_BG_V2.png') center fixed;
+}
+
+#membrePic{
+  padding : 20px 0px 0px 0px;
+}
+
+#membreNom{
+  padding: 20px 0px 0px 0px;
+}
+
+#membreSite{
+  padding: 0px 0px 20px 0px;
+}
+
+#description{
+  padding: 20px 0px 0px 0px;
+}
+
+#content{
+  padding: 20px 0px 0px 0px;
+}
+
+#picContent img{
+  padding: 0px 10px 20px 10px;
+}
+
+.urlNom{
+ width : 75%;
+}
+.urlSerial{
+  width: 75%;
+}
 
 // >>>>>>>>>>>>>>>> ADMIN ARTICLES <<<<<<<<<<<<<
 #postHeader{
   padding-bottom: 3em;
   img{
-    max-height:500px;
+    max-height: 800px;
+    min-height: 500px;
   }
 }
 
@@ -368,6 +440,10 @@ footer{
     font-size: 3em;
     padding-bottom: 0.5em;
   }
+}
+
+#postTitle, #postContent{
+  background-color: rgba(7, 12, 12, 0.8);
 }
 
 #postContent{
