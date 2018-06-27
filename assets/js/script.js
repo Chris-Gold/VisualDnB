@@ -360,6 +360,14 @@ $(document).ready(function(){
       $("#modalFocus").attr("src", location);
     })
 
+  // MEMBRE MODAL
+    // PHOTOS
+    // $("#picContent img").click(function(){
+    //   var location = $(this).attr('src');
+    //   console.log(location);
+    //   $("#picFocus").attr("src", location);
+    // })
+
   // VIMEO IFRAME + BUTTONS
     var vimeo = new Vimeo.Player('topVid');
     $('#vimPlay').on('click', function(){

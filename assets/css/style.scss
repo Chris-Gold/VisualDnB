@@ -242,6 +242,16 @@ header{
   }
 }
 
+#trans1, #trans3, #trans2{
+  transition: background-size linear;
+}
+#trans1, #trans3{
+  background-size: 100%;
+}
+#trans2{
+  background-size: 125%;
+}
+
 #about{
   z-index: 10;
   height: auto;
