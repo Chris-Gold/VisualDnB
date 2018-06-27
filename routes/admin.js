@@ -474,7 +474,7 @@ router.post('/edit-membre/:id', function(req, res){
         site: req.body.site,
         description: req.body.description,
         urlSound: req.body.urlSound,
-        ulrPhoto: {
+        urlPhoto: {
             url1: req.body.purl1,
             url2: req.body.purl2,
             url3: req.body.purl3,
