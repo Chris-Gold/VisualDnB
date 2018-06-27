@@ -61,7 +61,7 @@ body{
     z-index: 10;
   }
   h3{
-    font-size: 2.5em;
+    font-size: 2em;
     padding-top: 1em;
     padding-bottom: 0.5em;
   }
@@ -74,7 +74,7 @@ body{
   .container-fluid{
     padding: 0px;
   }
-
+  // EFFET LETTER SPACING
   .toBig{
     color: $blanc;
     transition: all 280ms ease-in-out;
@@ -96,7 +96,6 @@ body{
   // EFFET BACKGROUND
   .bgFirst{
     background: url('../img/bgFirst.png') center fixed;
-    background-size: cover;
   }
   .bgOver{
     background-color: transparent;
@@ -104,6 +103,18 @@ body{
   }
   .filter{
     background-color: rgba(7,12,12,0.8);
+  }
+  .filter1{
+    background: linear-gradient($noir, rgba(7,12,12,0.9));
+  }
+  .filter2{
+    background: linear-gradient(rgba(7,12,12,0.9), rgba(7,12,12,0.8));
+  }
+  .filter3{
+    background: linear-gradient(rgba(7,12,12,0.8),rgba(7,12,12,0.9));
+  }
+  .filter4{
+    background: linear-gradient(rgba(7,12,12,0.9), $noir);
   }
   // IMAGE BUBBLE
   .bubble2{
@@ -128,8 +139,24 @@ body{
     width: 11em;
     height: 11em;
   }
+  // EFFET OMBRAGE/ZOOM
+  .hover-shadow {
+  transition: 0.3s;
+  }
+  .hover-shadow:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  // EFFET BOUTONS "BACK"
   .back{
     color: $vert;
+    transition: all 280ms ease-in-out;
+    font-size: 1.2em;
+  }
+  .back:hover{
+    transition: all 280ms ease-in-out;
+    letter-spacing: 0.3em;
+    font-size: 0.8em;
   }
   .slick-prev:before,
   .slick-next:before {
@@ -171,22 +198,20 @@ header{
 
 #navigation{
   z-index: 20;
-  background-color: $noir;
-  font-size: 1.5em;
+  background-color: rgba(7,12,12,0.955);
+  font-size: 1em;
   width: 100%;
   div, ul{
     width: 100%;
   }
   button{
+    cursor: pointer;
     height: 1.5em;
     margin: 0;
     border: 0;
     background-color: rgba(0,0,0,0);
     img{
       height: 1.5em;
-      }
-      img:hover{
-        cursor: pointer;
       }
     }
   .btn-2:after,
@@ -217,6 +242,16 @@ header{
   }
 }
 
+#trans1, #trans3, #trans2{
+  transition: background-size linear;
+}
+#trans1, #trans3{
+  background-size: 100%;
+}
+#trans2{
+  background-size: 125%;
+}
+
 #about{
   z-index: 10;
   height: auto;
@@ -228,6 +263,7 @@ header{
 }
 
 #booked{
+  background-color: $noir;
   max-width: 100%;
   height: auto;
 }
@@ -236,8 +272,11 @@ header{
   padding-bottom: 2em;
   height: auto;
   width: 100%;
+  #slideSizer{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
   #da-slider, .da-slider{
-    width: 100%;
     h4{
       font-size: 20px;
     }
@@ -252,9 +291,9 @@ header{
     height: 100%;
     margin: 0 auto;
     padding-bottom: 2em;
+
     a{
       color: $blanc;
-
     }
     .feed{
       max-height: 25em;
@@ -264,6 +303,10 @@ header{
     p{
       padding-top: 1em;
     }
+  }
+  #instafeed:before{
+    background: url('../img/bgOver.png')center fixed no-repeat;
+    background-size: cover;
   }
 }
 
@@ -275,7 +318,7 @@ header{
   .prev, .next{
     background-color: rgba(0,0,0,0);
     border: none;
-    font-size: 4em;
+    // font-size: 4em;
     height: 100%;
     width: 100%;
     outline: none;
@@ -309,14 +352,20 @@ header{
       margin : 1em 0px 1em 0px;
     }
   }
-  input[type=text], input[type=email], input[type=password]{
+  input[type=text], input[type=email]{
+    background-color : $noir;
+    color: $vert;
     height: 2.5em;
     border-radius: 1em;
     transition: all 280ms ease-in-out;
   }
-  input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus{
-    background-color: rgba(0,0,0,0);
+  textarea{
+    background-color : $noir;
     color: $vert;
+  }
+  input[type=text]:focus, input[type=email]:focus, textarea:focus{
+    background-color: $blanc;
+    color: $noir;
     font-weight: bold;
     transition: all 280ms ease-in-out;
   }
@@ -356,6 +405,7 @@ footer{
   height : 100px;
   background-color : $noir;
   p{
+    font-size: 0.8em;
     width: 100%;
     height: 100%;
   }
@@ -365,29 +415,80 @@ footer{
 }
 
 // >>>>>>>>>>>>>>> ARTICLES <<<<<<<<<<<<<<
-.bg{
-  background: url('../img/Page_Perso_Assets_BG_V1.png')center repeat fixed;
-}
 #post{
   padding: 0;
+  .bg{
+    background: url('../img/Page_Perso_Assets_BG_V1.png')center repeat fixed;
+  }
 }
+
 #postHeader{
-  padding-bottom: 0;
+  padding-bottom: 3em;
   .container{
     max-width: 90%;
     img{
       padding-top: 3em;
       padding-bottom: 3em;
+      max-height: 800px;
+      min-height: 500px;
+
+    }
+  }
+}
+#postText{
+  #postSubText{
+    border-radius: 5%;
+    padding: 0;
+    background: url('../img/Page_Perso_Assets_BG_V2.png')center repeat fixed;
+    #postTitle{
+      h2{
+        font-size: 3em;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+      }
+      p{
+        margin-bottom:0;
+      }
+    }
+    #postContent{
+      padding-top: 3em;
+      padding-bottom: 2em;
     }
   }
 }
 
 #postPics{
-  border-radius: 5%;
+  *{
+    border-radius: 5%;
+  }
   max-width: 80%;
   padding-top: 3em;
   padding-bottom: 3em;
   background-color: rgba(7, 12, 12, 0.6);
+  .filter{
+    padding-top: 2em;
+    div{
+      padding-bottom: 2em;
+    }
+  }
+  img{
+    max-height: 300px;
+    width: auto;
+    cursor: pointer;
+  }
+  p{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#postModal, .modal-content, .modal-dialog, .modal-body{
+  min-width: 80%;
+  height: auto;
+  #modalFocus{
+    height: auto;
+    width: 100%;
+  }
 }
 
 // >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
@@ -432,56 +533,6 @@ footer{
 }
 .urlSerial{
   width: 75%;
-}
-
-// >>>>>>>>>>>>>>>> ADMIN ARTICLES <<<<<<<<<<<<<
-#postHeader{
-  padding-bottom: 3em;
-  img{
-    max-height: 800px;
-    min-height: 500px;
-  }
-}
-
-#postTitle{
-  h2{
-    font-size: 3em;
-    padding-bottom: 0.5em;
-  }
-}
-
-#postTitle, #postContent{
-  background-color: rgba(7, 12, 12, 0.8);
-}
-
-#postContent{
-  padding-top: 3em;
-  padding-bottom: 2em;
-}
-
-#postPics{
-  div{
-    padding-bottom: 3em;
-  }
-  .hover-shadow {
-  transition: 0.3s;
-  }
-  .hover-shadow:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  img{
-    max-height: 300px;
-    width: auto;
-  }
-}
-
-#postModal, .modal-content, .modal-dialog, .modal-body{
-  min-width: 80%;
-  height: auto;
-  #modalFocus{
-    height: auto;
-    width: 100%;
-  }
 }
 
 // >>>>>>>>>>>>>>>> ADMIN SHOWROOM <<<<<<<<<<<<<

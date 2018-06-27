@@ -25,7 +25,7 @@ body {
     background-color: #070C0C;
     z-index: 10; }
   body h3 {
-    font-size: 2.5em;
+    font-size: 2em;
     padding-top: 1em;
     padding-bottom: 0.5em; }
   body i {
@@ -49,13 +49,20 @@ body {
     letter-spacing: 0.2em;
     transition: all 400ms ease-in-out; }
   body .bgFirst {
-    background: url("../img/bgFirst.png") center fixed;
-    background-size: cover; }
+    background: url("../img/bgFirst.png") center fixed; }
   body .bgOver {
     background-color: transparent;
     background: url("../img/bgOver.png") center repeat; }
   body .filter {
     background-color: rgba(7, 12, 12, 0.8); }
+  body .filter1 {
+    background: linear-gradient(#070C0C, rgba(7, 12, 12, 0.9)); }
+  body .filter2 {
+    background: linear-gradient(rgba(7, 12, 12, 0.9), rgba(7, 12, 12, 0.8)); }
+  body .filter3 {
+    background: linear-gradient(rgba(7, 12, 12, 0.8), rgba(7, 12, 12, 0.9)); }
+  body .filter4 {
+    background: linear-gradient(rgba(7, 12, 12, 0.9), #070C0C); }
   body .bubble2 {
     width: 8em;
     height: 8em;
@@ -75,8 +82,19 @@ body {
     border: 0.5em solid rgba(5, 183, 47, 0.5);
     width: 11em;
     height: 11em; }
+  body .hover-shadow {
+    transition: 0.3s; }
+  body .hover-shadow:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   body .back {
-    color: #05b72f; }
+    color: #05b72f;
+    transition: all 280ms ease-in-out;
+    font-size: 1.2em; }
+  body .back:hover {
+    transition: all 280ms ease-in-out;
+    letter-spacing: 0.3em;
+    font-size: 0.8em; }
   body .slick-prev:before,
   body .slick-next:before {
     color: #05b72f; }
@@ -108,20 +126,19 @@ header #vimButton {
 
 #navigation {
   z-index: 20;
-  background-color: #070C0C;
-  font-size: 1.5em;
+  background-color: rgba(7, 12, 12, 0.955);
+  font-size: 1em;
   width: 100%; }
   #navigation div, #navigation ul {
     width: 100%; }
   #navigation button {
+    cursor: pointer;
     height: 1.5em;
     margin: 0;
     border: 0;
     background-color: transparent; }
     #navigation button img {
       height: 1.5em; }
-    #navigation button img:hover {
-      cursor: pointer; }
   #navigation .btn-2:after,
   #navigation .btn-2:before {
     backface-visibility: hidden;
@@ -146,6 +163,15 @@ header #vimButton {
     top: 0;
     width: 70%; }
 
+#trans1, #trans3, #trans2 {
+  transition: background-size linear; }
+
+#trans1, #trans3 {
+  background-size: 100%; }
+
+#trans2 {
+  background-size: 125%; }
+
 #about {
   z-index: 10;
   height: auto;
@@ -155,6 +181,7 @@ header #vimButton {
     padding-bottom: 1em; }
 
 #booked {
+  background-color: #070C0C;
   max-width: 100%;
   height: auto; }
 
@@ -162,10 +189,11 @@ header #vimButton {
   padding-bottom: 2em;
   height: auto;
   width: 100%; }
-  #presta #da-slider, #presta .da-slider {
-    width: 100%; }
-    #presta #da-slider h4, #presta .da-slider h4 {
-      font-size: 20px; }
+  #presta #slideSizer {
+    padding-left: 2em;
+    padding-right: 2em; }
+  #presta #da-slider h4, #presta .da-slider h4 {
+    font-size: 20px; }
 
 #insta {
   height: auto;
@@ -183,6 +211,9 @@ header #vimButton {
       padding-left: 1em; }
     #insta #instafeed p {
       padding-top: 1em; }
+  #insta #instafeed:before {
+    background: url("../img/bgOver.png") center fixed no-repeat;
+    background-size: cover; }
 
 #showroom {
   background-color: #070C0C; }
@@ -191,7 +222,6 @@ header #vimButton {
   #showroom .prev, #showroom .next {
     background-color: transparent;
     border: none;
-    font-size: 4em;
     height: 100%;
     width: 100%;
     outline: none; }
@@ -214,13 +244,18 @@ header #vimButton {
     background-color: #070C0C; }
     #contact #contactForm input, #contact #contactForm textarea {
       margin: 1em 0px 1em 0px; }
-  #contact input[type=text], #contact input[type=email], #contact input[type=password] {
+  #contact input[type=text], #contact input[type=email] {
+    background-color: #070C0C;
+    color: #05b72f;
     height: 2.5em;
     border-radius: 1em;
     transition: all 280ms ease-in-out; }
-  #contact input[type=text]:focus, #contact input[type=email]:focus, #contact input[type=password]:focus, #contact textarea:focus {
-    background-color: transparent;
-    color: #05b72f;
+  #contact textarea {
+    background-color: #070C0C;
+    color: #05b72f; }
+  #contact input[type=text]:focus, #contact input[type=email]:focus, #contact textarea:focus {
+    background-color: #E5E5E4;
+    color: #070C0C;
     font-weight: bold;
     transition: all 280ms ease-in-out; }
   #contact #submit {
@@ -252,31 +287,66 @@ footer {
   height: 100px;
   background-color: #070C0C; }
   footer p {
+    font-size: 0.8em;
     width: 100%;
     height: 100%; }
   footer i {
     color: #E5E5E4; }
 
-.bg {
-  background: url("../img/Page_Perso_Assets_BG_V1.png") center repeat fixed; }
-
 #post {
   padding: 0; }
+  #post .bg {
+    background: url("../img/Page_Perso_Assets_BG_V1.png") center repeat fixed; }
 
 #postHeader {
-  padding-bottom: 0; }
+  padding-bottom: 3em; }
   #postHeader .container {
     max-width: 90%; }
     #postHeader .container img {
       padding-top: 3em;
-      padding-bottom: 3em; }
+      padding-bottom: 3em;
+      max-height: 800px;
+      min-height: 500px; }
+
+#postText #postSubText {
+  border-radius: 5%;
+  padding: 0;
+  background: url("../img/Page_Perso_Assets_BG_V2.png") center repeat fixed; }
+  #postText #postSubText #postTitle h2 {
+    font-size: 3em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em; }
+  #postText #postSubText #postTitle p {
+    margin-bottom: 0; }
+  #postText #postSubText #postContent {
+    padding-top: 3em;
+    padding-bottom: 2em; }
 
 #postPics {
-  border-radius: 5%;
   max-width: 80%;
   padding-top: 3em;
   padding-bottom: 3em;
   background-color: rgba(7, 12, 12, 0.6); }
+  #postPics * {
+    border-radius: 5%; }
+  #postPics .filter {
+    padding-top: 2em; }
+    #postPics .filter div {
+      padding-bottom: 2em; }
+  #postPics img {
+    max-height: 300px;
+    width: auto;
+    cursor: pointer; }
+  #postPics p {
+    width: 100%;
+    text-align: center; }
+
+#postModal, .modal-content, .modal-dialog, .modal-body {
+  min-width: 80%;
+  height: auto; }
+  #postModal #modalFocus, .modal-content #modalFocus, .modal-dialog #modalFocus, .modal-body #modalFocus {
+    height: auto;
+    width: 100%; }
 
 #membre {
   background: url("../img/Page_Perso_Assets_BG_V2.png") center fixed; }
@@ -311,40 +381,6 @@ footer {
 
 .urlSerial {
   width: 75%; }
-
-#postHeader {
-  padding-bottom: 3em; }
-  #postHeader img {
-    max-height: 800px;
-    min-height: 500px; }
-
-#postTitle h2 {
-  font-size: 3em;
-  padding-bottom: 0.5em; }
-
-#postTitle, #postContent {
-  background-color: rgba(7, 12, 12, 0.8); }
-
-#postContent {
-  padding-top: 3em;
-  padding-bottom: 2em; }
-
-#postPics div {
-  padding-bottom: 3em; }
-#postPics .hover-shadow {
-  transition: 0.3s; }
-#postPics .hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-#postPics img {
-  max-height: 300px;
-  width: auto; }
-
-#postModal, .modal-content, .modal-dialog, .modal-body {
-  min-width: 80%;
-  height: auto; }
-  #postModal #modalFocus, .modal-content #modalFocus, .modal-dialog #modalFocus, .modal-body #modalFocus {
-    height: auto;
-    width: 100%; }
 
 #adminLogo, #adminAudreact, #adminBumpers, #adminVJing {
   padding-top: 1em;
