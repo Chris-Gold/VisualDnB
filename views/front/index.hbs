@@ -179,13 +179,11 @@
   <div class="container">
     <div class="row">
         {{#each membres}}
-        <div class="col-3">
-          <h4>
+        <div class="col-4 col-md-3">
             <a href="/membres/{{this._id}}">
-              <img class="urlNom" src="../img/{{this.urlPicture}}" alt="">
+              <img class="urlNom bubble" src="../img/{{this.urlPicture}}" alt="">
             </a>
-          </h4>
-          <img class="urlSerial" src="../img/{{this.urlSerial}}" alt=""><br>
+          <img class="urlSerial img-fluid" src="../img/{{this.urlSerial}}" alt=""><br>
         </div>
         {{/each}}
     </div>

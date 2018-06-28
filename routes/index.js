@@ -17,6 +17,10 @@ router.get('/', function (req, res){
     let articles = {};
     let progs = {};
     let logos = {};
+    let audreacts = {};
+    let bumpers = {};
+    let vjings = {};
+    let membres = {};
 
     Visuel.find({}, function(err, allvisuels){
         if(err) throw err;
@@ -34,22 +38,22 @@ router.get('/', function (req, res){
     })
 
     Audreact.find(function(err, allaudreacts){
-        if(err)throw err;
+        if(err) throw err;
         audreacts = allaudreacts;
     })
 
     Bumpers.find(function(err, allbumpers){
-        if(err)throw err;
+        if(err) throw err;
         bumpers = allbumpers;
     })
 
     Vjing.find(function(err, allvjings){
-        if(err)throw err;
+        if(err) throw err;
         vjings = allvjings;
     })
 
     Membre.find(function(err, allmembres){
-        if(err)throw err;
+        if(err) throw err;
         membres = allmembres;
     })
 

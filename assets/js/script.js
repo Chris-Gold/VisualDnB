@@ -117,7 +117,6 @@ $(document).ready(function(){
     // });
     // $('#bookedLogos img').removeAttr('style');
     // }
-
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
@@ -354,19 +353,18 @@ $(document).ready(function(){
     }
 
   // ARTICLE MODAL
-    $(".hover-shadow").click(function(){
+    $("#postPics img").click(function(){
       var location = $(this).attr('src');
       console.log(location);
       $("#modalFocus").attr("src", location);
     })
 
   // MEMBRE MODAL
-    // PHOTOS
-    // $("#picContent img").click(function(){
-    //   var location = $(this).attr('src');
-    //   console.log(location);
-    //   $("#picFocus").attr("src", location);
-    // })
+    $("#pictures img").click(function(){
+      var location = $(this).attr('src');
+      console.log(location);
+      $("#picFocus").attr("src", location);
+    })
 
   // VIMEO IFRAME + BUTTONS
     var vimeo = new Vimeo.Player('topVid');
