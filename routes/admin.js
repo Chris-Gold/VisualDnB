@@ -364,7 +364,7 @@ router.get('/media', function(req, res){
             throw err;
         }
         res.render("back/adminMedia.hbs", {medias: results, title:'Media'});
-    })
+    }).sort({_id:-1})
 });
 
 router.post('/media',upload.any(),function(req,res,next){

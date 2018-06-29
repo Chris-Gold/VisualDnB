@@ -12,66 +12,45 @@ const Vjing = require('../models/vjing');
 const Membre = require('../models/membre');
 
 // GET l'url, si = '/' alors affiche le fichier index.html
-router.get('/', function (req, res){
-    let visuels = {};
-    let articles = {};
-    let progs = {};
-    let logos = {};
-    let audreacts = {};
-    let bumpers = {};
-    let vjings = {};
-    let membres = {};
+router.get('/', async (req, res) => {
 
-    Visuel.find({}, function(err, allvisuels){
-        if(err) throw err;
-        visuels = allvisuels;
-    })
+    try {
+        const [
+            visuels,
+            articles,
+            progs,
+            audreacts,
+            bumpers,
+            vjings,
+            membres,
+            logos
+        ] = await Promise.all([
+            Visuel.find(),
+            Article.find().sort({ _id: -1 }).exec(),
+            Prog.find(),
+            Audreact.find(),
+            Bumpers.find(),
+            Vjing.find(),
+            Membre.find(),
+            Logo.find()
+        ]);
 
-    Article.find({}, function(err, allarticles){
-        if (err) throw err;
-        articles = allarticles;
-    }).sort({_id:-1})
-
-    Prog.find({}, function(err, allprogs){
-        if (err) throw err;
-        progs = allprogs;
-    })
-
-    Audreact.find(function(err, allaudreacts){
-        if(err) throw err;
-        audreacts = allaudreacts;
-    })
-
-    Bumpers.find(function(err, allbumpers){
-        if(err) throw err;
-        bumpers = allbumpers;
-    })
-
-    Vjing.find(function(err, allvjings){
-        if(err) throw err;
-        vjings = allvjings;
-    })
-
-    Membre.find(function(err, allmembres){
-        if(err) throw err;
-        membres = allmembres;
-    })
-
-    Logo.find({}, function(err, alllogos){
-        if (err) throw err;
-        logos = alllogos;
         res.render("front/index", {
-          visuels:visuels,
-          articles:articles,
-          progs:progs,
-          logos:logos,
-          audreacts:audreacts,
-          bumpers:bumpers,
-          vjings:vjings,
-          membres:membres,
-          title:'Visual DNB'
+            visuels,
+            articles,
+            progs,
+            logos,
+            audreacts,
+            bumpers,
+            vjings,
+            membres,
+            title: 'Visual DNB'
         });
-    })
+    } catch (error) {
+        console.error(error);
+
+        res.render('front/404');
+    }
 });
 
 router.post('/', function(req, res){
