@@ -1,19 +1,46 @@
 @media (min-height: 650px) and (max-height: 900px) {
-  body header #topVid {
+  body #header #topVid {
     height: 125%;
     overflow: hidden;
     top: -8em; }
-  body header #vimButton button {
+  body #header #vimButton button {
     font-size: 30px; }
   body #showroom .next, body #showroom .prev {
-    font-size: 7em; } }
+    font-size: 7em; }
+  body #membre #membreId #membreDesc {
+    margin-top: 1em;
+    height: 100%; }
+    body #membre #membreId #membreDesc #description {
+      height: 100%; }
+  body #membre #membreContent #pictures {
+    height: 100%; }
+    body #membre #membreContent #pictures img {
+      padding: 0px 10px 20px 10px;
+      max-width: 15em;
+      height: auto; }
+  body #membre #membreContent #sound {
+    min-height: 50%; }
+    body #membre #membreContent #sound * {
+      max-height: 50%; }
+  body #membre #membreContent #videos {
+    padding-bottom: 2em; } }
 @media (min-width: 910px) {
-  body header #topVid {
+  body #header #topVid {
     top: -8em; }
-  body header #vimButton button {
+  body #header #vimButton button {
     font-size: 50px; }
   body #showroom .next, body #showroom .prev {
-    font-size: 10em; } }
+    font-size: 10em; }
+  body #membre #membreContent #pictures {
+    height: 100%; }
+    body #membre #membreContent #pictures img {
+      padding: 0px 10px 20px 10px;
+      max-width: 15em;
+      height: auto; }
+  body #membre #membreContent #sound {
+    min-height: 100%; }
+    body #membre #membreContent #sound * {
+      height: 100%; } }
 body {
   background-color: #070C0C;
   color: #E5E5E4;
@@ -37,20 +64,24 @@ body {
   body .toBig {
     color: #E5E5E4;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   body .toBig:hover {
     color: #E5E5E4;
     letter-spacing: 0.2em;
     -webkit-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out; }
   body .toBigMod {
     color: #070C0C;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   body .toBigMod:hover {
     color: #070C0C;
     letter-spacing: 0.2em;
     -webkit-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out; }
   body .bgFirst {
     background: url("../img/bgFirst.png") center fixed; }
@@ -61,15 +92,23 @@ body {
     background-color: rgba(7, 12, 12, 0.8); }
   body .filter1 {
     background: -webkit-gradient(linear, left top, left bottom, from(#070C0C), to(rgba(7, 12, 12, 0.9)));
+    background: -webkit-linear-gradient(#070C0C, rgba(7, 12, 12, 0.9));
+    background: -o-linear-gradient(#070C0C, rgba(7, 12, 12, 0.9));
     background: linear-gradient(#070C0C, rgba(7, 12, 12, 0.9)); }
   body .filter2 {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 12, 12, 0.9)), to(rgba(7, 12, 12, 0.8)));
+    background: -webkit-linear-gradient(rgba(7, 12, 12, 0.9), rgba(7, 12, 12, 0.8));
+    background: -o-linear-gradient(rgba(7, 12, 12, 0.9), rgba(7, 12, 12, 0.8));
     background: linear-gradient(rgba(7, 12, 12, 0.9), rgba(7, 12, 12, 0.8)); }
   body .filter3 {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 12, 12, 0.8)), to(rgba(7, 12, 12, 0.9)));
+    background: -webkit-linear-gradient(rgba(7, 12, 12, 0.8), rgba(7, 12, 12, 0.9));
+    background: -o-linear-gradient(rgba(7, 12, 12, 0.8), rgba(7, 12, 12, 0.9));
     background: linear-gradient(rgba(7, 12, 12, 0.8), rgba(7, 12, 12, 0.9)); }
   body .filter4 {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 12, 12, 0.9)), to(#070C0C));
+    background: -webkit-linear-gradient(rgba(7, 12, 12, 0.9), #070C0C);
+    background: -o-linear-gradient(rgba(7, 12, 12, 0.9), #070C0C);
     background: linear-gradient(rgba(7, 12, 12, 0.9), #070C0C); }
   body .bubble2 {
     width: 8em;
@@ -83,32 +122,40 @@ body {
     padding: 20px;
     border: none;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out;
     -webkit-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
             transform: rotate(-360deg); }
   body .bubble:hover {
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out;
     -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
             transform: rotate(360deg);
     border: 0.5em solid rgba(5, 183, 47, 0.5);
     width: 11em;
     height: 11em; }
   body .hover-shadow {
     -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s; }
   body .hover-shadow:hover {
     -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
             transform: scale(1.15);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   body .back {
     color: #05b72f;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out;
     font-size: 1.2em; }
   body .back:hover {
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out;
     letter-spacing: 0.3em;
     font-size: 0.8em; }
@@ -120,7 +167,7 @@ body {
     color: #E5E5E4;
     margin: 0; }
 
-header #topVid {
+#header #topVid {
   overflow: hidden;
   z-index: -50;
   display: block;
@@ -128,16 +175,17 @@ header #topVid {
   height: 115%;
   width: 100%;
   top: -1em; }
-header #vimButton {
+#header #vimButton {
   position: relative;
   top: 90%; }
-  header #vimButton button {
+  #header #vimButton button {
     -webkit-transition: width 350ms ease-in-out;
+    -o-transition: width 350ms ease-in-out;
     transition: width 350ms ease-in-out;
     background-color: transparent;
     border: none;
     outline: none; }
-  header #vimButton button:hover {
+  #header #vimButton button:hover {
     cursor: pointer;
     border: none;
     opacity: 0.8; }
@@ -168,6 +216,7 @@ header #vimButton {
     margin: 0 auto;
     position: relative;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out;
     width: 0;
     color: #05b72f; }
@@ -178,6 +227,7 @@ header #vimButton {
     border-color: #05b72f;
     color: #05b72f;
     -webkit-transition: width 350ms ease-in-out;
+    -o-transition: width 350ms ease-in-out;
     transition: width 350ms ease-in-out;
     width: 70%; }
   #navigation .btn-2:hover:before {
@@ -186,8 +236,12 @@ header #vimButton {
     width: 70%; }
 
 #trans1, #trans3, #trans2 {
-  -webkit-transition: background-size linear;
-  transition: background-size linear; }
+  -webkit-transition: background-size 20ms linear;
+  -o-transition: background-size 20ms linear;
+  transition: background-size 20ms linear;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
 
 #trans1, #trans3 {
   background-size: 100%; }
@@ -273,6 +327,7 @@ header #vimButton {
     height: 2.5em;
     border-radius: 1em;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   #contact textarea {
     background-color: #070C0C;
@@ -282,6 +337,7 @@ header #vimButton {
     color: #070C0C;
     font-weight: bold;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   #contact #submit {
     height: 3em;
@@ -289,6 +345,7 @@ header #vimButton {
     background: #05b72f;
     border-radius: 50px;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   #contact #submit:hover {
     color: #E5E5E4;
@@ -297,6 +354,7 @@ header #vimButton {
             box-shadow: 0 0 0 2px #E5E5E4, 0 0 0 4px #05b72f;
     background: #048522;
     -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
     transition: all 280ms ease-in-out; }
   #contact #calendrier {
     background-color: #070C0C; }
@@ -372,36 +430,63 @@ footer {
 #postModal, .modal-content, .modal-dialog, .modal-body {
   min-width: 80%;
   height: auto; }
-  #postModal #modalFocus, .modal-content #modalFocus, .modal-dialog #modalFocus, .modal-body #modalFocus {
-    height: auto;
-    width: 100%; }
 
-#membre {
+#membreBg {
+  border-radius: 5%;
+  padding: 0;
+  max-width: 90%;
   background: url("../img/Page_Perso_Assets_BG_V2.png") center fixed; }
 
-#membrePic {
-  padding: 20px 0px 0px 0px; }
+#membreId {
+  height: 100%;
+  padding-bottom: 1em; }
+  #membreId #membrePic {
+    max-height: 100%;
+    width: auto;
+    padding: 20px 0px 0px 0px; }
+  #membreId #membreDetails {
+    max-height: 100%;
+    padding: 20px 0px 0px 20px; }
+    #membreId #membreDetails #membreNom img {
+      max-height: 5em; }
+    #membreId #membreDetails #membreSerial {
+      padding-bottom: 0.5em; }
+      #membreId #membreDetails #membreSerial img {
+        height: 1em; }
+    #membreId #membreDetails #membreLink {
+      height: 5%; }
+  #membreId #membreDesc {
+    height: 100%; }
+    #membreId #membreDesc #description {
+      margin-top: 2em;
+      height: 100%; }
 
-#membreNom {
-  padding: 20px 0px 0px 0px; }
-
-#membreSite {
-  padding: 0px 0px 20px 0px; }
-
-#description {
-  padding: 20px 0px 0px 0px; }
-
-#content {
-  padding: 20px 0px 0px 0px; }
-
-#picContent img {
-  padding: 0px 10px 20px 10px; }
-
-.urlNom {
-  width: 75%; }
-
-.urlSerial {
-  width: 75%; }
+#membreContent {
+  height: 100%;
+  padding: 0.5em; }
+  #membreContent #pictures {
+    height: 100%; }
+    #membreContent #pictures img {
+      padding: 0px 10px 20px 10px;
+      max-width: 12em;
+      height: auto; }
+  #membreContent #picModal {
+    width: auto;
+    height: 100%; }
+    #membreContent #picModal #picFocus {
+      width: auto;
+      height: 100%; }
+  #membreContent #sound {
+    padding-bottom: 2em; }
+  #membreContent #videos {
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    #membreContent #videos .vidContent {
+      min-height: 300px; }
+      #membreContent #videos .vidContent iframe {
+        width: 100%;
+        height: 100%;
+        padding: 10px; }
 
 #adminLogo, #adminAudreact, #adminBumpers, #adminVJing {
   padding-top: 1em;

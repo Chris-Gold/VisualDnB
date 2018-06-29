@@ -1,21 +1,21 @@
 {
-  "short_name": "VisualDnB",
+  "short_name": "VslDnB",
   "name": "VisualDnB",
   "icons": [
     {
-      "src": "/img/visualdnb.png",
+      "src": "./assets/img/visualdnb.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/visualdnb.png",
+      "src": "./assets/img/visualdnb.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.hbs",
+  "start_url": "./views/front/index.hbs",
   "background_color": "#070C0C",
   "display": "standalone",
-  "orientation":  "landscape",
+  "orientation": "landscape",
   "theme_color": "#070C0C"
 }

@@ -191,7 +191,10 @@ body {
     width: 70%; }
 
 #trans1, #trans3, #trans2 {
-  transition: background-size linear; }
+  transition: background-size 20ms linear;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
 
 #trans1, #trans3 {
   background-size: 100%; }

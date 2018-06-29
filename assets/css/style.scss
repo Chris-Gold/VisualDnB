@@ -6,6 +6,18 @@ $vert : #05b72f;
 //   border: 1px solid $blanc;
 // }
 
+// >>>>>>>>>>>>>> MEDIA QUERY LANDSCAPE <<<<<<<<<<<<<<<<<<
+// @media (orientation: portrait) {
+//   body {
+//     -webkit-transform: rotate(-90deg);
+//     -moz-transform: rotate(-90deg);
+//     -o-transform: rotate(-90deg);
+//     -ms-transform: rotate(-90deg);
+//     transform: rotate(-90deg);
+//   }
+// }
+// C'est cool, mais c'est pas top!!
+
 // >>>>>>>>>>>>>> MEDIA QUERY TABLETTE <<<<<<<<<<<<<<
 @media (min-height: 650px) and (max-height: 900px){
   body{
@@ -308,7 +320,10 @@ body{
 }
 
 #trans1, #trans3, #trans2{
-  transition: background-size linear;
+  transition: background-size 20ms linear;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 #trans1, #trans3{
   background-size: 100%;
