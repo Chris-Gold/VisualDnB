@@ -25,6 +25,10 @@ $(document).ready(function(){
       $('html, body').stop().animate({scrollTop: ($(target).offset().top)-navHeight}, 1000 );
     })
 
+  // GOLDEN BOX class (hauteur = 1/3 largeur)
+    var gldWidth = $('.gldBox').width();
+    $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
+
   // SUPRESSION CLASS GLDBOX POUR MOBILE
     var screenWidth = $(window).width();
     if (screenWidth <= 750){
@@ -63,7 +67,6 @@ $(document).ready(function(){
       }
     })
 
-
   // SLIDER PARALLAX
     $('#da-slider').cslider({
 			bgincrement	: 0
@@ -95,28 +98,8 @@ $(document).ready(function(){
     });
     userFeed.run();
 
-  // GOLDEN BOX class
-    var gldWidth = $('.gldBox').width();
-    $('.gldBox').css({"width" : "100%", "height" : gldWidth*0.33});
 
   // PROGRAMME AVEC Carousel Slick
-    // if (window.matchMedia("(max-width: 950px)").matches) {
-    //   $('#bookedLogos').slick({
-    //     adaptiveHeight: false,
-    //     infinite: true,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 5
-    //   });
-    //   $('#bookedLogos img').removeAttr('style');
-    // } else {
-    // $('#bookedLogos').slick({
-    //   adaptiveHeight: false,
-    //   infinite: true,
-    //   slidesToShow: 5,
-    //   slidesToScroll: 5
-    // });
-    // $('#bookedLogos img').removeAttr('style');
-    // }
     $('#bookedLogos').slick({
       adaptiveHeight: false,
       infinite: true,
@@ -340,6 +323,7 @@ $(document).ready(function(){
       $('#focusVJ').addClass('collapsing').removeClass('collapse show');
       $('#firstVJ a').attr('data-target',"#focusVJ");
     })
+
   // Fonction destiné à compléter le sujet du mail à envoyer.
     let buttons = document.querySelectorAll('.inputButton');
 
@@ -352,21 +336,22 @@ $(document).ready(function(){
       })
     }
 
-  // ARTICLE MODAL
+  // MODAL
+    // ARTICLE
     $("#postPics img").click(function(){
       var location = $(this).attr('src');
       console.log(location);
       $("#modalFocus").attr("src", location);
     })
 
-  // MEMBRE MODAL
+    // MEMBRE
     $("#pictures img").click(function(){
       var location = $(this).attr('src');
       console.log(location);
       $("#picFocus").attr("src", location);
     })
 
-  // VIMEO IFRAME + BUTTONS
+  // VIMEO IFRAME + BUTTONS (HEADER)
     var vimeo = new Vimeo.Player('topVid');
     $('#vimPlay').on('click', function(){
       vimeo.play();
@@ -388,4 +373,3 @@ $(document).ready(function(){
     })
 
 });
-// })(jQuery);
